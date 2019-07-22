@@ -11,6 +11,17 @@ import Alamofire
 
 class APIClient {
     
-    static func getUserData()
+    static func getUserData(didFinishWithSuccess: @escaping (([FeedData]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        let url = "https://randomuser.me/api/"
+        Alamofire.request(url)
+            .responseJSON { response in
+                if response != nil {
+                    print(response)
+                    didFinishWithSuccess([FeedData("a", "s", "d", "f", ["g", "h"])])
+                } else {
+                    didFinishWithError(404, "Cant fetch Shit")
+                }
+        }
+    }
     
 }
