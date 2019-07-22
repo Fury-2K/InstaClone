@@ -12,6 +12,11 @@ class FeedViewModel {
     
     func getData() -> [FeedData] {
         let feedData: [FeedData] = []
+        APIClient.getUserData(didFinishWithSuccess: { x in
+            print(x[0].gender)
+        }, didFinishWithError: { errorCode,error  in
+            print("\(errorCode) \(error)")
+        })
         return feedData
     }
     
