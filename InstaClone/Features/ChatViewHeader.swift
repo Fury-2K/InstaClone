@@ -21,7 +21,7 @@ class ChatViewHeader: UICollectionReusableView {
     func setupCell() {
         self.HeaderLabel.text = "Inbox"
         self.searchField.setIcon(image: UIImage(named: "search-7"), alignment: "left")
-        self.searchField.setIcon(image: UIImage(named: "search-7"), alignment: "right")
+        self.searchField.setIcon(image: UIImage(named: "gear-7"), alignment: "right")
     }
 }
 
