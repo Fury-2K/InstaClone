@@ -11,12 +11,9 @@ import UIKit
 class FeedVC: UIViewController {
     
     @IBOutlet weak var collectionView: MainCollectionView!
-    let viewModel: FeedViewModel = FeedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let y = viewModel.getData()
-        print(y)
     }
 
 }
