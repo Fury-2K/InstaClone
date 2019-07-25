@@ -120,30 +120,14 @@
 		1A4560D022E5703800AB49A0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1A45AB0422E9C0C100133D0A /* Essentials */,
+				1A45AB0322E9C0A000133D0A /* ChatPage */,
 				1A4560D122E5703F00AB49A0 /* Feed */,
-				1A4560D622E5782700AB49A0 /* FeedCollectionView.swift */,
 				1A4560D822E587AC00AB49A0 /* VC1.swift */,
 				1A4560D922E587AC00AB49A0 /* VC1.xib */,
 				1A4560DC22E587B700AB49A0 /* VC2.swift */,
 				1A4560DD22E587B700AB49A0 /* VC2.xib */,
 				1A3E424B22E8184F00D9829D /* GoogleService-Info.plist */,
-				1A4560E022E58EF000AB49A0 /* MainViewController.swift */,
-				1A4560E822E5B04500AB49A0 /* ChatVC.swift */,
-				1A4560E922E5B04500AB49A0 /* ChatVC.xib */,
-				1A4560EC22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift */,
-				1A4560F222E5C48400AB49A0 /* APIClient.swift */,
-				1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */,
-				1A3E424322E6C8E800D9829D /* ChatViewCell.swift */,
-				1A3E424422E6C8E800D9829D /* ChatViewCell.xib */,
-				1A3E424722E6E25D00D9829D /* ChatViewHeader.swift */,
-				1A3E424822E6E25D00D9829D /* ChatViewHeader.xib */,
-				1A3E425322E85A8A00D9829D /* FeedViewCell.swift */,
-				1A3E425422E85A8A00D9829D /* FeedViewCell.xib */,
-				1A3E425722E86F2A00D9829D /* FeedHeaderView.swift */,
-				1A3E425822E86F2A00D9829D /* FeedHeaderView.xib */,
-				1A3E425B22E87FB400D9829D /* HeaderCollectionCell.swift */,
-				1A3E425C22E87FB400D9829D /* HeaderCollectionCell.xib */,
-				1A45AB0122E9683B00133D0A /* FeedHeaderCollectionView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -151,12 +135,68 @@
 		1A4560D122E5703F00AB49A0 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				1A4560D622E5782700AB49A0 /* FeedCollectionView.swift */,
 				1A4560CC22E5702F00AB49A0 /* FeedVC.swift */,
 				1A4560CD22E5702F00AB49A0 /* FeedVC.xib */,
+				1A45AB0122E9683B00133D0A /* FeedHeaderCollectionView.swift */,
 				1A4560EE22E5C2CB00AB49A0 /* FeedViewModel.swift */,
 				1A4560F022E5C32900AB49A0 /* FeedData.swift */,
+				1A45AB0622E9C10800133D0A /* HelperViews */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		1A45AB0322E9C0A000133D0A /* ChatPage */ = {
+			isa = PBXGroup;
+			children = (
+				1A4560E822E5B04500AB49A0 /* ChatVC.swift */,
+				1A4560E922E5B04500AB49A0 /* ChatVC.xib */,
+				1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */,
+				1A45AB0522E9C0EB00133D0A /* HelperViews */,
+			);
+			path = ChatPage;
+			sourceTree = "<group>";
+		};
+		1A45AB0422E9C0C100133D0A /* Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				1A4560E022E58EF000AB49A0 /* MainViewController.swift */,
+				1A4560EC22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift */,
+				1A4560F222E5C48400AB49A0 /* APIClient.swift */,
+			);
+			path = Essentials;
+			sourceTree = "<group>";
+		};
+		1A45AB0522E9C0EB00133D0A /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E424322E6C8E800D9829D /* ChatViewCell.swift */,
+				1A3E424422E6C8E800D9829D /* ChatViewCell.xib */,
+				1A3E424722E6E25D00D9829D /* ChatViewHeader.swift */,
+				1A3E424822E6E25D00D9829D /* ChatViewHeader.xib */,
+			);
+			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		1A45AB0622E9C10800133D0A /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E425322E85A8A00D9829D /* FeedViewCell.swift */,
+				1A3E425422E85A8A00D9829D /* FeedViewCell.xib */,
+				1A3E425722E86F2A00D9829D /* FeedHeaderView.swift */,
+				1A3E425822E86F2A00D9829D /* FeedHeaderView.xib */,
+				1A45AB0822E9C13000133D0A /* HeaderCollectionCell */,
+			);
+			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		1A45AB0822E9C13000133D0A /* HeaderCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E425B22E87FB400D9829D /* HeaderCollectionCell.swift */,
+				1A3E425C22E87FB400D9829D /* HeaderCollectionCell.xib */,
+			);
+			path = HeaderCollectionCell;
 			sourceTree = "<group>";
 		};
 		AD961F525A740D06DDCB6695 /* Pods */ = {
