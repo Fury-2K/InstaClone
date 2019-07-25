@@ -29,15 +29,6 @@ class APIClient {
                     let url2 = pictures["medium"] as? String,
                     let url3 = pictures["thumbnail"] as? String else { return }
                 let urls: [String] = [url1, url2, url3]
-//                var pics: [UIImage] = []
-//                for url in urls {
-//                    Alamofire.request(url)
-//                        .responseJSON { response in
-//                            print(response.data!)
-//                            guard let data1 = response.result.value else { return }
-//                            print(data1)
-//                    }
-//                }
                 let feedData = FeedData(gender, fName, lName, email, urls)
                 didFinishWithSuccess(feedData)
         }
