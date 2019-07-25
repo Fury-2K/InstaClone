@@ -27,7 +27,10 @@ class APIClient {
                     let pictures = results["picture"] as? [String: Any],
                     let url1 = pictures["large"] as? String,
                     let url2 = pictures["medium"] as? String,
-                    let url3 = pictures["thumbnail"] as? String else { return }
+                    let url3 = pictures["thumbnail"] as? String else {
+                        didFinishWithError(404, "error")
+                        return
+                }
                 let urls: [String] = [url1, url2, url3]
                 let feedData = FeedData(gender, fName, lName, email, urls)
                 didFinishWithSuccess(feedData)

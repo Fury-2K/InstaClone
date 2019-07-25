@@ -11,47 +11,55 @@ import UIKit
 class ChatVC: UIViewController {
     
     let viewModel: FeedViewModel = FeedViewModel()
+    var refreshControl: UIRefreshControl!
+    var feedData: [FeedData] = []
+    
     @IBOutlet weak var collectionView: ChatCollectionView!
     @IBOutlet weak var footerCameraIcon: UIImageView!
     @IBOutlet weak var footerLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRefreshControl()
         setupNavigationBar()
+        footerCameraIcon.image = UIImage(named: "camera-7")
+        setChatPage()
+    }
+    
+    func setupRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            collectionView.refreshControl = refreshControl
+        } else {
+            collectionView.addSubview(refreshControl)
+        }
+    }
+    
+    @objc func refreshPage() {
         setChatPage()
     }
     
     func setChatPage() {
-        self.footerCameraIcon.image = UIImage(named: "camera-7")
-        self.footerLabel.text = "Camera"
-        var feedData: [FeedData] = []
-        self.viewModel.getData(didFinishWithSuccess: { data in
-            feedData.append(data)
-            self.viewModel.getData(didFinishWithSuccess: { data in
-                feedData.append(data)
-                self.viewModel.getData(didFinishWithSuccess: { data in
-                    feedData.append(data)
-                    self.viewModel.getData(didFinishWithSuccess: { data in
-                        feedData.append(data)
-                        self.viewModel.getData(didFinishWithSuccess: { data in
-                            feedData.append(data)
-                            self.collectionView.data = feedData
-                        }, didFinishWithError: { errorCode, error in
-                            print("\(errorCode) \(error)")
-                        })
-                    }, didFinishWithError: { errorCode, error in
-                        print("\(errorCode) \(error)")
-                    })
-                }, didFinishWithError: { errorCode, error in
-                    print("\(errorCode) \(error)")
-                })
+        refreshControl.beginRefreshing()
+        
+        let group = DispatchGroup()
+        
+        for _ in 0..<5 {
+            group.enter()
+            self.viewModel.getData(didFinishWithSuccess: { response in
+                self.feedData.append(response)
+                group.leave()
             }, didFinishWithError: { errorCode, error in
-                print("\(errorCode) \(error)")
+                print(error)
+                group.leave()
             })
-        }, didFinishWithError: { errorCode, error in
-            print("\(errorCode) \(error)")
-        })
+        }
+        
+        group.notify(queue: .main) {
+            self.collectionView.data = self.feedData
+            self.refreshControl.endRefreshing()
+        }
     }
     
 }

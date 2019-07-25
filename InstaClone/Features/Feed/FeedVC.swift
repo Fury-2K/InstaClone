@@ -40,34 +40,24 @@ class FeedVC: UIViewController {
     
     func getPageData() {
         refreshControl.beginRefreshing()
-        self.viewModel.getData(didFinishWithSuccess: { data in
-            self.feedData.append(data)
-            self.viewModel.getData(didFinishWithSuccess: { data in
-                self.feedData.append(data)
-                self.viewModel.getData(didFinishWithSuccess: { data in
-                    self.feedData.append(data)
-                    self.viewModel.getData(didFinishWithSuccess: { data in
-                        self.feedData.append(data)
-                        self.viewModel.getData(didFinishWithSuccess: { data in
-                            self.feedData.append(data)
-                            self.collectionView.data = self.feedData
-                            self.collectionView.reloadData()
-                            self.refreshControl.endRefreshing()
-                        }, didFinishWithError: { errorCode, error in
-                            print("\(errorCode) \(error)")
-                        })
-                    }, didFinishWithError: { errorCode, error in
-                        print("\(errorCode) \(error)")
-                    })
-                }, didFinishWithError: { errorCode, error in
-                    print("\(errorCode) \(error)")
-                })
+        
+        let group = DispatchGroup()
+        
+        for _ in 0..<5 {
+            group.enter()
+            self.viewModel.getData(didFinishWithSuccess: { response in
+                self.feedData.append(response)
+                group.leave()
             }, didFinishWithError: { errorCode, error in
-                print("\(errorCode) \(error)")
+                print(error)
+                group.leave()
             })
-        }, didFinishWithError: { errorCode, error in
-            print("\(errorCode) \(error)")
-        })
+        }
+        
+        group.notify(queue: .main) {
+            self.collectionView.data = self.feedData
+            self.refreshControl.endRefreshing()
+        }
     }
     
 }
