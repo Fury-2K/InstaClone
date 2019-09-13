@@ -58,7 +58,7 @@ class FeedViewCell: UICollectionViewCell {
     func addTapGesture() {
         self.likeImageBtn.addTapGesture(#selector(likesBtnTapped), target: self)
         self.commentImageBtn.addTapGesture(#selector(commentBtnTapped), target: self)
-        self.shareImageBtn.addTapGesture(#selector(likesBtnTapped), target: self)
+        self.shareImageBtn.addTapGesture(#selector(shareBtnTapped), target: self)
         self.saveImageBtn.addTapGesture(#selector(saveBtnTapped), target: self)
     }
     
@@ -73,31 +73,31 @@ class FeedViewCell: UICollectionViewCell {
 }
 
 extension FeedViewCell {
-    
+
     @objc func likesBtnTapped() {
         guard let indexPath = self.indexPath else { return }
         onClickListener?.likesBtnTapped(indexPath: indexPath)
     }
-    
+
     @objc func commentBtnTapped() {
         guard let indexPath = self.indexPath else { return }
         onClickListener?.commentBtnTapped(indexPath: indexPath)
     }
-    
+
     @objc func shareBtnTapped() {
         guard let indexPath = self.indexPath else { return }
         onClickListener?.shareBtnTapped(indexPath: indexPath)
     }
-    
+
     @objc func saveBtnTapped() {
         guard let indexPath = self.indexPath else { return }
         onClickListener?.saveBtnTapped(indexPath: indexPath)
     }
-    
+
 }
 
 extension UIView {
-    
+
     @discardableResult func addTapGesture(_ selector: Selector, target: AnyObject?, numberOfTapsRequired: Int = 1) -> UITapGestureRecognizer {
         isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: target, action: selector)
@@ -105,5 +105,5 @@ extension UIView {
         addGestureRecognizer(tapGesture)
         return tapGesture
     }
-    
+
 }

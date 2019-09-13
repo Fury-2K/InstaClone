@@ -1,21 +1,21 @@
 //
-//  FeedHeaderCollectionView.swift
+//  VC1CollectionView.swift
 //  InstaClone
 //
-//  Created by Manas Aggarwal on 25/07/19.
+//  Created by Manas Aggarwal on 30/07/19.
 //  Copyright © 2019 zopsmart. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FeedHeaderCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol ScrollDelegate: class {
+    func scrolled(_ scrollView: UIScrollView)
+}
+
+class VC1CollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var data: [FeedData] = [] {
-        didSet {
-            self.reloadData()
-        }
-    }
+    weak var scrollDelegate: ScrollDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -29,12 +29,15 @@ class FeedHeaderCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     func sharedInit() {
         dataSource = self
+        isScrollEnabled = true
         delegate = self
+        alwaysBounceVertical = true
+        setCollectionViewLayout(UICollectionViewFlowLayout(), animated: true)
         registerClasses()
     }
     
     func registerClasses() {
-        register(UINib(nibName: "HeaderCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HeaderCollectionCell")
+        register(UINib(nibName: "VC1ScrollCell", bundle: nil), forCellWithReuseIdentifier: "VC1ScrollCell")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -42,12 +45,12 @@ class FeedHeaderCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.data.count
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeaderCollectionCell", for: indexPath) as? HeaderCollectionCell ?? HeaderCollectionCell()
-        cell.setData(self.data[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VC1ScrollCell", for: indexPath) as? VC1ScrollCell ?? VC1ScrollCell()
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
         return cell
     }
     
@@ -62,11 +65,14 @@ class FeedHeaderCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 93)
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
- 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 8, bottom: 8, right: 8)
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.scrolled(scrollView)
+    }
+    
 }

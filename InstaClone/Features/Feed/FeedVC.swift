@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import MaterialComponents
+import MaterialComponents.MaterialBottomSheet_ShapeThemer
 
 class FeedVC: UIViewController {
     
     @IBOutlet weak var collectionView: FeedCollectionView!
     let viewModel: FeedViewModel = FeedViewModel()
     
+    var bottomSheetController: MDCBottomSheetController = MDCBottomSheetController()
     var feedData: [FeedData] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshControl()
-        self.collectionView.contentInset = UIEdgeInsets(top: -45, left: 0, bottom: 0, right: 0)
         collectionView.onclickListener = self
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
         getPageData()
     }
     
@@ -74,7 +79,9 @@ extension FeedVC: OnClickListener {
     }
 
     func shareBtnTapped(indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ChatVC(), animated: true)
+        bottomSheetController = MDCBottomSheetController(contentViewController: ChatVC())
+        bottomSheetController.preferredContentSize = CGSize(width: self.preferredContentSize.width, height: 5 * 103 - 20)
+        present(bottomSheetController, animated: true, completion: nil)
     }
 
     func saveBtnTapped(indexPath: IndexPath) {

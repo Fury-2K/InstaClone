@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
+
 class FeedCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var onclickListener: OnClickListener?
+    weak var scrollDelegate: ScrollDelegate?
     
     var data: [FeedData] = [] {
         didSet {
@@ -55,7 +57,8 @@ class FeedCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedViewCell", for: indexPath) as? FeedViewCell ?? FeedViewCell()
         let cellData = self.data[indexPath.row]
         cell.setData(cellData)
-        cell.onClickListener = onclickListener
+        cell.onClickListener = self.onclickListener
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -72,10 +75,7 @@ class FeedCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 552)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FeedHeaderView", for: indexPath) as? FeedHeaderView ?? FeedHeaderView()
         headerView.data = self.data
@@ -85,5 +85,5 @@ class FeedCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 93)
     }
-
+    
 }

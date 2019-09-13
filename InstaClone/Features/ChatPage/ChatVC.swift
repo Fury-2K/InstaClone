@@ -51,7 +51,6 @@ class ChatVC: UIViewController {
                 self.feedData.append(response)
                 group.leave()
             }, didFinishWithError: { errorCode, error in
-                print(error)
                 group.leave()
             })
         }

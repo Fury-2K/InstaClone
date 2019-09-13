@@ -19,6 +19,9 @@
 		1A3E425A22E86F2A00D9829D /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E425822E86F2A00D9829D /* FeedHeaderView.xib */; };
 		1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E425B22E87FB400D9829D /* HeaderCollectionCell.swift */; };
 		1A3E425E22E87FB400D9829D /* HeaderCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E425C22E87FB400D9829D /* HeaderCollectionCell.xib */; };
+		1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */; };
+		1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */; };
+		1A40DAE822F0180D0015D95D /* VC1ScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */; };
 		1A4560BB22E56E8500AB49A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4560BA22E56E8500AB49A0 /* AppDelegate.swift */; };
 		1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4560C122E56EB200AB49A0 /* Assets.xcassets */; };
 		1A4560CE22E5702F00AB49A0 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4560CC22E5702F00AB49A0 /* FeedVC.swift */; };
@@ -52,6 +55,9 @@
 		1A3E425822E86F2A00D9829D /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		1A3E425B22E87FB400D9829D /* HeaderCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionCell.swift; sourceTree = "<group>"; };
 		1A3E425C22E87FB400D9829D /* HeaderCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionCell.xib; sourceTree = "<group>"; };
+		1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC1CollectionView.swift; sourceTree = "<group>"; };
+		1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC1ScrollCell.swift; sourceTree = "<group>"; };
+		1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VC1ScrollCell.xib; sourceTree = "<group>"; };
 		1A4560B722E56E8500AB49A0 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4560BA22E56E8500AB49A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4560C122E56EB200AB49A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 				1A4560DC22E587B700AB49A0 /* VC2.swift */,
 				1A4560DD22E587B700AB49A0 /* VC2.xib */,
 				1A3E424B22E8184F00D9829D /* GoogleService-Info.plist */,
+				1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */,
+				1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */,
+				1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 				1A4560CF22E5702F00AB49A0 /* FeedVC.xib in Resources */,
 				1A3E424622E6C8E800D9829D /* ChatViewCell.xib in Resources */,
 				1A3E424A22E6E25D00D9829D /* ChatViewHeader.xib in Resources */,
+				1A40DAE822F0180D0015D95D /* VC1ScrollCell.xib in Resources */,
 				1A4560DB22E587AC00AB49A0 /* VC1.xib in Resources */,
 				1A4560EB22E5B04500AB49A0 /* ChatVC.xib in Resources */,
 				1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */,
@@ -342,6 +352,7 @@
 				1A4560EA22E5B04500AB49A0 /* ChatVC.swift in Sources */,
 				1A4560F122E5C32900AB49A0 /* FeedData.swift in Sources */,
 				1A3E425522E85A8A00D9829D /* FeedViewCell.swift in Sources */,
+				1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */,
 				1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */,
 				1A4560E222E58EF000AB49A0 /* MainViewController.swift in Sources */,
 				1A4560CE22E5702F00AB49A0 /* FeedVC.swift in Sources */,
@@ -350,6 +361,7 @@
 				1A3E425922E86F2A00D9829D /* FeedHeaderView.swift in Sources */,
 				1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */,
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
+				1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */,
 				1A3E424922E6E25D00D9829D /* ChatViewHeader.swift in Sources */,
 				1A3E424522E6C8E800D9829D /* ChatViewCell.swift in Sources */,
 				1A4560DE22E587B700AB49A0 /* VC2.swift in Sources */,

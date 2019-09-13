@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JGD-tU-ASs" customClass="FeedCollectionView" customModule="InstaClone" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m5p-cd-ULk">
                         <size key="itemSize" width="50" height="50"/>
@@ -32,9 +32,9 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="JGD-tU-ASs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PFO-oZ-FbF"/>
+                <constraint firstItem="JGD-tU-ASs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bdv-3R-AMz"/>
                 <constraint firstItem="JGD-tU-ASs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="q3m-sb-AJo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JGD-tU-ASs" secondAttribute="trailing" id="uux-MK-4dI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JGD-tU-ASs" secondAttribute="bottom" id="wOF-fl-2cb"/>

@@ -21,7 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let mainViewController = MainViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
-
+        
+        navigationController.navigationBar.isOpaque = true
+        navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.backgroundColor = .white
+        
         window?.rootViewController = navigationController
         return true
     }
