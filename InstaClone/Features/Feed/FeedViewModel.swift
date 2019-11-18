@@ -3,21 +3,19 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import Foundation
 
 class FeedViewModel {
     
-    func getData() -> [FeedData] {
-        let feedData: [FeedData] = []
-        APIClient.getUserData(didFinishWithSuccess: { x in
-            print(x[0].gender)
-        }, didFinishWithError: { errorCode,error  in
-            print("\(errorCode) \(error)")
-        })
-        return feedData
+    func getData(didFinishWithSuccess: @escaping ((FeedData) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+            APIClient.getUserData(didFinishWithSuccess: { result in
+                didFinishWithSuccess(result)
+            }, didFinishWithError: { errorCode,error  in
+                didFinishWithError(errorCode, error)
+            })
     }
     
 }

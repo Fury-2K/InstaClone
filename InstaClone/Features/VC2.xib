@@ -1,26 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VC2" customModule="InstaClone" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="BZd-Nf-jY0" id="8KY-V2-aOf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-Nf-jY0">
+                    <rect key="frame" x="0.0" y="150" width="375" height="367"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9B-AE-28q">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="q9B-AE-28q" secondAttribute="bottom" id="32R-d0-Ath"/>
+                        <constraint firstItem="q9B-AE-28q" firstAttribute="centerY" secondItem="BZd-Nf-jY0" secondAttribute="centerY" id="3vb-FD-4PL"/>
+                        <constraint firstAttribute="trailing" secondItem="q9B-AE-28q" secondAttribute="trailing" id="DDN-Z9-tdH"/>
+                        <constraint firstItem="q9B-AE-28q" firstAttribute="top" secondItem="BZd-Nf-jY0" secondAttribute="top" id="DqJ-6q-sJ3"/>
+                        <constraint firstItem="q9B-AE-28q" firstAttribute="leading" secondItem="BZd-Nf-jY0" secondAttribute="leading" id="f4Y-we-Uay"/>
+                        <constraint firstItem="q9B-AE-28q" firstAttribute="centerX" secondItem="BZd-Nf-jY0" secondAttribute="centerX" id="nTd-jj-fPY"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Sg2-L8-bZK"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="AgF-Ti-dIl"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BZd-Nf-jY0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="aaa-kO-zLi"/>
+                <constraint firstItem="BZd-Nf-jY0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dU4-Xr-Uky"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BZd-Nf-jY0" secondAttribute="bottom" constant="150" id="eUe-od-qrq"/>
+                <constraint firstItem="BZd-Nf-jY0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wTv-HX-c8k"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="172" y="142.57871064467767"/>
         </view>
     </objects>
 </document>

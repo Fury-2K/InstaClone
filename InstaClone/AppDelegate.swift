@@ -3,10 +3,11 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        FirebaseApp.configure()
         let mainViewController = MainViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
-
+        
+        navigationController.navigationBar.isOpaque = true
+        navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.backgroundColor = .white
+        
         window?.rootViewController = navigationController
         return true
     }

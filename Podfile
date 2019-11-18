@@ -3,6 +3,8 @@ platform :ios, '9.0'
 
 def shared_pods
 	pod "Alamofire"
+	pod "Firebase/Core"
+	pod "MaterialComponents"
 end
 
 target 'InstaClone' do
