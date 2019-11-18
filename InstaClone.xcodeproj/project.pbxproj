@@ -40,6 +40,20 @@
 		1A4560F322E5C48400AB49A0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4560F222E5C48400AB49A0 /* APIClient.swift */; };
 		1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB0122E9683B00133D0A /* FeedHeaderCollectionView.swift */; };
 		1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */; };
+		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
+		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
+		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
+		BB50E31B237D63AB008843EC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E319237D63AB008843EC /* RegistrationViewController.xib */; };
+		BB50E320237D7A96008843EC /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E31E237D7A96008843EC /* UserAccountViewController.swift */; };
+		BB50E321237D7A96008843EC /* UserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E31F237D7A96008843EC /* UserAccountViewController.xib */; };
+		BB6A2E42237161E200D3F39C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E40237161E200D3F39C /* SettingsViewController.swift */; };
+		BB6A2E43237161E200D3F39C /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E41237161E200D3F39C /* SettingsViewController.xib */; };
+		BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E44237163AB00D3F39C /* DetailWebViewCell.swift */; };
+		BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */; };
+		BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */; };
+		BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */; };
+		BBEDADA0237427AC007622EC /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDAD9E237427AC007622EC /* BoxViewController.swift */; };
+		BBEDADA1237427AC007622EC /* BoxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEDAD9F237427AC007622EC /* BoxViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +94,20 @@
 		1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
 		4E37CDD222B7B319A82FB7C4 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		9BA01523D6C466623CEC7BF2 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
+		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BB50E319237D63AB008843EC /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		BB50E31E237D7A96008843EC /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
+		BB50E31F237D7A96008843EC /* UserAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAccountViewController.xib; sourceTree = "<group>"; };
+		BB6A2E40237161E200D3F39C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BB6A2E41237161E200D3F39C /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		BB6A2E44237163AB00D3F39C /* DetailWebViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewCell.swift; sourceTree = "<group>"; };
+		BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWebViewCell.xib; sourceTree = "<group>"; };
+		BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillerTableViewCell.swift; sourceTree = "<group>"; };
+		BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillerTableViewCell.xib; sourceTree = "<group>"; };
+		BBEDAD9E237427AC007622EC /* BoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
+		BBEDAD9F237427AC007622EC /* BoxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +165,8 @@
 				1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */,
 				1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */,
 				1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */,
+				BBEDADA2237427B5007622EC /* Box-Animation */,
+				BB50E31D237D63BB008843EC /* UserAccount */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -162,6 +192,12 @@
 				1A4560E922E5B04500AB49A0 /* ChatVC.xib */,
 				1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */,
 				1A45AB0522E9C0EB00133D0A /* HelperViews */,
+				BB6A2E40237161E200D3F39C /* SettingsViewController.swift */,
+				BB6A2E41237161E200D3F39C /* SettingsViewController.xib */,
+				BB6A2E44237163AB00D3F39C /* DetailWebViewCell.swift */,
+				BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */,
+				BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */,
+				BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */,
 			);
 			path = ChatPage;
 			sourceTree = "<group>";
@@ -217,6 +253,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB50E317237D6396008843EC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BB50E313237D638E008843EC /* LoginViewController.swift */,
+				BB50E314237D638E008843EC /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BB50E31C237D63B1008843EC /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BB50E318237D63AB008843EC /* RegistrationViewController.swift */,
+				BB50E319237D63AB008843EC /* RegistrationViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		BB50E31D237D63BB008843EC /* UserAccount */ = {
+			isa = PBXGroup;
+			children = (
+				BB50E317237D6396008843EC /* Login */,
+				BB50E31C237D63B1008843EC /* Register */,
+				BB50E31E237D7A96008843EC /* UserAccountViewController.swift */,
+				BB50E31F237D7A96008843EC /* UserAccountViewController.xib */,
+			);
+			path = UserAccount;
+			sourceTree = "<group>";
+		};
+		BBEDADA2237427B5007622EC /* Box-Animation */ = {
+			isa = PBXGroup;
+			children = (
+				BBEDAD9E237427AC007622EC /* BoxViewController.swift */,
+				BBEDAD9F237427AC007622EC /* BoxViewController.xib */,
+			);
+			path = "Box-Animation";
+			sourceTree = "<group>";
+		};
 		C98707C35FB5981E66F5DD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +329,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = zopsmart;
+				ORGANIZATIONNAME = Personal;
 				TargetAttributes = {
 					1A4560B622E56E8500AB49A0 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -285,17 +359,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6A2E43237161E200D3F39C /* SettingsViewController.xib in Resources */,
 				1A4560DF22E587B700AB49A0 /* VC2.xib in Resources */,
 				1A3E425E22E87FB400D9829D /* HeaderCollectionCell.xib in Resources */,
+				BB50E31B237D63AB008843EC /* RegistrationViewController.xib in Resources */,
 				1A3E425A22E86F2A00D9829D /* FeedHeaderView.xib in Resources */,
 				1A3E424C22E8184F00D9829D /* GoogleService-Info.plist in Resources */,
+				BB50E321237D7A96008843EC /* UserAccountViewController.xib in Resources */,
 				1A4560CF22E5702F00AB49A0 /* FeedVC.xib in Resources */,
 				1A3E424622E6C8E800D9829D /* ChatViewCell.xib in Resources */,
 				1A3E424A22E6E25D00D9829D /* ChatViewHeader.xib in Resources */,
+				BB50E316237D638E008843EC /* LoginViewController.xib in Resources */,
 				1A40DAE822F0180D0015D95D /* VC1ScrollCell.xib in Resources */,
 				1A4560DB22E587AC00AB49A0 /* VC1.xib in Resources */,
 				1A4560EB22E5B04500AB49A0 /* ChatVC.xib in Resources */,
 				1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */,
+				BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */,
+				BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */,
+				BBEDADA1237427AC007622EC /* BoxViewController.xib in Resources */,
 				1A3E425622E85A8A00D9829D /* FeedViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,24 +432,31 @@
 			files = (
 				1A4560EA22E5B04500AB49A0 /* ChatVC.swift in Sources */,
 				1A4560F122E5C32900AB49A0 /* FeedData.swift in Sources */,
+				BB6A2E42237161E200D3F39C /* SettingsViewController.swift in Sources */,
 				1A3E425522E85A8A00D9829D /* FeedViewCell.swift in Sources */,
+				BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */,
 				1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */,
 				1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */,
 				1A4560E222E58EF000AB49A0 /* MainViewController.swift in Sources */,
 				1A4560CE22E5702F00AB49A0 /* FeedVC.swift in Sources */,
+				BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */,
 				1A4560DA22E587AC00AB49A0 /* VC1.swift in Sources */,
 				1A4560F322E5C48400AB49A0 /* APIClient.swift in Sources */,
 				1A3E425922E86F2A00D9829D /* FeedHeaderView.swift in Sources */,
 				1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */,
+				BB50E315237D638E008843EC /* LoginViewController.swift in Sources */,
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
 				1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */,
 				1A3E424922E6E25D00D9829D /* ChatViewHeader.swift in Sources */,
 				1A3E424522E6C8E800D9829D /* ChatViewCell.swift in Sources */,
 				1A4560DE22E587B700AB49A0 /* VC2.swift in Sources */,
+				BBEDADA0237427AC007622EC /* BoxViewController.swift in Sources */,
 				1A4560BB22E56E8500AB49A0 /* AppDelegate.swift in Sources */,
+				BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
 				1A4560EF22E5C2CB00AB49A0 /* FeedViewModel.swift in Sources */,
+				BB50E320237D7A96008843EC /* UserAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

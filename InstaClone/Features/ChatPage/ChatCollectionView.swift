@@ -3,7 +3,7 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import Foundation
@@ -16,6 +16,8 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
             self.reloadData()
         }
     }
+    
+    var toggleSettingsDelegate: ToggleSettingsDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -72,6 +74,7 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ChatViewHeader", for: indexPath) as? ChatViewHeader ?? ChatViewHeader()
+            headerView.toggleSettingsDelegate = toggleSettingsDelegate
             return headerView
     }
     

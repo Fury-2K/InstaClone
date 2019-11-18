@@ -3,7 +3,7 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 25/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import Foundation

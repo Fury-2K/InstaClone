@@ -3,7 +3,7 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import UIKit
@@ -24,6 +24,8 @@ class ChatVC: UIViewController {
         setupNavigationBar()
         footerCameraIcon.image = UIImage(named: "camera-7")
         setChatPage()
+        
+        collectionView.toggleSettingsDelegate = self
     }
     
     func setupRefreshControl() {
@@ -101,4 +103,10 @@ extension ChatVC: UIGestureRecognizerDelegate {
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension ChatVC: ToggleSettingsDelegate {
+    func toggleSettings() {
+        present(SettingsViewController(), animated: true, completion: nil)
+    }
 }
