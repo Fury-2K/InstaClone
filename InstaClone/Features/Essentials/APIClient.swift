@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Firebase
 
 class APIClient {
     
@@ -32,8 +33,31 @@ class APIClient {
                         return
                 }
                 let urls: [String] = [url1, url2, url3]
-                let feedData = FeedData(gender, fName, lName, email, urls)
+                let feedData = FeedData(gender, fName, lName, email, urls, uid: "")
                 didFinishWithSuccess(feedData)
+        }
+    }
+    
+    static func fetchUsers(didFinishWithSuccess: @escaping ((User) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        let ref = Database.database().reference().child("users")
+        ref.observe(.value, with: { (snapshot) in
+            if let user = snapshot.value as? [String: Any] {
+                var allusers : [[String : Any]] = []
+                for (key, value) in user{
+                    guard let value = value as? [String : Any] else {continue}
+                    allusers.append(value)
+                }
+                print(allusers.count)
+                guard let username = user["username"] as? [String : Any],
+                    let email = user["email"] as? String else { return }
+                let uid = snapshot.key
+                didFinishWithSuccess(User(username: "username", name: email, profilePic: nil, uid: uid))
+            } else {
+                didFinishWithError(2, "Data not Found")
+            }
+        }) { (error) in
+            guard let error = error as? NSError else {return}
+            didFinishWithError(error.code, error.description)
         }
     }
     

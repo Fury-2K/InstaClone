@@ -44,6 +44,7 @@ extension MainViewController {
     
     private func setupRemainingnavBarItems() {
         let titleImageView = UIImageView(image: UIImage(named: "animal-element-7"))
+        titleImageView.addTapGesture(#selector(logoutUser), target: self)
         navigationItem.titleView = titleImageView
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
@@ -53,4 +54,12 @@ extension MainViewController {
         navigationController?.pushViewController(ChatVC(), animated: true)
     }
     
+    @objc func logoutUser() {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        let userAccountViewController = UserAccountViewController()
+        userAccountViewController.modalPresentationStyle = .fullScreen
+        present(userAccountViewController, animated: true) {
+            UIApplication.shared.keyWindow?.rootViewController = UserAccountViewController()
+        }
+    }
 }

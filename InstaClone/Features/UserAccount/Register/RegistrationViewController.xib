@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="InstaClone" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="zvn-Js-eGH" id="K0Y-y4-Zko"/>
+                <outlet property="passwordTextField" destination="rsf-au-5i7" id="0Pe-oq-Db1"/>
+                <outlet property="registerBtn" destination="6GO-yf-c1T" id="mH6-sV-1SH"/>
+                <outlet property="userNameTextField" destination="E77-Gk-Mnq" id="Rer-qb-YRH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +21,69 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E77-Gk-Mnq">
+                    <rect key="frame" x="16" y="349.5" width="382" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="n0N-nJ-bDH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-Js-eGH">
+                    <rect key="frame" x="16" y="392.5" width="382" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="PTz-yD-kov"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-au-5i7">
+                    <rect key="frame" x="16" y="435.5" width="382" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="U6v-dQ-Dhx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6K-BD-oGR">
+                    <rect key="frame" x="16" y="478.5" width="382" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Cwc-3b-rqy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GO-yf-c1T">
+                    <rect key="frame" x="341" y="521.5" width="57" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ffK-lO-ZoZ"/>
+                    </constraints>
+                    <state key="normal" title="Register">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="registerBtnTapped:" destination="-1" eventType="touchUpInside" id="We9-Jp-dE4"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="z6K-BD-oGR" firstAttribute="top" secondItem="rsf-au-5i7" secondAttribute="bottom" constant="8" id="2Mc-6K-09n"/>
+                <constraint firstItem="E77-Gk-Mnq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="FHZ-rJ-XSB"/>
+                <constraint firstItem="zvn-Js-eGH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LDZ-Ki-JrP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rsf-au-5i7" secondAttribute="trailing" constant="16" id="MHA-Zq-oRT"/>
+                <constraint firstItem="z6K-BD-oGR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="PTK-R1-U7N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z6K-BD-oGR" secondAttribute="trailing" constant="16" id="ahD-97-1uT"/>
+                <constraint firstItem="zvn-Js-eGH" firstAttribute="top" secondItem="E77-Gk-Mnq" secondAttribute="bottom" constant="8" id="cvs-UU-i92"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6GO-yf-c1T" secondAttribute="trailing" constant="16" id="fJ6-Fn-Awk"/>
+                <constraint firstItem="rsf-au-5i7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="mWk-kD-rnU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E77-Gk-Mnq" secondAttribute="trailing" constant="16" id="p8M-q1-lFe"/>
+                <constraint firstItem="rsf-au-5i7" firstAttribute="top" secondItem="zvn-Js-eGH" secondAttribute="bottom" constant="8" id="pRp-oR-F95"/>
+                <constraint firstItem="rsf-au-5i7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yRx-ng-xrR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zvn-Js-eGH" secondAttribute="trailing" constant="16" id="ysh-YC-PNq"/>
+                <constraint firstItem="6GO-yf-c1T" firstAttribute="top" secondItem="z6K-BD-oGR" secondAttribute="bottom" constant="8" id="zVe-qJ-py7"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="150"/>
         </view>

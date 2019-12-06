@@ -15,18 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        FirebaseApp.configure()
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
         
-        navigationController.navigationBar.isOpaque = true
-        navigationController.navigationBar.tintColor = .black
-        navigationController.navigationBar.backgroundColor = .white
-        
-        window?.rootViewController = navigationController
+        if let isUserLoggedIn = UserDefaults.standard.value(forKey: "isUserLoggedIn") as? Bool, isUserLoggedIn {
+            let mainViewController = MainViewController()
+            let navigationController = UINavigationController(rootViewController: mainViewController)
+
+            navigationController.navigationBar.isOpaque = true
+            navigationController.navigationBar.tintColor = .black
+            navigationController.navigationBar.backgroundColor = .white
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+        } else {
+            window?.rootViewController = UserAccountViewController()
+        }
         return true
     }
 

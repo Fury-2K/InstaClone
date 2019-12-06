@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserAccountViewController" customModule="InstaClone" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="yPt-Po-88I" id="mRI-v7-Bbu"/>
+                <outlet property="pageSwitcher" destination="lcJ-QM-3AG" id="jBU-lY-2zq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,15 +20,67 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-8k-SoZ">
-                    <rect key="frame" x="87" y="384" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-8k-SoZ">
+                    <rect key="frame" x="32" y="234" width="350" height="428"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lcJ-QM-3AG">
+                            <rect key="frame" x="8" y="8" width="334" height="32"/>
+                            <segments>
+                                <segment title="Register"/>
+                                <segment title="Login"/>
+                            </segments>
+                            <connections>
+                                <action selector="pageSwitcherTriggered:" destination="-1" eventType="valueChanged" id="VfB-UN-BRj"/>
+                            </connections>
+                        </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPt-Po-88I">
+                            <rect key="frame" x="0.0" y="47" width="350" height="381"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="lcJ-QM-3AG" secondAttribute="trailing" constant="8" id="0jA-Db-gbr"/>
+                        <constraint firstItem="lcJ-QM-3AG" firstAttribute="leading" secondItem="w6x-8k-SoZ" secondAttribute="leading" constant="8" id="5PK-2C-mE9"/>
+                        <constraint firstItem="yPt-Po-88I" firstAttribute="leading" secondItem="w6x-8k-SoZ" secondAttribute="leading" id="QBp-es-D4c"/>
+                        <constraint firstItem="lcJ-QM-3AG" firstAttribute="top" secondItem="w6x-8k-SoZ" secondAttribute="top" constant="8" id="dBp-VV-HUx"/>
+                        <constraint firstAttribute="trailing" secondItem="yPt-Po-88I" secondAttribute="trailing" id="gSI-gt-sUy"/>
+                        <constraint firstAttribute="bottom" secondItem="yPt-Po-88I" secondAttribute="bottom" id="rRH-w8-7Tb"/>
+                        <constraint firstItem="yPt-Po-88I" firstAttribute="top" secondItem="lcJ-QM-3AG" secondAttribute="bottom" constant="8" id="yjy-Kp-c6h"/>
+                    </constraints>
+                </view>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhW-gg-nUX">
+                    <rect key="frame" x="42" y="662" width="340" height="10"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="6gW-H4-4E0"/>
+                    </constraints>
+                </view>
+                <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rX-nY-meO">
+                    <rect key="frame" x="382" y="244" width="10" height="428"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="0iW-4R-d71"/>
+                    </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.62902175759656098" green="0.47367015370045118" blue="0.7404748766533451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="3rX-nY-meO" firstAttribute="leading" secondItem="w6x-8k-SoZ" secondAttribute="trailing" id="0Im-Sb-3qL"/>
+                <constraint firstItem="3rX-nY-meO" firstAttribute="bottom" secondItem="YhW-gg-nUX" secondAttribute="bottom" id="COI-Ld-e5t"/>
+                <constraint firstItem="YhW-gg-nUX" firstAttribute="top" secondItem="w6x-8k-SoZ" secondAttribute="bottom" id="Fjo-Lv-0d7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="w6x-8k-SoZ" secondAttribute="bottom" constant="200" id="OcW-fb-MZs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3rX-nY-meO" secondAttribute="trailing" constant="22" id="TJ6-fM-8cD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YhW-gg-nUX" secondAttribute="trailing" constant="32" id="Zlj-AR-uhm"/>
+                <constraint firstItem="w6x-8k-SoZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="alo-f5-APz"/>
+                <constraint firstItem="w6x-8k-SoZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="190" id="boh-Sv-3GL"/>
+                <constraint firstItem="3rX-nY-meO" firstAttribute="leading" secondItem="w6x-8k-SoZ" secondAttribute="trailing" id="bze-me-xxE"/>
+                <constraint firstItem="3rX-nY-meO" firstAttribute="height" secondItem="w6x-8k-SoZ" secondAttribute="height" id="fLB-nA-rsz"/>
+                <constraint firstItem="YhW-gg-nUX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="kgQ-qJ-vOe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="w6x-8k-SoZ" secondAttribute="trailing" constant="32" id="qSP-eu-dSZ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="125"/>
+            <point key="canvasLocation" x="147.82608695652175" y="106.47321428571428"/>
         </view>
     </objects>
 </document>

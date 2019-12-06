@@ -25,7 +25,7 @@ class HeaderCollectionCell: UICollectionViewCell {
     }
 
     func setData(_ cellData: FeedData) {
-        self.imageView.downloaded(from: cellData.dp[2])
+        self.imageView.downloaded(from: cellData.feedPics[2])
         self.userLabel.text = cellData.firstName
     }
     

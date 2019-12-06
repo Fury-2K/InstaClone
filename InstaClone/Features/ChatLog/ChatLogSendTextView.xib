@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatLogSendTextView" customModule="InstaClone" customModuleProvider="target">
+            <connections>
+                <outlet property="addBtn" destination="qZ7-RJ-uSG" id="a2y-8f-gty"/>
+                <outlet property="audioBtn" destination="HiA-4M-038" id="KYh-Ig-JLi"/>
+                <outlet property="cameraBtn" destination="tbr-IM-AAf" id="r66-gR-Wp6"/>
+                <outlet property="cameraBtnHeightConstraint" destination="tC8-Xw-sOr" id="JmU-gx-Q1H"/>
+                <outlet property="cameraBtnWidthConstraint" destination="USg-IE-pmr" id="Mlt-ge-I7y"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="3cy-TQ-vfX"/>
+                <outlet property="defaultStackView" destination="Cur-cP-SY0" id="i5q-Kl-cgb"/>
+                <outlet property="imageBtn" destination="xhz-ns-Bwo" id="Zvr-fP-wyi"/>
+                <outlet property="sendBtn" destination="SGJ-6Y-2pE" id="gPk-xB-TdH"/>
+                <outlet property="textField" destination="rAY-uU-qCm" id="ok6-Hq-iOy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-IM-AAf">
+                    <rect key="frame" x="8" y="81.5" width="32" height="32"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="USg-IE-pmr"/>
+                        <constraint firstAttribute="height" constant="32" id="tC8-Xw-sOr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" image="camera-7"/>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAY-uU-qCm">
+                    <rect key="frame" x="48" y="89" width="252" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGJ-6Y-2pE">
+                    <rect key="frame" x="357" y="81" width="41" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Send"/>
+                    <connections>
+                        <action selector="sendBtnTapped:" destination="-1" eventType="touchUpInside" id="h5C-1X-cLr"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-cP-SY0">
+                    <rect key="frame" x="308" y="82.5" width="98" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiA-4M-038">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" image="music-7"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhz-ns-Bwo">
+                            <rect key="frame" x="34" y="0.0" width="30" height="30"/>
+                            <state key="normal" image="photo-7"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ7-RJ-uSG">
+                            <rect key="frame" x="68" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="0WB-7y-Itl"/>
+                                <constraint firstAttribute="height" constant="30" id="ZmH-1B-HH8"/>
+                            </constraints>
+                            <state key="normal" image="plus-simple-7"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="xhz-ns-Bwo" firstAttribute="height" secondItem="HiA-4M-038" secondAttribute="height" id="9m7-Bd-IiX"/>
+                        <constraint firstItem="qZ7-RJ-uSG" firstAttribute="height" secondItem="xhz-ns-Bwo" secondAttribute="height" id="ENN-5z-Qlq"/>
+                        <constraint firstItem="HiA-4M-038" firstAttribute="width" secondItem="xhz-ns-Bwo" secondAttribute="width" id="JvB-jf-OJ9"/>
+                        <constraint firstItem="xhz-ns-Bwo" firstAttribute="width" secondItem="qZ7-RJ-uSG" secondAttribute="width" id="KIt-eY-Qsm"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SGJ-6Y-2pE" firstAttribute="centerY" secondItem="rAY-uU-qCm" secondAttribute="centerY" id="EVZ-KS-7g2"/>
+                <constraint firstItem="rAY-uU-qCm" firstAttribute="leading" secondItem="tbr-IM-AAf" secondAttribute="trailing" constant="8" id="OCN-Bx-Dpp"/>
+                <constraint firstItem="tbr-IM-AAf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Pib-Hm-W5j"/>
+                <constraint firstItem="Cur-cP-SY0" firstAttribute="leading" secondItem="rAY-uU-qCm" secondAttribute="trailing" constant="8" id="UlJ-JQ-r9d"/>
+                <constraint firstItem="Cur-cP-SY0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="WOx-vi-vHD"/>
+                <constraint firstAttribute="trailing" secondItem="SGJ-6Y-2pE" secondAttribute="trailing" constant="16" id="fXQ-ZV-ETK"/>
+                <constraint firstItem="rAY-uU-qCm" firstAttribute="centerY" secondItem="tbr-IM-AAf" secondAttribute="centerY" id="g78-XS-eX4"/>
+                <constraint firstItem="Cur-cP-SY0" firstAttribute="centerY" secondItem="rAY-uU-qCm" secondAttribute="centerY" id="l4B-s2-EuW"/>
+                <constraint firstAttribute="trailing" secondItem="Cur-cP-SY0" secondAttribute="trailing" constant="8" id="nPf-ry-5DO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="39" y="393"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera-7" width="30" height="30"/>
+        <image name="music-7" width="30" height="30"/>
+        <image name="photo-7" width="30" height="30"/>
+        <image name="plus-simple-7" width="30" height="30"/>
+    </resources>
+</document>
