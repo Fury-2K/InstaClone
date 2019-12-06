@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedHeaderView" id="U6b-Vx-4bR" customClass="FeedHeaderView" customModule="InstaClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BPz-92-Ndg" customClass="FeedHeaderCollectionView" customModule="InstaClone" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3cT-VK-4Of">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BPz-92-Ndg" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="9sn-rK-zGi"/>
+                <constraint firstItem="BPz-92-Ndg" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="MUS-Si-Afu"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="BPz-92-Ndg" secondAttribute="trailing" id="ddX-QM-zZ7"/>
+                <constraint firstAttribute="bottom" secondItem="BPz-92-Ndg" secondAttribute="bottom" id="peR-Tr-dbP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="collectionView" destination="BPz-92-Ndg" id="8xK-Mf-hQg"/>
+            </connections>
+            <point key="canvasLocation" x="101" y="90"/>
+        </collectionReusableView>
+    </objects>
+</document>

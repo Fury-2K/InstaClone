@@ -3,10 +3,11 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,13 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+        
+        if let isUserLoggedIn = UserDefaults.standard.value(forKey: "isUserLoggedIn") as? Bool, isUserLoggedIn {
+            let mainViewController = MainViewController()
+            let navigationController = UINavigationController(rootViewController: mainViewController)
 
-        window?.rootViewController = navigationController
+            navigationController.navigationBar.isOpaque = true
+            navigationController.navigationBar.tintColor = .black
+            navigationController.navigationBar.backgroundColor = .white
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+        } else {
+            window?.rootViewController = UserAccountViewController()
+        }
         return true
     }
 
