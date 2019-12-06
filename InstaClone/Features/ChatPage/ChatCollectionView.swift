@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol CellTappedListener: class {
+    func cellTapped(_ indexPath: IndexPath)
+}
+
 class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var data: [FeedData] = [] {
@@ -17,7 +21,14 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
         }
     }
     
+    var userData: [User] = [] {
+        didSet {
+            self.reloadData()
+        }
+    }
+    
     var toggleSettingsDelegate: ToggleSettingsDelegate?
+    var cellTappedListener: CellTappedListener?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -48,12 +59,12 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return userData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatViewCell", for: indexPath) as? ChatViewCell ?? ChatViewCell()
-        let cellData = self.data[indexPath.row]
+        let cellData = self.userData[indexPath.row]
         cell.setData(cellData)
         return cell
     }
@@ -80,6 +91,10 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 103)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        cellTappedListener?.cellTapped(indexPath)
     }
 
 }

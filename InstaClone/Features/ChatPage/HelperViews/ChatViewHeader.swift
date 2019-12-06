@@ -26,30 +26,12 @@ class ChatViewHeader: UICollectionReusableView {
     
     func setupCell() {
         self.HeaderLabel.text = "Inbox"
-        self.searchField.setIcon(image: UIImage(named: "search-7"), alignment: "left")
-        self.searchField.setIcon(image: UIImage(named: "gear-7"), alignment: "right")
+        self.searchField.setIcon(image: UIImage(named: "search-7"), alignment: .left)
+        self.searchField.setIcon(image: UIImage(named: "gear-7"), alignment: .right)
         searchField.rightView?.addTapGesture(#selector(openSettings), target: self)
     }
     
     @objc func openSettings() {
         toggleSettingsDelegate?.toggleSettings()
-    }
-}
-
-extension UITextField {
-    
-    func setIcon( image: UIImage?, alignment: String) {
-        guard let image = image else { return }
-        let iconView = UIImageView(frame: CGRect(x: 5, y: 5, width: 18, height: 18))
-        iconView.image = image
-        let iconContentView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
-        iconContentView.addSubview(iconView)
-        if alignment.lowercased() == "left" {
-            leftView = iconContentView
-            leftViewMode = .always
-        } else {
-            rightView = iconContentView
-            rightViewMode = .always
-        }
     }
 }

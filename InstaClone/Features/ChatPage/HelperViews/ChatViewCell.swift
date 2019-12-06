@@ -21,32 +21,11 @@ class ChatViewCell: UICollectionViewCell {
     @IBOutlet weak var cameraImageView: UIImageView!
     
     
-    func setData(_ cellData: FeedData) {
-        self.nameLabel.text = String(cellData.firstName + " " + cellData.lastName)
-        self.chatPreviewLabel.text = cellData.email
-        self.dp.downloaded(from: cellData.dp[2])
+    func setData(_ cellData: User) {
+        self.nameLabel.text = cellData.name//String(cellData.firstName + " " + cellData.lastName)
+        self.chatPreviewLabel.text = cellData.username
+        //self.dp.downloaded(from: cellData.feedPics[2])
         self.cameraImageView.image = UIImage(named: "camera-7")
     }
     
-}
-
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-            }
-            }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
 }

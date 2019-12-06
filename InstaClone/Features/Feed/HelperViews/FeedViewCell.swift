@@ -63,10 +63,10 @@ class FeedViewCell: UICollectionViewCell {
     }
     
     func setData(_ cellData: FeedData) {
-        self.userProfileImage.downloaded(from: cellData.dp[2])
+        self.userProfileImage.downloaded(from: cellData.feedPics[2])
         self.userNameLabel.text = String(cellData.firstName + " " + cellData.lastName)
-        self.currentUserImage.downloaded(from: cellData.dp[2])
-        self.postedImage.downloaded(from: cellData.dp[0])
+        self.currentUserImage.downloaded(from: cellData.feedPics[2])
+        self.postedImage.downloaded(from: cellData.feedPics[0])
         self.likesCountLabel.text = String(String(cellData.likes) + " likes")
     }
     
@@ -92,18 +92,6 @@ extension FeedViewCell {
     @objc func saveBtnTapped() {
         guard let indexPath = self.indexPath else { return }
         onClickListener?.saveBtnTapped(indexPath: indexPath)
-    }
-
-}
-
-extension UIView {
-
-    @discardableResult func addTapGesture(_ selector: Selector, target: AnyObject?, numberOfTapsRequired: Int = 1) -> UITapGestureRecognizer {
-        isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: target, action: selector)
-        tapGesture.numberOfTapsRequired = numberOfTapsRequired
-        addGestureRecognizer(tapGesture)
-        return tapGesture
     }
 
 }
