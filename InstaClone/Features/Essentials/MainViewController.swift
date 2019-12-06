@@ -3,7 +3,7 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import UIKit
@@ -74,7 +74,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func getLikePageController() -> UIViewController {
-        let navController = UINavigationController(rootViewController: VC1())
+        let navController = UINavigationController(rootViewController: BoxViewController())
         navController.tabBarItem = UITabBarItem(title: "Likes",
                                                 image: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal),
                                                 selectedImage: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal))

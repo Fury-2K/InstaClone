@@ -3,7 +3,7 @@
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 22/07/19.
-//  Copyright © 2019 zopsmart. All rights reserved.
+//  Copyright © 2019 Fury2K. All rights reserved.
 //
 
 import Foundation
@@ -44,6 +44,7 @@ extension MainViewController {
     
     private func setupRemainingnavBarItems() {
         let titleImageView = UIImageView(image: UIImage(named: "animal-element-7"))
+        titleImageView.addTapGesture(#selector(logoutUser), target: self)
         navigationItem.titleView = titleImageView
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
@@ -53,4 +54,12 @@ extension MainViewController {
         navigationController?.pushViewController(ChatVC(), animated: true)
     }
     
+    @objc func logoutUser() {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        let userAccountViewController = UserAccountViewController()
+        userAccountViewController.modalPresentationStyle = .fullScreen
+        present(userAccountViewController, animated: true) {
+            UIApplication.shared.keyWindow?.rootViewController = UserAccountViewController()
+        }
+    }
 }
