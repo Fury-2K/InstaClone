@@ -38,27 +38,78 @@ class APIClient {
         }
     }
     
-    static func fetchUsers(didFinishWithSuccess: @escaping ((User) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        let ref = Database.database().reference().child("users")
-        ref.observe(.value, with: { (snapshot) in
-            if let user = snapshot.value as? [String: Any] {
-                var allusers : [[String : Any]] = []
-                for (key, value) in user{
-                    guard let value = value as? [String : Any] else {continue}
-                    allusers.append(value)
-                }
-                print(allusers.count)
-                guard let username = user["username"] as? [String : Any],
-                    let email = user["email"] as? String else { return }
-                let uid = snapshot.key
-                didFinishWithSuccess(User(username: "username", name: email, profilePic: nil, uid: uid))
-            } else {
-                didFinishWithError(2, "Data not Found")
+    static func fetchUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        APIClient.loadData(fetch: "users", eventType: .value, didFinishWithSuccess: { (users) in
+            let allUsers = users.compactMap { element -> User? in
+                guard let user = element.value as? [String : Any],
+                    let username = user["username"] as? String,
+                    let email = user["email"] as? String
+                    else { return nil }
+                let uid = element.key
+                return User(username: username, name: email, uid: uid)
             }
+            didFinishWithSuccess(allUsers)
+        }) { (errorCode, error) in
+            didFinishWithError(errorCode, error.description)
+        }
+    }
+    
+    static func fetchMessages(didFinishWithSuccess: @escaping ((Message) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        APIClient.loadData(fetch: "messages", eventType: .childAdded, didFinishWithSuccess: { (messages) in
+            if let toId = messages["toId"] as? String,
+                let fromId = messages["fromId"] as? String,
+                let text = messages["data"] as? String,
+                let timeStamp = messages["timeStamp"] as? Int {
+                didFinishWithSuccess(Message(toId: toId, fromId: fromId, text: text, timeStamp: timeStamp))
+            }
+        }) { (errorCode, error) in
+            didFinishWithError(errorCode, error.description)
+        }
+    }
+    
+    static func fetchAllMessages(didFinishWithSuccess: @escaping (([Message]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        APIClient.loadData(fetch: "messages", eventType: .value, didFinishWithSuccess: { (messages) in
+            var allMessages: [Message] = []
+            for (_, value) in messages {
+                guard let message = value as? [String: Any],
+                    let toId = message["toId"] as? String,
+                    let fromId = message["fromId"] as? String,
+                    let text = message["data"] as? String,
+                    let timeStamp = message["timeStamp"] as? Int
+                    else {continue}
+                allMessages.append(Message(toId: toId, fromId: fromId, text: text, timeStamp: timeStamp))
+            }
+            didFinishWithSuccess(allMessages)
+        }) { (errorCode, error) in
+            didFinishWithError(errorCode, error.description)
+        }
+    }
+    
+    static func loadData(fetch child: String, eventType: DataEventType, didFinishWithSuccess: @escaping (([String: Any]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        let ref = Database.database().reference().child(child)
+        ref.observe(eventType, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: Any] {
+               didFinishWithSuccess(dictionary)
+            } else { didFinishWithError(111,"NetworkCall successful but datafetching failed") }
         }) { (error) in
-            guard let error = error as? NSError else {return}
+            let error = error as NSError
             didFinishWithError(error.code, error.description)
         }
     }
     
+    static func sendMessage(_ message: String, to user: User) {
+        let ref = Database.database().reference().child("messages")
+        let childRef = ref.childByAutoId()
+        // Force unwrapped because this method can only be called when user is signedIn
+        let fromId = Auth.auth().currentUser!.uid
+        let toId =  user.uid
+        let timeStamp: Int = Int(NSDate().timeIntervalSince1970)
+        let values: [String: Any] = [
+            "toId": toId,
+            "fromId": fromId,
+            "data": message,
+            "timeStamp": timeStamp
+            ]
+        childRef.updateChildValues(values)
+    }
 }

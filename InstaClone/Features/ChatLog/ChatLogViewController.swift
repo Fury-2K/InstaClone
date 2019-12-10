@@ -13,10 +13,29 @@ class ChatLogViewController: UIViewController {
     @IBOutlet weak var chatLogSendTextView: ChatLogSendTextView!
     @IBOutlet weak var tableView: UITableView!
     
+    let viewModel: ChatViewModel = ChatViewModel()
+    
+    var user: User?
+    var messages: [Message] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupNavigationBar(user?.username, user?.name)
+        
         setupView()
         setupTableView()
+        APIClient.fetchMessages(didFinishWithSuccess: { (result) in
+            if result.toId == self.user?.uid || result.fromId == self.user?.uid { self.messages.append(result) }
+        }) { (errorCode, error) in
+            print(errorCode, error)
+        }
+        
+        chatLogSendTextView.addMessageDelegate = self
     }
 
     func setupView() {
@@ -36,10 +55,20 @@ extension ChatLogViewController: UITableViewDelegate {}
 extension ChatLogViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell =  UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        cell.textLabel?.text = messages[indexPath.row].toId
+        cell.detailTextLabel?.text = messages[indexPath.row].text
+        return cell
+    }
+}
+
+extension ChatLogViewController: AddMessageDelegate {
+    func handleSend(_ text: String?) {
+        viewModel.sendMessage(text, to: user)
+        chatLogSendTextView.textField.text = ""
     }
 }

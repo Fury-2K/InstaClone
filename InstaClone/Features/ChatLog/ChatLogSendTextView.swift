@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+protocol AddMessageDelegate {
+    func handleSend(_ text: String?)
+}
+
 class ChatLogSendTextView: UIView {
     
     @IBOutlet var containerView: UIView!
@@ -21,6 +25,8 @@ class ChatLogSendTextView: UIView {
     @IBOutlet weak var cameraBtnHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var defaultStackView: UIStackView!
     @IBOutlet weak var sendBtn: UIButton!
+    
+    var addMessageDelegate: AddMessageDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,32 +74,15 @@ class ChatLogSendTextView: UIView {
     }
     
     @IBAction func sendBtnTapped(_ sender: UIButton) {
-        handleSend(textField.text)
-        textField.text = ""
-    }
-    
-    func handleSend(_ text: String? = nil) {
-        guard let message = text else { return }
-        let ref = Database.database().reference().child("Messages")
-        let childRef = ref.childByAutoId()
-        // Force unwrapped because this method can only be called when user is signedIn
-        let fromId = Auth.auth().currentUser!.uid
-        let toId = "TestUser"
-        let timeStamp: Int = Int(NSDate().timeIntervalSince1970)
-        let values: [String: Any] = [
-            "toId": toId,
-            "fromId": fromId,
-            "data": message,
-            "timeStamp": timeStamp
-            ]
-        childRef.updateChildValues(values)
+        addMessageDelegate?.handleSend(textField.text)
     }
     
 }
 
+// To enable 'return' key to send the message
 extension ChatLogSendTextView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        handleSend()
+        addMessageDelegate?.handleSend(textField.text)
         return true
     }
 }

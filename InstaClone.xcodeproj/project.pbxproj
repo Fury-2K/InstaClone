@@ -60,6 +60,8 @@
 		BBCE13DA2397D0D30096A7B3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13D92397D0D30096A7B3 /* UIView.swift */; };
 		BBCE13DC239916D60096A7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13DB239916D60096A7B3 /* User.swift */; };
 		BBCE13DF239921920096A7B3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13DE239921920096A7B3 /* ChatViewModel.swift */; };
+		BBCE13E1239A78850096A7B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E0239A78850096A7B3 /* Message.swift */; };
+		BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E4239E916B0096A7B3 /* UserData.swift */; };
 		BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0D52A238672280097D947 /* UserViewModel.swift */; };
 		BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D52C238678A10097D947 /* GoogleService-Info.plist */; };
 		BBE0D553238816840097D947 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D552238816840097D947 /* Launch Screen.storyboard */; };
@@ -127,6 +129,8 @@
 		BBCE13D92397D0D30096A7B3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BBCE13DB239916D60096A7B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BBCE13DE239921920096A7B3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		BBCE13E0239A78850096A7B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BBCE13E4239E916B0096A7B3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BBE0D52A238672280097D947 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BBE0D52C238678A10097D947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBE0D552238816840097D947 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */,
 				BBCE13D52397CE720096A7B3 /* ChatLogSendTextView.xib */,
 				BBCE13D72397D0B50096A7B3 /* ChatLogSendTextView.swift */,
+				BBCE13E0239A78850096A7B3 /* Message.swift */,
+				BBCE13E4239E916B0096A7B3 /* UserData.swift */,
 			);
 			path = ChatLog;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */,
 				1A4560EA22E5B04500AB49A0 /* ChatVC.swift in Sources */,
 				BBCE13D82397D0B50096A7B3 /* ChatLogSendTextView.swift in Sources */,
 				1A4560F122E5C32900AB49A0 /* FeedData.swift in Sources */,
@@ -529,6 +536,7 @@
 				1A3E425522E85A8A00D9829D /* FeedViewCell.swift in Sources */,
 				BBE0D556238D37330097D947 /* ChatLogViewController.swift in Sources */,
 				BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */,
+				BBCE13E1239A78850096A7B3 /* Message.swift in Sources */,
 				BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */,
 				1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */,
 				1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */,
