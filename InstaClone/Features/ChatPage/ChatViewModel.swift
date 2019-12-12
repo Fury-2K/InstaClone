@@ -20,7 +20,7 @@ class ChatViewModel {
                 self.messages = messages
                 var userData: [UserData] = []
                 for user in self.users {
-                    let userMessages = self.messages.filter { $0.toId == user.uid }
+                    let userMessages = self.messages.filter { $0.toId == user.uid || $0.fromId == user.uid }
                     userData.append(UserData(user: user, messages: userMessages))
                 }
                 didFinishWithSuccess(userData)

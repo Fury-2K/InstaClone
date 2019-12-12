@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 protocol AddMessageDelegate {
-    func handleSend(_ text: String?)
+    func handleSend(_ text: String)
 }
 
 class ChatLogSendTextView: UIView {
@@ -74,7 +74,9 @@ class ChatLogSendTextView: UIView {
     }
     
     @IBAction func sendBtnTapped(_ sender: UIButton) {
-        addMessageDelegate?.handleSend(textField.text)
+        if let text = textField.text, !text.isEmpty {
+            addMessageDelegate?.handleSend(text)
+        }
     }
     
 }
@@ -82,7 +84,9 @@ class ChatLogSendTextView: UIView {
 // To enable 'return' key to send the message
 extension ChatLogSendTextView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addMessageDelegate?.handleSend(textField.text)
+        if let text = textField.text, !text.isEmpty {
+            addMessageDelegate?.handleSend(text)
+        }
         return true
     }
 }

@@ -22,7 +22,7 @@ class Message {
         self.timeStamp = timeStamp
     }
     
-    func getTimeStamp(_ timeStamp: Int) -> String {
+    func getFormattedTimeStamp() -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(timeStamp))
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm:ss a"

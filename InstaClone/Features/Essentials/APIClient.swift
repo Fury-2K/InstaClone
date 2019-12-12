@@ -46,6 +46,7 @@ class APIClient {
                     let email = user["email"] as? String
                     else { return nil }
                 let uid = element.key
+                if uid == Auth.auth().currentUser!.uid { return nil }
                 return User(username: username, name: email, uid: uid)
             }
             didFinishWithSuccess(allUsers)

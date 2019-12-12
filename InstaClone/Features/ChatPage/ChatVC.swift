@@ -29,9 +29,13 @@ class ChatVC: UIViewController {
         setupNavigationBar()
         footerCameraIcon.image = UIImage(named: "camera-7")
         refreshPage()
-        fetchAllMessages()
         collectionView.cellTappedListener = self
         collectionView.toggleSettingsDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchAllMessages()
     }
     
     func fetchAllMessages() {

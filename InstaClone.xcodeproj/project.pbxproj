@@ -62,6 +62,9 @@
 		BBCE13DF239921920096A7B3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13DE239921920096A7B3 /* ChatViewModel.swift */; };
 		BBCE13E1239A78850096A7B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E0239A78850096A7B3 /* Message.swift */; };
 		BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E4239E916B0096A7B3 /* UserData.swift */; };
+		BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */; };
+		BBCE13E9239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */; };
+		BBCE13EB239FC97F0096A7B3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13EA239FC97F0096A7B3 /* String.swift */; };
 		BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0D52A238672280097D947 /* UserViewModel.swift */; };
 		BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D52C238678A10097D947 /* GoogleService-Info.plist */; };
 		BBE0D553238816840097D947 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D552238816840097D947 /* Launch Screen.storyboard */; };
@@ -131,6 +134,9 @@
 		BBCE13DE239921920096A7B3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		BBCE13E0239A78850096A7B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BBCE13E4239E916B0096A7B3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogCollectionViewCell.swift; sourceTree = "<group>"; };
+		BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogCollectionViewCell.xib; sourceTree = "<group>"; };
+		BBCE13EA239FC97F0096A7B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BBE0D52A238672280097D947 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BBE0D52C238678A10097D947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBE0D552238816840097D947 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 				BBCE13C323966B1E0096A7B3 /* UIImageView.swift */,
 				BBCE13D32397C5510096A7B3 /* UITextField.swift */,
 				BBCE13D92397D0D30096A7B3 /* UIView.swift */,
+				BBCE13EA239FC97F0096A7B3 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +362,8 @@
 				BBCE13D72397D0B50096A7B3 /* ChatLogSendTextView.swift */,
 				BBCE13E0239A78850096A7B3 /* Message.swift */,
 				BBCE13E4239E916B0096A7B3 /* UserData.swift */,
+				BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */,
+				BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */,
 			);
 			path = ChatLog;
 			sourceTree = "<group>";
@@ -446,6 +455,7 @@
 				1A4560CF22E5702F00AB49A0 /* FeedVC.xib in Resources */,
 				1A3E424622E6C8E800D9829D /* ChatViewCell.xib in Resources */,
 				1A3E424A22E6E25D00D9829D /* ChatViewHeader.xib in Resources */,
+				BBCE13E9239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib in Resources */,
 				BB50E316237D638E008843EC /* LoginViewController.xib in Resources */,
 				BBE0D557238D37330097D947 /* ChatLogViewController.xib in Resources */,
 				1A40DAE822F0180D0015D95D /* VC1ScrollCell.xib in Resources */,
@@ -530,6 +540,7 @@
 			files = (
 				BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */,
 				1A4560EA22E5B04500AB49A0 /* ChatVC.swift in Sources */,
+				BBCE13EB239FC97F0096A7B3 /* String.swift in Sources */,
 				BBCE13D82397D0B50096A7B3 /* ChatLogSendTextView.swift in Sources */,
 				1A4560F122E5C32900AB49A0 /* FeedData.swift in Sources */,
 				BB6A2E42237161E200D3F39C /* SettingsViewController.swift in Sources */,
@@ -563,6 +574,7 @@
 				BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
+				BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */,
 				BBCE13DC239916D60096A7B3 /* User.swift in Sources */,
 				1A4560EF22E5C2CB00AB49A0 /* FeedViewModel.swift in Sources */,
 				BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */,
