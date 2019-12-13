@@ -49,12 +49,12 @@ class ChatLogCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func toggleTimeStampLabel() {
-        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
             self.timeStampHeightConstraint.constant = 16
             self.layoutIfNeeded()
         }) { (successfull) in
             if successfull {
-                UIView.animate(withDuration: 1.2, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                     self.timeStampHeightConstraint.constant = 0
                     self.layoutIfNeeded()
                 })

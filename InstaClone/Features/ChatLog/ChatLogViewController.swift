@@ -21,6 +21,7 @@ class ChatLogViewController: UIViewController {
     var messages: [Message] = [] {
         didSet {
             collectionView.reloadData()
+            collectionView.scrollToItem(at: IndexPath(item: messages.count - 1, section: 0), at: [.centeredVertically, .centeredHorizontally], animated: true)
         }
     }
     
@@ -88,6 +89,5 @@ extension ChatLogViewController: AddMessageDelegate {
     func handleSend(_ text: String) {
         viewModel.sendMessage(text, to: user)
         chatLogSendTextView.textField.text = ""
-        collectionView.scrollToItem(at: IndexPath(item: messages.count - 1, section: 0), at: .bottom, animated: true)
     }
 }
