@@ -8,6 +8,7 @@ def shared_pods
 	pod "Firebase"
 	pod "FirebaseUI/Auth"
 	pod "Firebase/Database"
+	pod "Firebase/Messaging"
 end
 
 target 'InstaClone' do
