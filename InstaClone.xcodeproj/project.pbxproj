@@ -51,6 +51,7 @@
 		BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */; };
 		BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */; };
 		BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */; };
+		BB7C3DA823B9D8AD00467B1A /* DemoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */; };
 		BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13C323966B1E0096A7B3 /* UIImageView.swift */; };
 		BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */; };
 		BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */; };
@@ -118,6 +119,7 @@
 		BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWebViewCell.xib; sourceTree = "<group>"; };
 		BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillerTableViewCell.swift; sourceTree = "<group>"; };
 		BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillerTableViewCell.xib; sourceTree = "<group>"; };
+		BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftUIView.swift; sourceTree = "<group>"; };
 		BBCE13C323966B1E0096A7B3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLogViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+CustomNavBar.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				1A4560D122E5703F00AB49A0 /* Feed */,
 				BBEDADA2237427B5007622EC /* Box-Animation */,
 				BBCE13C623966E6C0096A7B3 /* Unused */,
+				BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				BBEDADA0237427AC007622EC /* BoxViewController.swift in Sources */,
 				1A4560BB22E56E8500AB49A0 /* AppDelegate.swift in Sources */,
 				BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */,
+				BB7C3DA823B9D8AD00467B1A /* DemoSwiftUIView.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
 				BBCE13DC239916D60096A7B3 /* User.swift in Sources */,

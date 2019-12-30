@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
@@ -74,7 +75,14 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func getLikePageController() -> UIViewController {
-        let navController = UINavigationController(rootViewController: BoxViewController())
+        var navController = UINavigationController()
+        if #available(iOS 13.0, *) {
+            let contentView = DemoSwiftUIView()
+            let host = UIHostingController(rootView: contentView)
+            navController = UINavigationController(rootViewController: host)
+        } else {
+            navController = UINavigationController(rootViewController: BoxViewController())
+        }
         navController.tabBarItem = UITabBarItem(title: "Likes",
                                                 image: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal),
                                                 selectedImage: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal))
