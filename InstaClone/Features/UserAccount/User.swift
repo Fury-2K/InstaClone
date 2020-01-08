@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class User {
+class User: NSObject {
     var username: String
     var name: String
     var profilePic: String?
     var uid: String
     
-    init(username: String, name: String, profilePic: String?, uid: String) {
+    init(username: String, name: String, profilePic: String? = nil, uid: String) {
         self.username = username
         self.name = name
         self.profilePic = profilePic
