@@ -11,9 +11,23 @@ import SwiftUI
 @available(iOS 13.0, *)
 struct FeedPreviewUIView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        CellView()
     }
 }
+
+@available(iOS 13.0, *)
+struct CellView: View {
+    var body: some View {
+        VStack {
+            Image("Home")
+                .frame(width: 100, height: 100)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(15)
+            Text("Home").foregroundColor(.blue).foregroundColor(.red)
+        }
+    }
+}
+
 
 @available(iOS 13.0, *)
 struct FeedPreviewUIView_Previews: PreviewProvider {

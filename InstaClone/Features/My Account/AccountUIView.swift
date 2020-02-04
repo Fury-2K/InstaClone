@@ -10,8 +10,26 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 struct AccountUIView: View {
+    
+    let cellView: [CellView] = [
+        CellView(),
+        CellView(),
+        CellView(),
+        CellView(),
+        CellView(),
+        CellView(),
+        CellView()
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("asd")
+            }
+            .navigationBarItems(leading: Text("UserName"), trailing: Image("list-fat-7"))
+            .navigationBarTitle(Text(""), displayMode: .inline)
+        }
+        
     }
 }
 
