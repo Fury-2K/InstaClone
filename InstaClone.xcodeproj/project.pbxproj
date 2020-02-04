@@ -39,6 +39,9 @@
 		1A4560F322E5C48400AB49A0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4560F222E5C48400AB49A0 /* APIClient.swift */; };
 		1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB0122E9683B00133D0A /* FeedHeaderCollectionView.swift */; };
 		1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */; };
+		BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */; };
+		BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */; };
+		BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */; };
 		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
 		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
 		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
@@ -111,6 +114,9 @@
 		1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
 		4E37CDD222B7B319A82FB7C4 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		9BA01523D6C466623CEC7BF2 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIView.swift; sourceTree = "<group>"; };
+		BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperAccountUIView.swift; sourceTree = "<group>"; };
+		BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreviewUIView.swift; sourceTree = "<group>"; };
 		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +144,7 @@
 		BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBCE13EA239FC97F0096A7B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BBE0D52A238672280097D947 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		BBE0D52C238678A10097D947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BBE0D52C238678A10097D947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "/Users/zop1902/Documents/InstaClone/InstaClone/GoogleService-Info.plist"; sourceTree = "<absolute>"; };
 		BBE0D552238816840097D947 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BBE0D554238D37330097D947 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		BBE0D555238D37330097D947 /* ChatLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogViewController.xib; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 				1A4560D122E5703F00AB49A0 /* Feed */,
 				BBEDADA2237427B5007622EC /* Box-Animation */,
 				BBCE13C623966E6C0096A7B3 /* Unused */,
+				BB1D7A7223E81A0B00D73D23 /* My Account */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -281,6 +288,16 @@
 				4E37CDD222B7B319A82FB7C4 /* Pods-InstaClone.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB1D7A7223E81A0B00D73D23 /* My Account */ = {
+			isa = PBXGroup;
+			children = (
+				BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */,
+				BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */,
+				BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */,
+			);
+			path = "My Account";
 			sourceTree = "<group>";
 		};
 		BB50E317237D6396008843EC /* Login */ = {
@@ -556,6 +573,7 @@
 				BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */,
 				1A4560DA22E587AC00AB49A0 /* VC1.swift in Sources */,
 				BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */,
+				BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */,
 				BBCE13DA2397D0D30096A7B3 /* UIView.swift in Sources */,
 				BBCE13D42397C5510096A7B3 /* UITextField.swift in Sources */,
 				BBCE13DF239921920096A7B3 /* ChatViewModel.swift in Sources */,
@@ -566,6 +584,7 @@
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
 				1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */,
 				BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */,
+				BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */,
 				1A3E424922E6E25D00D9829D /* ChatViewHeader.swift in Sources */,
 				1A3E424522E6C8E800D9829D /* ChatViewCell.swift in Sources */,
 				1A4560DE22E587B700AB49A0 /* VC2.swift in Sources */,
@@ -579,6 +598,7 @@
 				1A4560EF22E5C2CB00AB49A0 /* FeedViewModel.swift in Sources */,
 				BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */,
 				BB50E320237D7A96008843EC /* UserAccountViewController.swift in Sources */,
+				BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
