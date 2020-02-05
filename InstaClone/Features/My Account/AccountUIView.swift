@@ -10,17 +10,6 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 struct AccountUIView: View {
-    
-    let cellView: [CellView] = [
-        CellView(),
-        CellView(),
-        CellView(),
-        CellView(),
-        CellView(),
-        CellView(),
-        CellView()
-    ]
-    
     var body: some View {
         NavigationView {
             VStack {
