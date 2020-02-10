@@ -16,6 +16,8 @@ class VC2: UIViewController {
         super.viewDidLoad()
         setupScrollView()
         addViews()
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     // View property of the other VCs

@@ -68,58 +68,6 @@ struct TagFeedGridView: View {
     }
 }
 
-//@available (iOS 13.0, *)
-//struct XView: View {
-//
-//    @State private var selectedPageIndex = 0
-//    var pages = [
-//        SegmentedPageData(image: "square-individual-nine-7", title: "Feed", view: "FeedGridView"),
-//        SegmentedPageData(image: "filing-7", title: "TaggedFeed", view: "TagFeedGridView")
-//    ]
-//
-//    var body: some View {
-//        Picker(selection: $selectedPageIndex, label: Text("What is your favorite color?")) {
-//            ForEach(0..<pages.count) { index in
-//                Image(self.pages[index].image).tag(index)
-//            }
-//        }
-//        .pickerStyle(SegmentedPickerStyle())
-//        .background(Color.clear)
-//        .foregroundColor(Color.red)
-//    }
-//}
-
-@available(iOS 13.0, *)
-struct FeedPreviewHeaderView: View {
-    
-    @State var selectedPageIndex = 0
-    var pages = [
-        SegmentedPageData(image: "square-individual-nine-7", title: "Feed", view: "FeedGridView"),
-        SegmentedPageData(image: "filing-7", title: "TaggedFeed", view: "TagFeedGridView")
-    ]
-    
-    var body: some View {
-        ScrollView {
-            VStack {
-                Picker(selection: $selectedPageIndex, label: Text("What is your favorite color?")) {
-                    ForEach(0..<pages.count) { index in
-                        Image(self.pages[index].image).tag(index)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .background(Color.clear)
-                .foregroundColor(Color.red)
-                
-                if selectedPageIndex == 0 {
-                    FeedGridView()
-                } else {
-                    TagFeedGridView()
-                }
-            }
-        }
-    }
-}
-
 
 // MARK: - SegmentedView
 
@@ -144,19 +92,19 @@ struct SegmentedPageView: UIViewRepresentable {
 
 // MARK: - Main UIViews
 
-@available(iOS 13.0, *)
-struct FeedPreviewUIView: View {
-    var body: some View {
-        VStack {
-            FeedPreviewHeaderView()
-            //SegmentedPageView()
-        }
-    }
-}
-
-@available(iOS 13.0, *)
-struct FeedPreviewUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedPreviewUIView()
-    }
-}
+//@available(iOS 13.0, *)
+//struct FeedPreviewUIView: View {
+//    var body: some View {
+//        VStack {
+//            FeedPreviewHeaderView()
+//            //SegmentedPageView()
+//        }
+//    }
+//}
+//
+//@available(iOS 13.0, *)
+//struct FeedPreviewUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedPreviewUIView()
+//    }
+//}

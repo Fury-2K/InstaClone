@@ -77,7 +77,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     func getLikePageController() -> UIViewController {
         var navController = UINavigationController()
         if #available(iOS 13.0, *) {
-            let contentView = FeedPreviewUIView()
+            let contentView = DemoSwiftUIView()
             let host = UIHostingController(rootView: contentView)
             navController = UINavigationController(rootViewController: host)
         } else {
@@ -90,7 +90,15 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func getAccountPageController() -> UIViewController {
-        let navController = UINavigationController(rootViewController: SegmentedPageViewController())
+        var navController = UINavigationController()
+        if #available(iOS 13.0, *) {
+            let contentView = AccountUIView()
+            let host = UIHostingController(rootView: contentView)
+            navController = UINavigationController(rootViewController: host)
+            navController.navigationBar.isHidden = true
+        } else {
+            navController = UINavigationController(rootViewController: SegmentedPageViewController())
+        }
         navController.tabBarItem = UITabBarItem(title: "MyAccount",
                                                 image: UIImage(named: "circle-user-7")?.withRenderingMode(.alwaysOriginal),
                                                 selectedImage: UIImage(named: "circle-user-7")?.withRenderingMode(.alwaysOriginal))

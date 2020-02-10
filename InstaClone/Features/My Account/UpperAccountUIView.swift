@@ -67,10 +67,11 @@ struct HeaderView: View {
             }
             Image("plus-simple-7")
                 .resizable()
-                .frame(width: 20, height: 20)
-                .cornerRadius(10)
+                .frame(width: 24, height: 24)
+                .background(Color.blue)
+                .border(Color.white, width: 4)
+                .cornerRadius(14)
                 .offset(x: -90, y: 40)
-                .background(Color.white)
         }.padding(EdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 16))
     }
 }
@@ -104,6 +105,7 @@ struct CustomButton: View {
         .frame(width: 110, height: 30)
         .border(Color.gray, width: 1)
         .cornerRadius(5)
+    .buttonStyle(DefaultButtonStyle())
     }
 }
 
@@ -114,6 +116,7 @@ struct ButtonView: View {
             CustomButton(btnConfig: ButtonConfig(title: "Edit Profile"))
             CustomButton(btnConfig: ButtonConfig(title: "Promotions"))
             CustomButton(btnConfig: ButtonConfig(title: "Contact"))
+            
         }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }
