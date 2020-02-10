@@ -20,9 +20,6 @@ class FeedHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.collectionView.showsHorizontalScrollIndicator = false
-//        self.collectionView.alwaysBounceHorizontal = false
-        self.collectionView.bounces = false
     }
     
 }

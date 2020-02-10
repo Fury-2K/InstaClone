@@ -26,7 +26,7 @@ struct StoryData {
 }
 
 
-// MARK: - Views
+// MARK: - Helper Views
 
 @available(iOS 13.0, *)
 struct TextStack: View {
@@ -46,8 +46,8 @@ struct TextStack: View {
 struct HeaderView: View {
 
     let cellData: [TextStackData] = [
-        TextStackData(num: "123", value: "Posts"),
-        TextStackData(num: "133", value: "Followers"),
+        TextStackData(num: "10", value: "Posts"),
+        TextStackData(num: "13.3K", value: "Followers"),
         TextStackData(num: "341", value: "Following")
     ]
     
@@ -70,7 +70,8 @@ struct HeaderView: View {
                 .frame(width: 20, height: 20)
                 .cornerRadius(10)
                 .offset(x: -90, y: 40)
-        }
+                .background(Color.white)
+        }.padding(EdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 16))
     }
 }
 
@@ -85,7 +86,7 @@ struct BodyView: View {
                 .font(.system(size: 14))
             Text("Discription")
                 .font(.system(size: 13))
-        }
+        }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }
 
@@ -113,7 +114,7 @@ struct ButtonView: View {
             CustomButton(btnConfig: ButtonConfig(title: "Edit Profile"))
             CustomButton(btnConfig: ButtonConfig(title: "Promotions"))
             CustomButton(btnConfig: ButtonConfig(title: "Contact"))
-        }
+        }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }
 
@@ -126,7 +127,6 @@ struct StoryCellView: View {
                 .resizable()
                 .frame(width: 64, height: 64)
                 .cornerRadius(32)
-//                .border(Color.gray, width: 1)
             Text(cellData.title)
                 .font(.system(size: 13))
         }
@@ -146,10 +146,49 @@ struct StoryScrollView: View {
                 StoryCellView(cellData: StoryData(image: "", title: "Home"))
                 StoryCellView(cellData: StoryData(image: "", title: "Home"))
                 StoryCellView(cellData: StoryData(image: "", title: "Home"))
-            }
+            }.padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         }
     }
 }
+
+
+// MARK: - Embedded a collectionView in SwiftUI View
+
+@available(iOS 13.0, *)
+struct FeedHeader: UIViewRepresentable {
+    
+    let dummyData: [FeedData] = [
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1"),
+        FeedData("username", "fname", "lname", "email", ["Home", "Home", "Home"], uid: "1")
+    ]
+    
+    func makeUIView(context: Context) -> FeedHeader.UIViewType {
+        
+        //Create and configure your layout flow seperately
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: 25, left: 0, bottom: 25, right: 0)
+        flowLayout.scrollDirection = .horizontal
+
+
+        //And create the UICollection View
+        let collectionView = FeedHeaderCollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 50), collectionViewLayout: flowLayout)
+        
+        collectionView.backgroundColor = .clear
+        
+        return collectionView
+    }
+    
+    func updateUIView(_ feedCollectionView: FeedHeaderCollectionView, context: Context) {
+        feedCollectionView.data = dummyData
+    }
+    
+}
+
 
 
 // MARK: - Main View
@@ -162,7 +201,7 @@ struct UpperAccountUIView: View {
             BodyView()
             ButtonView()
             StoryScrollView()
-        }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        }
     }
 }
 

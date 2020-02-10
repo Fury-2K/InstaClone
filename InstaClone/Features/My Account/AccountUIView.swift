@@ -12,13 +12,15 @@ import SwiftUI
 struct AccountUIView: View {
     var body: some View {
         NavigationView {
-            VStack {
-                Text("asd")
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    UpperAccountUIView()
+                    FeedPreviewUIView()
+                        .navigationBarItems(leading: Text("UserName"), trailing: Image("list-fat-7"))
+                        .navigationBarTitle(Text(""), displayMode: .inline)
+                }
             }
-            .navigationBarItems(leading: Text("UserName"), trailing: Image("list-fat-7"))
-            .navigationBarTitle(Text(""), displayMode: .inline)
         }
-        
     }
 }
 

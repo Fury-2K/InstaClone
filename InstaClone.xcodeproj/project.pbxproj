@@ -42,6 +42,8 @@
 		BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */; };
 		BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */; };
 		BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */; };
+		BB32E3B123EAAFF200A926E3 /* SegmentedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AF23EAAFF200A926E3 /* SegmentedPageViewController.swift */; };
+		BB32E3B223EAAFF200A926E3 /* SegmentedPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB32E3B023EAAFF200A926E3 /* SegmentedPageViewController.xib */; };
 		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
 		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
 		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
@@ -118,6 +120,8 @@
 		BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperAccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreviewUIView.swift; sourceTree = "<group>"; };
+		BB32E3AF23EAAFF200A926E3 /* SegmentedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPageViewController.swift; sourceTree = "<group>"; };
+		BB32E3B023EAAFF200A926E3 /* SegmentedPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedPageViewController.xib; sourceTree = "<group>"; };
 		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +213,7 @@
 				BBEDADA2237427B5007622EC /* Box-Animation */,
 				BBCE13C623966E6C0096A7B3 /* Unused */,
 				BB1D7A7223E81A0B00D73D23 /* My Account */,
-                BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */,
+				BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -355,6 +359,8 @@
 				1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */,
 				1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */,
 				1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */,
+				BB32E3AF23EAAFF200A926E3 /* SegmentedPageViewController.swift */,
+				BB32E3B023EAAFF200A926E3 /* SegmentedPageViewController.xib */,
 			);
 			path = Unused;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */,
 				1A4560DB22E587AC00AB49A0 /* VC1.xib in Resources */,
 				1A4560EB22E5B04500AB49A0 /* ChatVC.xib in Resources */,
+				BB32E3B223EAAFF200A926E3 /* SegmentedPageViewController.xib in Resources */,
 				1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */,
 				BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */,
 				BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */,
@@ -578,6 +585,7 @@
 				BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */,
 				BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */,
 				BBCE13DA2397D0D30096A7B3 /* UIView.swift in Sources */,
+				BB32E3B123EAAFF200A926E3 /* SegmentedPageViewController.swift in Sources */,
 				BBCE13D42397C5510096A7B3 /* UITextField.swift in Sources */,
 				BBCE13DF239921920096A7B3 /* ChatViewModel.swift in Sources */,
 				1A4560F322E5C48400AB49A0 /* APIClient.swift in Sources */,
