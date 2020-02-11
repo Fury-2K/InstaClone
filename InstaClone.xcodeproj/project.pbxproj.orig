@@ -42,9 +42,6 @@
 		BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */; };
 		BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */; };
 		BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */; };
-		BB32E3F123F291BF00A926E3 /* SegmentedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3EF23F291BF00A926E3 /* SegmentedPageViewController.swift */; };
-		BB32E3F223F291BF00A926E3 /* SegmentedPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB32E3F023F291BF00A926E3 /* SegmentedPageViewController.xib */; };
-		BB32E3F423F2930C00A926E3 /* DemoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */; };
 		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
 		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
 		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
@@ -57,6 +54,7 @@
 		BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */; };
 		BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */; };
 		BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */; };
+		BB7C3DA823B9D8AD00467B1A /* DemoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */; };
 		BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13C323966B1E0096A7B3 /* UIImageView.swift */; };
 		BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */; };
 		BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */; };
@@ -120,9 +118,6 @@
 		BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperAccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreviewUIView.swift; sourceTree = "<group>"; };
-		BB32E3EF23F291BF00A926E3 /* SegmentedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPageViewController.swift; sourceTree = "<group>"; };
-		BB32E3F023F291BF00A926E3 /* SegmentedPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedPageViewController.xib; sourceTree = "<group>"; };
-		BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftUIView.swift; sourceTree = "<group>"; };
 		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +130,7 @@
 		BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWebViewCell.xib; sourceTree = "<group>"; };
 		BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillerTableViewCell.swift; sourceTree = "<group>"; };
 		BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillerTableViewCell.xib; sourceTree = "<group>"; };
+		BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftUIView.swift; sourceTree = "<group>"; };
 		BBCE13C323966B1E0096A7B3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLogViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+CustomNavBar.swift"; sourceTree = "<group>"; };
@@ -212,8 +208,11 @@
 				1A4560D122E5703F00AB49A0 /* Feed */,
 				BBEDADA2237427B5007622EC /* Box-Animation */,
 				BBCE13C623966E6C0096A7B3 /* Unused */,
+<<<<<<< HEAD
+				BB7C3DA723B9D8AD00467B1A /* DemoSwiftUIView.swift */,
+=======
 				BB1D7A7223E81A0B00D73D23 /* My Account */,
-				BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */,
+>>>>>>> dev
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -359,8 +358,6 @@
 				1A40DAE322F0148E0015D95D /* VC1CollectionView.swift */,
 				1A40DAE522F0180D0015D95D /* VC1ScrollCell.swift */,
 				1A40DAE622F0180D0015D95D /* VC1ScrollCell.xib */,
-				BB32E3EF23F291BF00A926E3 /* SegmentedPageViewController.swift */,
-				BB32E3F023F291BF00A926E3 /* SegmentedPageViewController.xib */,
 			);
 			path = Unused;
 			sourceTree = "<group>";
@@ -488,7 +485,6 @@
 				BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */,
 				1A4560DB22E587AC00AB49A0 /* VC1.xib in Resources */,
 				1A4560EB22E5B04500AB49A0 /* ChatVC.xib in Resources */,
-				BB32E3F223F291BF00A926E3 /* SegmentedPageViewController.xib in Resources */,
 				1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */,
 				BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */,
 				BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */,
@@ -571,7 +567,6 @@
 				BBCE13D82397D0B50096A7B3 /* ChatLogSendTextView.swift in Sources */,
 				1A4560F122E5C32900AB49A0 /* FeedData.swift in Sources */,
 				BB6A2E42237161E200D3F39C /* SettingsViewController.swift in Sources */,
-				BB32E3F123F291BF00A926E3 /* SegmentedPageViewController.swift in Sources */,
 				1A3E425522E85A8A00D9829D /* FeedViewCell.swift in Sources */,
 				BBE0D556238D37330097D947 /* ChatLogViewController.swift in Sources */,
 				BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */,
@@ -596,13 +591,13 @@
 				1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */,
 				BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */,
 				BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */,
-				BB32E3F423F2930C00A926E3 /* DemoSwiftUIView.swift in Sources */,
 				1A3E424922E6E25D00D9829D /* ChatViewHeader.swift in Sources */,
 				1A3E424522E6C8E800D9829D /* ChatViewCell.swift in Sources */,
 				1A4560DE22E587B700AB49A0 /* VC2.swift in Sources */,
 				BBEDADA0237427AC007622EC /* BoxViewController.swift in Sources */,
 				1A4560BB22E56E8500AB49A0 /* AppDelegate.swift in Sources */,
 				BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */,
+				BB7C3DA823B9D8AD00467B1A /* DemoSwiftUIView.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
 				BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */,
