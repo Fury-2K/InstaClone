@@ -12,6 +12,7 @@ class UserAccountViewController: UIViewController {
 
     @IBOutlet weak var pageSwitcher: UISegmentedControl!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet var userImageView: UIImageView!
     
     let loginViewController = LoginViewController()
     let registerViewController = RegistrationViewController()
@@ -19,23 +20,34 @@ class UserAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupContentView()
+        setupImageView()
         loginViewController.userSigningDelegate = self
         registerViewController.userSigningDelegate = self
+        
     }
     
-    func setupContentView() {
-        if pageSwitcher.selectedSegmentIndex == 0 {
-            contentView.addSubview(registerViewController.view)
-            addChild(registerViewController)
-            addSubViewConstraints(registerViewController.view)
-        } else {
-            contentView.addSubview(loginViewController.view)
-            addChild(loginViewController)
-            addSubViewConstraints(loginViewController.view)
-        }
+    private func setupImageView() {
+        userImageView.layer.cornerRadius = userImageView.frame.height/2
+        userImageView.addTapGesture(#selector(openImagePicker), target: self)
     }
     
-    func addSubViewConstraints(_ view: UIView) {
+    private func setupContentView() {
+        let isLoginSelected: Bool = pageSwitcher.selectedSegmentIndex == 1
+        
+        userImageView.isHidden = isLoginSelected
+        
+        contentView.addSubview(isLoginSelected ? loginViewController.view : registerViewController.view)
+        addChild(isLoginSelected ? loginViewController : registerViewController)
+        addSubViewConstraints(isLoginSelected ? loginViewController.view : registerViewController.view)
+    }
+    
+    @objc private func openImagePicker() {
+        let imagePickerViewController = UIImagePickerController()
+        imagePickerViewController.delegate = self
+        present(imagePickerViewController, animated: true, completion: nil)
+    }
+    
+    private func addSubViewConstraints(_ view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         view.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
@@ -47,6 +59,9 @@ class UserAccountViewController: UIViewController {
         setupContentView()
     }
 }
+
+
+// MARK: - UserSigningDelegate
 
 extension UserAccountViewController: UserSigningDelegate {
     
@@ -70,4 +85,16 @@ extension UserAccountViewController: UserSigningDelegate {
         navigationController.navigationBar.backgroundColor = .white
         UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
+}
+
+
+// MARK: - UIImagePickerControllerDelegate and UINavigationControllerDelegate
+
+extension UserAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(info)
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
