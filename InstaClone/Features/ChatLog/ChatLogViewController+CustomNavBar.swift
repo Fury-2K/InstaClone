@@ -11,7 +11,9 @@ import UIKit
 
 extension ChatLogViewController: UIGestureRecognizerDelegate {
     
-    func setupNavigationBar(_ username: String, _ name: String) {
+    func setupNavigationBar(_ username: String?, _ name: String?) {
+        guard let username = username,
+            let name = name else { return }
         setupLeftNavBarItems(username, name)
         setupRightNavBarItems()
         setupRemainingnavBarItems()
