@@ -10,40 +10,25 @@ import UIKit
 
 class ChatVC: UIViewController {
     
+    let viewModel: FeedViewModel = FeedViewModel()
+    let chatViewModel: ChatViewModel = ChatViewModel()
+    var refreshControl: UIRefreshControl!
+    var feedData: [FeedData] = []
+    var userData: [User] = []
+    
     @IBOutlet weak var collectionView: ChatCollectionView!
     @IBOutlet weak var footerCameraIcon: UIImageView!
     @IBOutlet weak var footerLabel: UILabel!
-    
-    let viewModel: ChatViewModel = ChatViewModel()
-    var refreshControl: UIRefreshControl!
-    
-    var userData: [UserData] = [] {
-        didSet {
-            collectionView.userData = userData
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshControl()
         setupNavigationBar()
         footerCameraIcon.image = UIImage(named: "camera-7")
-        refreshPage()
+        //setChatPage()
+        
         collectionView.cellTappedListener = self
         collectionView.toggleSettingsDelegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchAllMessages()
-    }
-    
-    func fetchAllMessages() {
-        self.viewModel.getUserMessageDictionary(didFinishWithSuccess: { (userDataValues) in
-            self.userData = userDataValues
-        }) { (errorCode, error) in
-            print(errorCode, error)
-        }
     }
     
     func setupRefreshControl() {
@@ -57,28 +42,58 @@ class ChatVC: UIViewController {
     }
     
     @objc func refreshPage() {
+        //setChatPage()
+    }
+    
+    func setChatPage() {
         refreshControl.beginRefreshing()
-        viewModel.getUsers(didFinishWithSuccess: { (response) in
-            self.userData = response.compactMap { UserData(user: $0) }
-            self.refreshControl.endRefreshing()
-        }) { (errorCode, error) in
-            print(errorCode, error)
+        
+        let group = DispatchGroup()
+        
+        
+        group.enter()
+        //            self.viewModel.getData(didFinishWithSuccess: { response in
+        //                self.feedData.append(response)
+        //                group.leave()
+        //            }, didFinishWithError: { errorCode, error in
+        //                group.leave()
+        //            })
+                    chatViewModel.getUsers(didFinishWithSuccess: { (response) in
+                        self.userData.append(response)
+                        group.leave()
+                    }) { (errorCode, error) in
+                        print(errorCode, error)
+                        group.leave()
+                    }
+//        for _ in 0..<5 {
+//
+//        }
+        
+        group.notify(queue: .main) {
+            self.collectionView.data = self.feedData
             self.refreshControl.endRefreshing()
         }
     }
+    
 }
 
 extension ChatVC: ToggleSettingsDelegate {
     func toggleSettings() {
-        present(SettingsViewController(), animated: true, completion: nil)
+        chatViewModel.getUsers(didFinishWithSuccess: { (response) in
+            print(response)
+        }) { (errorCode, error) in
+            print(error)
+        }
+        //present(SettingsViewController(), animated: true, completion: nil)
     }
 }
 
 extension ChatVC: CellTappedListener {
     func cellTapped(_ indexPath: IndexPath) {
         let chatLogViewController = ChatLogViewController()
-        chatLogViewController.user = userData[indexPath.row].user
-//        chatLogViewController.messages = userData[indexPath.row].messages
+        let name = feedData[indexPath.row].firstName + " " + feedData[indexPath.row].lastName
+        let username = feedData[indexPath.row].username
+        chatLogViewController.setupNavigationBar(username, name)
         self.navigationController?.pushViewController(chatLogViewController, animated: true)
     }
 }

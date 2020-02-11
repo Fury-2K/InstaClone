@@ -19,7 +19,7 @@ class UserViewModel {
             }
             guard let uid = result?.user.uid else { return }
             let values = ["email": email, "username": username]
-            Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
+            Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
                 if let error = error {
                     didFinishWithError(String("Failed to update database values: " + error.localizedDescription))
                 }

@@ -666,20 +666,14 @@ DEPENDENCIES:
   - MaterialComponents
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Firebase
     - FirebaseAnalytics
-    - FirebaseAuth
-    - FirebaseAuthInterop
     - FirebaseCore
-    - FirebaseDatabase
     - FirebaseInstanceID
-    - FirebaseUI
     - GoogleAppMeasurement
     - GoogleUtilities
-    - GTMSessionFetcher
-    - leveldb-library
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -687,6 +681,13 @@ SPEC REPOS:
     - MotionInterchange
     - MotionTransitioning
     - nanopb
+  trunk:
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseDatabase
+    - FirebaseUI
+    - GTMSessionFetcher
+    - leveldb-library
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3

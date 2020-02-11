@@ -14,8 +14,14 @@ protocol CellTappedListener: class {
 }
 
 class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    var userData: [UserData] = [] {
+    
+    var data: [FeedData] = [] {
+        didSet {
+            self.reloadData()
+        }
+    }
+    
+    var userData: [User] = [] {
         didSet {
             self.reloadData()
         }
