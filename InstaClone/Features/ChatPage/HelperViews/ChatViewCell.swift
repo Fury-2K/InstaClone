@@ -21,9 +21,9 @@ class ChatViewCell: UICollectionViewCell {
     @IBOutlet weak var cameraImageView: UIImageView!
     
     
-    func setData(_ cellData: UserData) {
-        self.nameLabel.text = cellData.user.name
-        self.chatPreviewLabel.text = cellData.messages.last?.text
+    func setData(_ cellData: User) {
+        self.nameLabel.text = cellData.name//String(cellData.firstName + " " + cellData.lastName)
+        self.chatPreviewLabel.text = cellData.username
         //self.dp.downloaded(from: cellData.feedPics[2])
         self.cameraImageView.image = UIImage(named: "camera-7")
     }
