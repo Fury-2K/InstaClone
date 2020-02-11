@@ -31,9 +31,6 @@ class FeedHeaderCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         dataSource = self
         delegate = self
         registerClasses()
-        
-        showsHorizontalScrollIndicator = false
-        bounces = false
     }
     
     func registerClasses() {
