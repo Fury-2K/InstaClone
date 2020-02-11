@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatLogViewController" customModule="InstaClone" customModuleProvider="target">
             <connections>
                 <outlet property="chatLogSendTextView" destination="eNS-Kz-cWR" id="XIf-fx-s4y"/>
-                <outlet property="tableView" destination="T6G-yM-z1V" id="PYd-fK-wuG"/>
+                <outlet property="collectionView" destination="7Mh-6f-ln7" id="c9X-mY-Jil"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,20 +27,26 @@
                         <constraint firstAttribute="height" constant="45" id="IbR-a9-HiT"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T6G-yM-z1V">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7Mh-6f-ln7">
                     <rect key="frame" x="0.0" y="44" width="414" height="757"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Anb-l0-QkK">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="eNS-Kz-cWR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="18a-EQ-V32"/>
-                <constraint firstItem="T6G-yM-z1V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hfh-9N-2pD"/>
                 <constraint firstItem="eNS-Kz-cWR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-16" id="K9B-6x-ECt"/>
-                <constraint firstItem="T6G-yM-z1V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h42-gC-X3b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="T6G-yM-z1V" secondAttribute="trailing" id="jBX-n9-yre"/>
+                <constraint firstItem="7Mh-6f-ln7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KvQ-CL-Kwq"/>
+                <constraint firstItem="7Mh-6f-ln7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MBU-IP-vOu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Mh-6f-ln7" secondAttribute="trailing" id="hbB-JB-1z2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eNS-Kz-cWR" secondAttribute="trailing" constant="16" id="nyv-LE-EiM"/>
-                <constraint firstItem="eNS-Kz-cWR" firstAttribute="top" secondItem="T6G-yM-z1V" secondAttribute="bottom" id="sgV-53-K6O"/>
+                <constraint firstItem="eNS-Kz-cWR" firstAttribute="top" secondItem="7Mh-6f-ln7" secondAttribute="bottom" id="u1c-Mi-8zF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
