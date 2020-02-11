@@ -24,6 +24,7 @@ struct AccountUIView: View {
         // To remove all separators including the actual ones:
         UITableView.appearance().separatorStyle = .none
         
+        // Hit and trial
 //        UITableView.appearance().allowsSelection = false
 //        UITableViewCell.appearance().selectionStyle = .none
     }
