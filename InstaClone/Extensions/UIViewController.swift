@@ -12,11 +12,15 @@ import  UIKit
 extension UIViewController {
     
     func showLoadingAnimation() {
-        view.showLoadingAnimation()
+        DispatchQueue.main.async {
+            self.view.showLoadingAnimation()
+        }
     }
 
     func hideLoadingAnimation() {
-        view.hideLoadingAnimation()
+        DispatchQueue.main.async {
+            self.view.hideLoadingAnimation()
+        }
     }
     
 }

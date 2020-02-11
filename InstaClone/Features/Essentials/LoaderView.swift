@@ -22,6 +22,7 @@ class LoaderView: UIView {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.blurEffectView = blurEffectView
         super.init(frame: frame)
+        self.tag = LoaderView.TAG
         addSubview(blurEffectView)
         addLoader()
     }
@@ -31,33 +32,21 @@ class LoaderView: UIView {
     }
 
     private func addLoader() {
+        let overlayView = UIView()
+        overlayView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        overlayView.backgroundColor = .white
+        overlayView.layer.cornerRadius = 10
+        
         guard let blurEffectView = blurEffectView else { return }
         let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.color = .gray
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        blurEffectView.contentView.addSubview(activityIndicator)
-        activityIndicator.center = blurEffectView.contentView.center
+        overlayView.addSubview(activityIndicator)
+        activityIndicator.center = overlayView.center
         activityIndicator.startAnimating()
+        
+        blurEffectView.contentView.addSubview(overlayView)
+        overlayView.center = blurEffectView.contentView.center
+
     }
-    
-//    convenience init(_ side: CGFloat = 120) {
-//        self.init(frame: CGRect(x: 0, y: 0, width: side, height: side))
-//
-//        let overlayView : UIView!
-//        let activityIndicator : UIActivityIndicatorView!
-//
-//        overlayView = UIView()
-//        activityIndicator = UIActivityIndicatorView()
-//
-//        overlayView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-//        overlayView.backgroundColor = .black
-//        overlayView.clipsToBounds = true
-//        overlayView.layer.cornerRadius = 10
-//        overlayView.layer.zPosition = 1
-//
-//        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-//        activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
-//        activityIndicator.style = .whiteLarge
-//        activityIndicator.color = .gray
-//        overlayView.addSubview(activityIndicator)
-//    }
 }

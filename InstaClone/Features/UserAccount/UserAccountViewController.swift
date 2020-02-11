@@ -42,9 +42,12 @@ class UserAccountViewController: UIViewController {
     }
     
     @objc private func openImagePicker() {
+        showLoadingAnimation()
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate = self
-        present(imagePickerViewController, animated: true, completion: nil)
+        present(imagePickerViewController, animated: true, completion: {
+            self.hideLoadingAnimation()
+        })
     }
     
     private func addSubViewConstraints(_ view: UIView) {
