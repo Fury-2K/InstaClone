@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
@@ -74,7 +75,14 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func getLikePageController() -> UIViewController {
-        let navController = UINavigationController(rootViewController: BoxViewController())
+        var navController = UINavigationController()
+        if #available(iOS 13.0, *) {
+            let contentView = DemoSwiftUIView()
+            let host = UIHostingController(rootView: contentView)
+            navController = UINavigationController(rootViewController: host)
+        } else {
+            navController = UINavigationController(rootViewController: BoxViewController())
+        }
         navController.tabBarItem = UITabBarItem(title: "Likes",
                                                 image: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal),
                                                 selectedImage: UIImage(named: "thumb-up-7")?.withRenderingMode(.alwaysOriginal))
@@ -82,7 +90,15 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func getAccountPageController() -> UIViewController {
-        let navController = UINavigationController(rootViewController: VC2())
+        var navController = UINavigationController()
+        if #available(iOS 13.0, *) {
+            let contentView = AccountUIView()
+            let host = UIHostingController(rootView: contentView)
+            navController = UINavigationController(rootViewController: host)
+            navController.navigationBar.isHidden = true
+        } else {
+            navController = UINavigationController(rootViewController: SegmentedPageViewController())
+        }
         navController.tabBarItem = UITabBarItem(title: "MyAccount",
                                                 image: UIImage(named: "circle-user-7")?.withRenderingMode(.alwaysOriginal),
                                                 selectedImage: UIImage(named: "circle-user-7")?.withRenderingMode(.alwaysOriginal))
