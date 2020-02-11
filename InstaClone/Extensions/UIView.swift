@@ -19,5 +19,16 @@ extension UIView {
         return tapGesture
     }
 
+    func showLoadingAnimation() {
+        let loader = LoaderView(frame: frame)
+        self.addSubview(loader)
+        isUserInteractionEnabled = false
+    }
+
+    func hideLoadingAnimation() {
+        viewWithTag(LoaderView.TAG)?.removeFromSuperview()
+        isUserInteractionEnabled = true
+    }
+
 }
 

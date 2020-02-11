@@ -45,6 +45,8 @@
 		BB32E3F123F291BF00A926E3 /* SegmentedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3EF23F291BF00A926E3 /* SegmentedPageViewController.swift */; };
 		BB32E3F223F291BF00A926E3 /* SegmentedPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB32E3F023F291BF00A926E3 /* SegmentedPageViewController.xib */; };
 		BB32E3F423F2930C00A926E3 /* DemoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */; };
+		BB32E3F823F2AD3500A926E3 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F723F2AD3500A926E3 /* LoaderView.swift */; };
+		BB32E3FA23F2BEDB00A926E3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F923F2BEDB00A926E3 /* UIViewController.swift */; };
 		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
 		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
 		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
@@ -123,6 +125,8 @@
 		BB32E3EF23F291BF00A926E3 /* SegmentedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPageViewController.swift; sourceTree = "<group>"; };
 		BB32E3F023F291BF00A926E3 /* SegmentedPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedPageViewController.xib; sourceTree = "<group>"; };
 		BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftUIView.swift; sourceTree = "<group>"; };
+		BB32E3F723F2AD3500A926E3 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		BB32E3F923F2BEDB00A926E3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				1A4560E022E58EF000AB49A0 /* MainViewController.swift */,
 				1A4560EC22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift */,
 				1A4560F222E5C48400AB49A0 /* APIClient.swift */,
+				BB32E3F723F2AD3500A926E3 /* LoaderView.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				BBCE13D32397C5510096A7B3 /* UITextField.swift */,
 				BBCE13D92397D0D30096A7B3 /* UIView.swift */,
 				BBCE13EA239FC97F0096A7B3 /* String.swift */,
+				BB32E3F923F2BEDB00A926E3 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */,
 				1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */,
 				1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */,
+				BB32E3FA23F2BEDB00A926E3 /* UIViewController.swift in Sources */,
 				1A4560E222E58EF000AB49A0 /* MainViewController.swift in Sources */,
 				1A4560CE22E5702F00AB49A0 /* FeedVC.swift in Sources */,
 				BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */,
@@ -603,6 +610,7 @@
 				BBEDADA0237427AC007622EC /* BoxViewController.swift in Sources */,
 				1A4560BB22E56E8500AB49A0 /* AppDelegate.swift in Sources */,
 				BB6A2E46237163AB00D3F39C /* DetailWebViewCell.swift in Sources */,
+				BB32E3F823F2AD3500A926E3 /* LoaderView.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
 				BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */,
