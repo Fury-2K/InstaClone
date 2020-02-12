@@ -33,7 +33,7 @@ class LoaderView: UIView {
 
     private func addLoader() {
         let overlayView = UIView()
-        overlayView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        overlayView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
         overlayView.backgroundColor = .white
         overlayView.layer.cornerRadius = 10
         

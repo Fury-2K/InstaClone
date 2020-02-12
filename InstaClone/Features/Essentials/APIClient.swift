@@ -8,7 +8,8 @@
 
 import Foundation
 import Alamofire
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class APIClient {
     
@@ -43,11 +44,12 @@ class APIClient {
             let allUsers = users.compactMap { element -> User? in
                 guard let user = element.value as? [String : Any],
                     let username = user["username"] as? String,
-                    let email = user["email"] as? String
+                    let email = user["email"] as? String,
+                    let profileImg = user["profileImage"] as? String
                     else { return nil }
                 let uid = element.key
                 if uid == Auth.auth().currentUser!.uid { return nil }
-                return User(username: username, name: email, uid: uid)
+                return User(username: username, name: email, profilePic: profileImg, uid: uid)
             }
             didFinishWithSuccess(allUsers)
         }) { (errorCode, error) in

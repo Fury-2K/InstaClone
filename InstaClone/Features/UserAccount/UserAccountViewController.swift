@@ -23,7 +23,6 @@ class UserAccountViewController: UIViewController {
         setupImageView()
         loginViewController.userSigningDelegate = self
         registerViewController.userSigningDelegate = self
-        
     }
     
     private func setupImageView() {
@@ -67,19 +66,9 @@ class UserAccountViewController: UIViewController {
 // MARK: - UserSigningDelegate
 
 extension UserAccountViewController: UserSigningDelegate {
-    
-    func userLoggedIn(_ email: String, _ password: String) {
+    func loginUser(_ email: String, _ password: String) {
         UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
-
-        navigationController.navigationBar.isOpaque = true
-        navigationController.navigationBar.tintColor = .black
-        navigationController.navigationBar.backgroundColor = .white
-        UIApplication.shared.keyWindow?.rootViewController = navigationController
-    }
-    
-    func userRegistered(_ username: String, _ email: String) {
+        
         let mainViewController = MainViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
 
@@ -96,9 +85,9 @@ extension UserAccountViewController: UserSigningDelegate {
 extension UserAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print(info)
         if let image = info[.originalImage] as? UIImage {
             userImageView.image = image
+            registerViewController.userImage = image
         }
         dismiss(animated: true, completion: nil)
     }
