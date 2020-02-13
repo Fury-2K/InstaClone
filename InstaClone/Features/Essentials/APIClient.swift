@@ -48,7 +48,8 @@ class APIClient {
                     let profileImg = user["profileImage"] as? String
                     else { return nil }
                 let uid = element.key
-                if uid == Auth.auth().currentUser!.uid { return nil }
+                guard let currentUser = UserDefaults.standard.value(forKey: "currentUser")as? User else { return nil }
+                if uid == currentUser.uid { return nil }
                 return User(username: username, name: email, profileImgUrl: profileImg, uid: uid)
             }
             didFinishWithSuccess(allUsers)
@@ -103,8 +104,8 @@ class APIClient {
     static func sendMessage(_ message: String, to user: User) {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
-        // Force unwrapped because this method can only be called when user is signedIn
-        let fromId = Auth.auth().currentUser!.uid
+        guard let currentUser = UserDefaults.standard.value(forKey: "currentUser")as? User else { return }
+        let fromId = currentUser.uid
         let toId =  user.uid
         let timeStamp: Int = Int(NSDate().timeIntervalSince1970)
         let values: [String: Any] = [

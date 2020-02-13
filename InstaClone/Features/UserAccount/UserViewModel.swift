@@ -36,6 +36,10 @@ class UserViewModel {
                             didFinishWithError("Invalid url")
                             return
                         }
+                        
+                        let user = User(username: username, name: username, profilePic: profileImgUrl, uid: uid)
+                        UserDefaults.standard.set(user, forKey: "currentUser")
+                        
                         let values: [String: Any] = ["email": email, "username": username, "profileImage": profileImgUrl]
                         Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
                             if let error = error {
@@ -54,9 +58,21 @@ class UserViewModel {
             if let error = error {
                 didFinishWithError("Failed to SignIN: " + error.localizedDescription)
             }
-            guard let username = result?.user else { return }
-            print(username)
-            didFinishWithSuccess("Sup?", "Nigga")
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            Database.database().reference().child("users").child(uid).observe(.value) { (snapshot, error) in
+                if error != nil {
+                    didFinishWithError(error ?? "error404")
+                }
+                guard let username = snapshot.value(forUndefinedKey: "username") as? String,
+                let profileImgUrl = snapshot.value(forUndefinedKey: "profileImg") as? String else {
+                    didFinishWithError(error ?? "error404")
+                    return
+                }
+                
+                let user = User(username: username, name: username, profilePic: profileImgUrl, uid: uid)
+                UserDefaults.standard.set(user, forKey: "currentUser")
+            }
         }
     }
 }

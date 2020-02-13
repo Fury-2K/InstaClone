@@ -15,7 +15,7 @@ class User: NSObject {
     var profileImgUrl: String
     var uid: String
     
-    init(username: String, name: String, profileImgUrl: String, uid: String) {
+    init(username: String = "", name: String = "", profileImgUrl: String = "", uid: String = "") {
         self.username = username
         self.name = name
         self.profileImgUrl = profileImgUrl

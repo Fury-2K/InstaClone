@@ -69,7 +69,8 @@ extension ChatLogViewController: UICollectionViewDelegate,  UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatLogCollectionViewCell", for: indexPath) as? ChatLogCollectionViewCell ?? ChatLogCollectionViewCell()
-        let isBlue = Auth.auth().currentUser?.uid == messages[indexPath.row].fromId
+        guard let currentUser = UserDefaults.standard.value(forKey: "currentUser") as? User else { return UICollectionViewCell() }
+        let isBlue = currentUser.uid == messages[indexPath.row].fromId
         cell.setupCell(messages[indexPath.row], isBlue, collectionView.frame.width - 32)
         return cell
     }

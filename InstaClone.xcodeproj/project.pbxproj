@@ -47,6 +47,7 @@
 		BB32E3F423F2930C00A926E3 /* DemoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */; };
 		BB32E3F823F2AD3500A926E3 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F723F2AD3500A926E3 /* LoaderView.swift */; };
 		BB32E3FA23F2BEDB00A926E3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3F923F2BEDB00A926E3 /* UIViewController.swift */; };
+		BB32E3FC23F4006500A926E3 /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3FB23F4006500A926E3 /* MyAccountViewModel.swift */; };
 		BB50E315237D638E008843EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E313237D638E008843EC /* LoginViewController.swift */; };
 		BB50E316237D638E008843EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50E314237D638E008843EC /* LoginViewController.xib */; };
 		BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50E318237D63AB008843EC /* RegistrationViewController.swift */; };
@@ -127,6 +128,7 @@
 		BB32E3F323F2930C00A926E3 /* DemoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftUIView.swift; sourceTree = "<group>"; };
 		BB32E3F723F2AD3500A926E3 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		BB32E3F923F2BEDB00A926E3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BB32E3FB23F4006500A926E3 /* MyAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewModel.swift; sourceTree = "<group>"; };
 		BB50E313237D638E008843EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB50E314237D638E008843EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BB50E318237D63AB008843EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */,
 				BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */,
 				BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */,
+				BB32E3FB23F4006500A926E3 /* MyAccountViewModel.swift */,
 			);
 			path = "My Account";
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */,
 				BB50E315237D638E008843EC /* LoginViewController.swift in Sources */,
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
+				BB32E3FC23F4006500A926E3 /* MyAccountViewModel.swift in Sources */,
 				1A40DAE422F0148E0015D95D /* VC1CollectionView.swift in Sources */,
 				BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */,
 				BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */,
