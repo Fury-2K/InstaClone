@@ -51,19 +51,19 @@ struct HeaderView: View {
         TextStackData(num: "13.3K", value: "Followers"),
         TextStackData(num: "341", value: "Following")
     ]
-    let profileImgUrl
-    @Binding var profileImg: UIImage
-    
-    init() {
-        //        guard let viewModel = viewModel,
-        //            let profileImgUrl = profileImgUrl else { return }
-        viewModel.downloadImage(fromUrl: profileImgUrl, didFinishWithSuccess: { (image) in
-            self.profileImg = image
-        }) { (error) in
-            print(error)
-        }
-    }
-    
+//    let profileImgUrl
+//    @Binding var profileImg: UIImage
+//
+//    init() {
+//        //        guard let viewModel = viewModel,
+//        //            let profileImgUrl = profileImgUrl else { return }
+//        viewModel.downloadImage(fromUrl: profileImgUrl, didFinishWithSuccess: { (image) in
+//            self.profileImg = image
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
     
     var body: some View {
         ZStack {
@@ -213,17 +213,17 @@ struct FeedHeader: UIViewRepresentable {
 @available(iOS 13.0, *)
 struct UpperAccountUIView: View {
     
-    let viewModel: MyAccountViewModel = MyAccountViewModel()
-    
-    var user: User
-    
-    init() {
-        user = viewModel.getCurrentUserData()
-    }
-    
+//    let viewModel: MyAccountViewModel = MyAccountViewModel()
+//
+//    var user: User
+//
+//    init() {
+//        user = viewModel.getCurrentUserData()
+//    }
+//
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HeaderView(viewModel, user.profileImgUrl)
+//            HeaderView(viewModel, user.profileImgUrl)
             BodyView()
             ButtonView()
             StoryScrollView()

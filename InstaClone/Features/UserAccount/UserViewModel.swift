@@ -37,7 +37,9 @@ class UserViewModel {
                             return
                         }
                         
-                        let user = User(username: username, name: username, profilePic: profileImgUrl, uid: uid)
+                        let user = User(username: username, name: username, profileImgUrl: profileImgUrl, uid: uid)
+                        
+                        // Change to CoreData
                         UserDefaults.standard.set(user, forKey: "currentUser")
                         
                         let values: [String: Any] = ["email": email, "username": username, "profileImage": profileImgUrl]
@@ -64,14 +66,19 @@ class UserViewModel {
                 if error != nil {
                     didFinishWithError(error ?? "error404")
                 }
-                guard let username = snapshot.value(forUndefinedKey: "username") as? String,
-                let profileImgUrl = snapshot.value(forUndefinedKey: "profileImg") as? String else {
-                    didFinishWithError(error ?? "error404")
-                    return
+                
+                guard let snapshot = snapshot.value as? [String: Any],
+                    let username = snapshot["username"] as? String,
+                    let profileImgUrl = snapshot["profileImage"] as? String else {
+                        didFinishWithError(error ?? "error404")
+                        return
                 }
                 
-                let user = User(username: username, name: username, profilePic: profileImgUrl, uid: uid)
+                let user = User(username: username, name: username, profileImgUrl: profileImgUrl, uid: uid)
+                
+                // Change to CoreData
                 UserDefaults.standard.set(user, forKey: "currentUser")
+                didFinishWithSuccess(email, username)
             }
         }
     }

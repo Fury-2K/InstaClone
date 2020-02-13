@@ -24,7 +24,7 @@ class ChatViewCell: UICollectionViewCell {
     func setData(_ cellData: UserData) {
         nameLabel.text = cellData.user.name
         chatPreviewLabel.text = cellData.messages.last?.text
-        dp.downloaded(from: cellData.user.profileImgUrl)
+        dp.downloadImage(fromUrl: cellData.user.profileImgUrl)
         cameraImageView.image = UIImage(named: "camera-7")
     }
     

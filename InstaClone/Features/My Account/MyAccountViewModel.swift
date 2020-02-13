@@ -14,18 +14,11 @@ class MyAccountViewModel {
     func getCurrentUserData() -> User {
         guard let user = UserDefaults.standard.value(forKey: "currentUser") as? User
             else { return User() }
-        return User(username: user.username, name: user.username, profilePic: user.profileImgUrl, uid: user.uid)
+        return User(username: user.username, name: user.username, profileImgUrl: user.profileImgUrl, uid: user.uid)
     }
     
     func downloadImage(fromUrl url: String, didFinishWithSuccess: @escaping ((UIImage) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
-        guard let user = UserDefaults.standard.value(forKey: "currentUser") as? User
-        else {
-            // Return placeholder image
-            didFinishWithSuccess(UIImage())
-            return
-        }
-        
-        let storageRef = Storage.storage().reference(forURL: user.profileImgUrl)
+        let storageRef = Storage.storage().reference(forURL: url)
         
         storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             if let error = error {
