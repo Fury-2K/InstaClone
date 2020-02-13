@@ -36,11 +36,8 @@ class UserViewModel {
                             didFinishWithError("Invalid url")
                             return
                         }
-                        
-                        let user = User(username: username, name: username, profileImgUrl: profileImgUrl, uid: uid)
-                        
-                        // Change to CoreData
-                        UserDefaults.standard.set(user, forKey: "currentUser")
+                        UserDefaults.standard.set(uid, forKey: "currentUserUid")
+                        UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid)
                         
                         let values: [String: Any] = ["email": email, "username": username, "profileImage": profileImgUrl]
                         Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
@@ -73,11 +70,9 @@ class UserViewModel {
                         didFinishWithError(error ?? "error404")
                         return
                 }
+                UserDefaults.standard.set(uid, forKey: "currentUserUid")
+                UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid)
                 
-                let user = User(username: username, name: username, profileImgUrl: profileImgUrl, uid: uid)
-                
-                // Change to CoreData
-                UserDefaults.standard.set(user, forKey: "currentUser")
                 didFinishWithSuccess(email, username)
             }
         }

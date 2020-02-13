@@ -48,8 +48,8 @@ class APIClient {
                     let profileImg = user["profileImage"] as? String
                     else { return nil }
                 let uid = element.key
-                guard let currentUser = UserDefaults.standard.value(forKey: "currentUser")as? User else { return nil }
-                if uid == currentUser.uid { return nil }
+                guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String else { return nil }
+                if uid == currentUserUid { return nil }
                 return User(username: username, name: email, profileImgUrl: profileImg, uid: uid)
             }
             didFinishWithSuccess(allUsers)
@@ -104,8 +104,8 @@ class APIClient {
     static func sendMessage(_ message: String, to user: User) {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
-        guard let currentUser = UserDefaults.standard.value(forKey: "currentUser")as? User else { return }
-        let fromId = currentUser.uid
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String else { return }
+        let fromId = currentUserUid
         let toId =  user.uid
         let timeStamp: Int = Int(NSDate().timeIntervalSince1970)
         let values: [String: Any] = [

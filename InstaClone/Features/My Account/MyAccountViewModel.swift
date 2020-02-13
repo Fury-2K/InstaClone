@@ -11,6 +11,8 @@ import FirebaseStorage
 
 class MyAccountViewModel {
     
+    
+    // FIXME: - Change this to use coreData
     func getCurrentUserData() -> User {
         guard let user = UserDefaults.standard.value(forKey: "currentUser") as? User
             else { return User() }

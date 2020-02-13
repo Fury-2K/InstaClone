@@ -11,15 +11,16 @@ import UIKit
 
 extension ChatLogViewController: UIGestureRecognizerDelegate {
     
-    func setupNavigationBar(_ username: String?, _ name: String?) {
+    func setupNavigationBar(_ username: String?, _ name: String?, _ imageUrl: String?) {
         guard let username = username,
-            let name = name else { return }
-        setupLeftNavBarItems(username, name)
+            let name = name,
+            let imageUrl = imageUrl else { return }
+        setupLeftNavBarItems(username, name, imageUrl)
         setupRightNavBarItems()
         setupRemainingnavBarItems()
     }
     
-    private func setupLeftNavBarItems(_ username: String, _ name: String) {
+    private func setupLeftNavBarItems(_ username: String, _ name: String, _ imageUrl: String) {
         let leftBtn = UIButton(type: .system)
         leftBtn.setImage(UIImage(named: "connect-arrow-left-7"), for: .normal)
         
@@ -73,7 +74,7 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 16
-                
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stackView)
     }
     
