@@ -60,6 +60,10 @@
 		BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */; };
 		BB6A2E4A2371737300D3F39C /* FillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */; };
 		BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */; };
+		BB96417A23F54B94003509E7 /* InstaClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB96417823F54B94003509E7 /* InstaClone.xcdatamodeld */; };
+		BB9641BC23F54E29003509E7 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641BB23F54E29003509E7 /* PersistenceService.swift */; };
+		BB9641C723F552F4003509E7 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641C523F552F4003509E7 /* UserData+CoreDataClass.swift */; };
+		BB9641C823F552F4003509E7 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641C623F552F4003509E7 /* UserData+CoreDataProperties.swift */; };
 		BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13C323966B1E0096A7B3 /* UIImageView.swift */; };
 		BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */; };
 		BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */; };
@@ -70,7 +74,7 @@
 		BBCE13DC239916D60096A7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13DB239916D60096A7B3 /* User.swift */; };
 		BBCE13DF239921920096A7B3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13DE239921920096A7B3 /* ChatViewModel.swift */; };
 		BBCE13E1239A78850096A7B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E0239A78850096A7B3 /* Message.swift */; };
-		BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E4239E916B0096A7B3 /* UserData.swift */; };
+		BBCE13E5239E916B0096A7B3 /* UserDataTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E4239E916B0096A7B3 /* UserDataTemp.swift */; };
 		BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */; };
 		BBCE13E9239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */; };
 		BBCE13EB239FC97F0096A7B3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13EA239FC97F0096A7B3 /* String.swift */; };
@@ -141,6 +145,10 @@
 		BB6A2E45237163AB00D3F39C /* DetailWebViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWebViewCell.xib; sourceTree = "<group>"; };
 		BB6A2E482371737300D3F39C /* FillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillerTableViewCell.swift; sourceTree = "<group>"; };
 		BB6A2E492371737300D3F39C /* FillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillerTableViewCell.xib; sourceTree = "<group>"; };
+		BB96417923F54B94003509E7 /* InstaClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaClone.xcdatamodel; sourceTree = "<group>"; };
+		BB9641BB23F54E29003509E7 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		BB9641C523F552F4003509E7 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB9641C623F552F4003509E7 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BBCE13C323966B1E0096A7B3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLogViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+CustomNavBar.swift"; sourceTree = "<group>"; };
@@ -151,7 +159,7 @@
 		BBCE13DB239916D60096A7B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BBCE13DE239921920096A7B3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		BBCE13E0239A78850096A7B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		BBCE13E4239E916B0096A7B3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		BBCE13E4239E916B0096A7B3 /* UserDataTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataTemp.swift; sourceTree = "<group>"; };
 		BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogCollectionViewCell.swift; sourceTree = "<group>"; };
 		BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBCE13EA239FC97F0096A7B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 				1A4560C622E56EB200AB49A0 /* Info.plist */,
 				1A4560D022E5703800AB49A0 /* Features */,
 				BBCE13C523966B290096A7B3 /* Extensions */,
+				BB96417B23F54B9B003509E7 /* CoreData */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -346,6 +355,17 @@
 			path = UserAccount;
 			sourceTree = "<group>";
 		};
+		BB96417B23F54B9B003509E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BB9641C523F552F4003509E7 /* UserData+CoreDataClass.swift */,
+				BB9641C623F552F4003509E7 /* UserData+CoreDataProperties.swift */,
+				BB96417823F54B94003509E7 /* InstaClone.xcdatamodeld */,
+				BB9641BB23F54E29003509E7 /* PersistenceService.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		BBCE13C523966B290096A7B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,7 +416,7 @@
 				BBCE13D52397CE720096A7B3 /* ChatLogSendTextView.xib */,
 				BBCE13D72397D0B50096A7B3 /* ChatLogSendTextView.swift */,
 				BBCE13E0239A78850096A7B3 /* Message.swift */,
-				BBCE13E4239E916B0096A7B3 /* UserData.swift */,
+				BBCE13E4239E916B0096A7B3 /* UserDataTemp.swift */,
 				BBCE13E6239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift */,
 				BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */,
 			);
@@ -574,7 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCE13E5239E916B0096A7B3 /* UserData.swift in Sources */,
+				BBCE13E5239E916B0096A7B3 /* UserDataTemp.swift in Sources */,
 				1A4560EA22E5B04500AB49A0 /* ChatVC.swift in Sources */,
 				BBCE13EB239FC97F0096A7B3 /* String.swift in Sources */,
 				BBCE13D82397D0B50096A7B3 /* ChatLogSendTextView.swift in Sources */,
@@ -587,6 +607,8 @@
 				BBCE13E1239A78850096A7B3 /* Message.swift in Sources */,
 				BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */,
 				1A40DAE722F0180D0015D95D /* VC1ScrollCell.swift in Sources */,
+				BB9641C823F552F4003509E7 /* UserData+CoreDataProperties.swift in Sources */,
+				BB9641BC23F54E29003509E7 /* PersistenceService.swift in Sources */,
 				1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */,
 				BB32E3FA23F2BEDB00A926E3 /* UIViewController.swift in Sources */,
 				1A4560E222E58EF000AB49A0 /* MainViewController.swift in Sources */,
@@ -601,6 +623,7 @@
 				1A4560F322E5C48400AB49A0 /* APIClient.swift in Sources */,
 				1A3E425922E86F2A00D9829D /* FeedHeaderView.swift in Sources */,
 				1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */,
+				BB9641C723F552F4003509E7 /* UserData+CoreDataClass.swift in Sources */,
 				BB50E315237D638E008843EC /* LoginViewController.swift in Sources */,
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
 				BB32E3FC23F4006500A926E3 /* MyAccountViewModel.swift in Sources */,
@@ -617,6 +640,7 @@
 				BB32E3F823F2AD3500A926E3 /* LoaderView.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
+				BB96417A23F54B94003509E7 /* InstaClone.xcdatamodeld in Sources */,
 				BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */,
 				BBCE13DC239916D60096A7B3 /* User.swift in Sources */,
 				1A4560EF22E5C2CB00AB49A0 /* FeedViewModel.swift in Sources */,
@@ -803,6 +827,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB96417823F54B94003509E7 /* InstaClone.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB96417923F54B94003509E7 /* InstaClone.xcdatamodel */,
+			);
+			currentVersion = BB96417923F54B94003509E7 /* InstaClone.xcdatamodel */;
+			path = InstaClone.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1A4560AF22E56E8500AB49A0 /* Project object */;
 }

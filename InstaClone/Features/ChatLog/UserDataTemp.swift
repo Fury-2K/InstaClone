@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserData {
+class UserDataTemp {
     var user: User
     var messages: [Message]
     
