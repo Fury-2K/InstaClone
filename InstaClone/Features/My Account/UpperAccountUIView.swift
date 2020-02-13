@@ -8,6 +8,7 @@
 import SwiftUI
 
 // MARK: - Constants
+
 struct TextStackData {
     let num: String
     let value: String
@@ -25,6 +26,7 @@ struct StoryData {
 
 
 // MARK: - Helper Views
+
 @available(iOS 13.0, *)
 struct TextStack: View {
     let TextStackData: TextStackData
@@ -41,12 +43,27 @@ struct TextStack: View {
 
 @available(iOS 13.0, *)
 struct HeaderView: View {
-
+    
+    let viewModel: MyAccountViewModel
+    
     let cellData: [TextStackData] = [
         TextStackData(num: "10", value: "Posts"),
         TextStackData(num: "13.3K", value: "Followers"),
         TextStackData(num: "341", value: "Following")
     ]
+//    let profileImgUrl
+//    @Binding var profileImg: UIImage
+//
+//    init() {
+//        //        guard let viewModel = viewModel,
+//        //            let profileImgUrl = profileImgUrl else { return }
+//        viewModel.downloadImage(fromUrl: profileImgUrl, didFinishWithSuccess: { (image) in
+//            self.profileImg = image
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
     
     var body: some View {
         ZStack {
@@ -102,7 +119,7 @@ struct CustomButton: View {
         .frame(width: 110, height: 30)
         .border(Color.gray, width: 1)
         .cornerRadius(5)
-    .buttonStyle(DefaultButtonStyle())
+        .buttonStyle(DefaultButtonStyle())
     }
 }
 
@@ -153,6 +170,7 @@ struct StoryScrollView: View {
 
 
 // MARK: - Embedded a collectionView in SwiftUI View
+
 @available(iOS 13.0, *)
 struct FeedHeader: UIViewRepresentable {
     
@@ -172,8 +190,8 @@ struct FeedHeader: UIViewRepresentable {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: 25, left: 0, bottom: 25, right: 0)
         flowLayout.scrollDirection = .horizontal
-
-
+        
+        
         //And create the UICollection View
         let collectionView = FeedHeaderCollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 50), collectionViewLayout: flowLayout)
         
@@ -191,11 +209,21 @@ struct FeedHeader: UIViewRepresentable {
 
 
 // MARK: - Main View
+
 @available(iOS 13.0, *)
 struct UpperAccountUIView: View {
+    
+//    let viewModel: MyAccountViewModel = MyAccountViewModel()
+//
+//    var user: User
+//
+//    init() {
+//        user = viewModel.getCurrentUserData()
+//    }
+//
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HeaderView()
+//            HeaderView(viewModel, user.profileImgUrl)
             BodyView()
             ButtonView()
             StoryScrollView()

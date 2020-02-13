@@ -12,13 +12,13 @@ import UIKit
 class User: NSObject {
     var username: String
     var name: String
-    var profilePic: String?
+    var profileImgUrl: String
     var uid: String
     
-    init(username: String, name: String, profilePic: String? = nil, uid: String) {
+    init(username: String = "", name: String = "", profileImgUrl: String = "", uid: String = "") {
         self.username = username
         self.name = name
-        self.profilePic = profilePic
+        self.profileImgUrl = profileImgUrl
         self.uid = uid
     }
 }

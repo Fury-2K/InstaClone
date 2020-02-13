@@ -13,15 +13,15 @@ class ChatViewModel {
     var messages: [Message] = []
     var users: [User] = []
     
-    func getUserMessageDictionary(didFinishWithSuccess: @escaping (([UserData]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+    func getUserMessageDictionary(didFinishWithSuccess: @escaping (([UserDataTemp]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         let queue = DispatchQueue(label: "background", qos: .background)
         queue.async {
             self.getAllMessages(didFinishWithSuccess: { (messages) in
                 self.messages = messages
-                var userData: [UserData] = []
+                var userData: [UserDataTemp] = []
                 for user in self.users {
                     let userMessages = self.messages.filter { $0.toId == user.uid || $0.fromId == user.uid }
-                    userData.append(UserData(user: user, messages: userMessages))
+                    userData.append(UserDataTemp(user: user, messages: userMessages))
                 }
                 didFinishWithSuccess(userData)
             }) { (errorCode, error) in

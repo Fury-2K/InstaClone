@@ -17,7 +17,7 @@ class ChatVC: UIViewController {
     let viewModel: ChatViewModel = ChatViewModel()
     var refreshControl: UIRefreshControl!
     
-    var userData: [UserData] = [] {
+    var userData: [UserDataTemp] = [] {
         didSet {
             collectionView.userData = userData
         }
@@ -59,7 +59,7 @@ class ChatVC: UIViewController {
     @objc func refreshPage() {
         refreshControl.beginRefreshing()
         viewModel.getUsers(didFinishWithSuccess: { (response) in
-            self.userData = response.compactMap { UserData(user: $0) }
+            self.userData = response.compactMap { UserDataTemp(user: $0) }
             self.refreshControl.endRefreshing()
         }) { (errorCode, error) in
             print(errorCode, error)

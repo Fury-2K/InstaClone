@@ -16,6 +16,10 @@ struct AccountUIView: View {
         SegmentedPageData(image: "filing-7", title: "TaggedFeed", view: "TagFeedGridView")
     ]
     
+    let viewModel: MyAccountViewModel = MyAccountViewModel()
+    
+    var user: User = User()
+    
     init() {
         // To remove only extra separators below the list:
         UITableView.appearance().tableFooterView = UIView()
@@ -26,6 +30,8 @@ struct AccountUIView: View {
         // Hit and trial
 //        UITableView.appearance().allowsSelection = false
 //        UITableViewCell.appearance().selectionStyle = .none
+        
+        user = viewModel.getCurrentUserData()
     }
     
     // TODO - Add tap gesture for the 3 buttons in ButtonView of UpperAccountUIView

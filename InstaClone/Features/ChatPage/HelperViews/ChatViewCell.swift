@@ -21,11 +21,11 @@ class ChatViewCell: UICollectionViewCell {
     @IBOutlet weak var cameraImageView: UIImageView!
     
     
-    func setData(_ cellData: UserData) {
-        self.nameLabel.text = cellData.user.name
-        self.chatPreviewLabel.text = cellData.messages.last?.text
-        //self.dp.downloaded(from: cellData.feedPics[2])
-        self.cameraImageView.image = UIImage(named: "camera-7")
+    func setData(_ cellData: UserDataTemp) {
+        nameLabel.text = cellData.user.name
+        chatPreviewLabel.text = cellData.messages.last?.text
+        dp.downloadImage(fromUrl: cellData.user.profileImgUrl)
+        cameraImageView.image = UIImage(named: "camera-7")
     }
     
 }

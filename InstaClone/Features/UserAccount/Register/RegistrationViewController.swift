@@ -9,8 +9,7 @@
 import UIKit
 
 protocol UserSigningDelegate: class {
-    func userRegistered(_ username: String, _ email: String)
-    func userLoggedIn(_ email: String, _ password: String)
+    func loginUser(_ email: String, _ password: String)
 }
 
 class RegistrationViewController: UIViewController {
@@ -22,23 +21,28 @@ class RegistrationViewController: UIViewController {
     
     weak var userSigningDelegate: UserSigningDelegate?
     let viewModel: UserViewModel = UserViewModel()
+    var userImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func registerBtnTapped(_ sender: UIButton) {
-        guard let username = userNameTextField.text else { return }
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        createUser(username, email, password)
+        guard let username = userNameTextField.text,
+        let email = emailTextField.text,
+        let password = passwordTextField.text,
+        let userImage = userImage else { return }
+        createUser(username, email, password, userImage)
     }
     
-    func createUser(_ username: String, _ email: String, _ password: String) {
-        viewModel.createUser(username, email, password, didFinishWithSuccess: { username, email in
-            self.userSigningDelegate?.userRegistered(username, email)
+    private func createUser(_ username: String, _ email: String, _ password: String, _ userImage: UIImage?) {
+        showLoadingAnimation()
+        viewModel.createUser(username, email, password, userImage, didFinishWithSuccess: { username, email in
+            self.userSigningDelegate?.loginUser(username, email)
+            self.hideLoadingAnimation()
         }, didFinishWithError: { error in
             print("error: ", error)
+            self.hideLoadingAnimation()
         })
     }
 

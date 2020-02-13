@@ -8,7 +8,8 @@
 
 import Foundation
 import Alamofire
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class APIClient {
     
@@ -43,11 +44,13 @@ class APIClient {
             let allUsers = users.compactMap { element -> User? in
                 guard let user = element.value as? [String : Any],
                     let username = user["username"] as? String,
-                    let email = user["email"] as? String
+                    let email = user["email"] as? String,
+                    let profileImg = user["profileImage"] as? String
                     else { return nil }
                 let uid = element.key
-                if uid == Auth.auth().currentUser!.uid { return nil }
-                return User(username: username, name: email, uid: uid)
+                guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String else { return nil }
+                if uid == currentUserUid { return nil }
+                return User(username: username, name: email, profileImgUrl: profileImg, uid: uid)
             }
             didFinishWithSuccess(allUsers)
         }) { (errorCode, error) in
@@ -101,8 +104,8 @@ class APIClient {
     static func sendMessage(_ message: String, to user: User) {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
-        // Force unwrapped because this method can only be called when user is signedIn
-        let fromId = Auth.auth().currentUser!.uid
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String else { return }
+        let fromId = currentUserUid
         let toId =  user.uid
         let timeStamp: Int = Int(NSDate().timeIntervalSince1970)
         let values: [String: Any] = [

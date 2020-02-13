@@ -23,12 +23,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+        guard let email = emailTextField.text,
+        let password = passwordTextField.text else { return }
+        showLoadingAnimation()
         viewModel.signInUser(email, password, didFinishWithSuccess: { username, email in
-            
-            self.userSigningDelegate?.userLoggedIn(email, password)
+            self.hideLoadingAnimation()
+            self.userSigningDelegate?.loginUser(email, password)
         }, didFinishWithError: { error in
+            self.hideLoadingAnimation()
             print(error)
         })
         

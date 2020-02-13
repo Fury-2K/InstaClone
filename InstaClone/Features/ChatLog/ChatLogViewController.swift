@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 
 class ChatLogViewController: UIViewController {
-
+    
     @IBOutlet weak var chatLogSendTextView: ChatLogSendTextView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -27,21 +27,26 @@ class ChatLogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupNavigationBar(user?.username, user?.name)
-        
+        setData()
         setupView()
         setupCollectionView()
+        chatLogSendTextView.addMessageDelegate = self
+    }
+    
+    private func setData() {
+        guard let user = user else { return }
+//        let currentUser: UserData = UserData.getUser(with: uid)[0]
+//                self.setupNavigationBar(user?.username, user?.name)
+        setupNavigationBar(user.username, user.username, user.profileImgUrl)
+        
         APIClient.fetchMessages(didFinishWithSuccess: { (result) in
-            if result.toId == self.user?.uid || result.fromId == self.user?.uid { self.messages.append(result) }
+            if result.toId == user.uid || result.fromId == user.uid { self.messages.append(result) }
         }) { (errorCode, error) in
             print(errorCode, error)
         }
-        
-        chatLogSendTextView.addMessageDelegate = self
     }
-
-    func setupView() {
+    
+    private func setupView() {
         chatLogSendTextView.layer.borderWidth = 1
         chatLogSendTextView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         chatLogSendTextView.layer.cornerRadius = chatLogSendTextView.frame.height / 2
@@ -69,7 +74,8 @@ extension ChatLogViewController: UICollectionViewDelegate,  UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatLogCollectionViewCell", for: indexPath) as? ChatLogCollectionViewCell ?? ChatLogCollectionViewCell()
-        let isBlue = Auth.auth().currentUser?.uid == messages[indexPath.row].fromId
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return UICollectionViewCell() }
+        let isBlue = currentUserUid == messages[indexPath.row].fromId
         cell.setupCell(messages[indexPath.row], isBlue, collectionView.frame.width - 32)
         return cell
     }
@@ -77,7 +83,6 @@ extension ChatLogViewController: UICollectionViewDelegate,  UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return ChatLogCollectionViewCell.sizeForItem(messages[indexPath.row], width: collectionView.frame.width)
     }
-    
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
