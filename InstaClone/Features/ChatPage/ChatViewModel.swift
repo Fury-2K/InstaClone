@@ -9,13 +9,23 @@
 import Foundation
 
 class ChatViewModel {
-        
+    
     var messages: [Message] = []
     var users: [User] = []
     
+    // MARK: - Method to fetch UserMessageDictionary
+    
     func getUserMessageDictionary(didFinishWithSuccess: @escaping (([UserDataTemp]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        let queue = DispatchQueue(label: "background", qos: .background)
-        queue.async {
+        
+        let getUsers = BlockOperation {
+            self.getUsers(didFinishWithSuccess: { (response) in
+                self.users = response.compactMap { $0 }
+            }) { (errorCode, error) in
+                didFinishWithError(errorCode, error)
+            }
+        }
+        
+        let getMessages = BlockOperation {
             self.getAllMessages(didFinishWithSuccess: { (messages) in
                 self.messages = messages
                 var userData: [UserDataTemp] = []
@@ -28,9 +38,14 @@ class ChatViewModel {
                 didFinishWithError(errorCode, error)
             }
         }
+        
+        getMessages.addDependency(getUsers)
+        let queue = OperationQueue()
+        
+        queue.addOperations([getMessages, getUsers], waitUntilFinished: true)
     }
-    
-    func getUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+
+    private func getUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         APIClient.fetchUsers(didFinishWithSuccess: { (result) in
             self.users = result
             didFinishWithSuccess(result)
@@ -39,17 +54,20 @@ class ChatViewModel {
         }
     }
     
-    func getMessages(didFinishWithSuccess: @escaping ((Message) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        APIClient.fetchMessages(didFinishWithSuccess: { (message) in
-            self.messages.append(message)
+    private func getAllMessages(didFinishWithSuccess: @escaping (([Message]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        APIClient.fetchAllMessages(didFinishWithSuccess: { (messages) in
+            didFinishWithSuccess(messages)
         }) { (errorCode, error) in
             didFinishWithError(errorCode, error)
         }
     }
     
-    func getAllMessages(didFinishWithSuccess: @escaping (([Message]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        APIClient.fetchAllMessages(didFinishWithSuccess: { (messages) in
-            didFinishWithSuccess(messages)
+    
+    // MARK: - Other methods
+    
+    func getMessages(didFinishWithSuccess: @escaping ((Message) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
+        APIClient.fetchMessages(didFinishWithSuccess: { (message) in
+            self.messages.append(message)
         }) { (errorCode, error) in
             didFinishWithError(errorCode, error)
         }

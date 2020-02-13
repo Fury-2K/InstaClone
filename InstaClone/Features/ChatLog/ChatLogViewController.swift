@@ -39,11 +39,11 @@ class ChatLogViewController: UIViewController {
 //                self.setupNavigationBar(user?.username, user?.name)
         setupNavigationBar(user.username, user.username, user.profileImgUrl)
         
-        APIClient.fetchMessages(didFinishWithSuccess: { (result) in
-            if result.toId == user.uid || result.fromId == user.uid { self.messages.append(result) }
-        }) { (errorCode, error) in
-            print(errorCode, error)
-        }
+//        APIClient.fetchMessages(didFinishWithSuccess: { (result) in
+//            if result.toId == user.uid || result.fromId == user.uid { self.messages.append(result) }
+//        }) { (errorCode, error) in
+//            print(errorCode, error)
+//        }
     }
     
     private func setupView() {

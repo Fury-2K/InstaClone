@@ -32,21 +32,8 @@ class ChatVC: UIViewController {
         collectionView.cellTappedListener = self
         collectionView.toggleSettingsDelegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchAllMessages()
-    }
-    
-    func fetchAllMessages() {
-        self.viewModel.getUserMessageDictionary(didFinishWithSuccess: { (userDataValues) in
-            self.userData = userDataValues
-        }) { (errorCode, error) in
-            print(errorCode, error)
-        }
-    }
-    
-    func setupRefreshControl() {
+
+    private func setupRefreshControl() {
         self.refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         if #available(iOS 10.0, *) {
@@ -56,10 +43,10 @@ class ChatVC: UIViewController {
         }
     }
     
-    @objc func refreshPage() {
+    @objc private func refreshPage() {
         refreshControl.beginRefreshing()
-        viewModel.getUsers(didFinishWithSuccess: { (response) in
-            self.userData = response.compactMap { UserDataTemp(user: $0) }
+        self.viewModel.getUserMessageDictionary(didFinishWithSuccess: { (userDataValues) in
+            self.userData = userDataValues
             self.refreshControl.endRefreshing()
         }) { (errorCode, error) in
             print(errorCode, error)
