@@ -49,7 +49,7 @@ class APIClient {
                     else { return nil }
                 let uid = element.key
                 if uid == Auth.auth().currentUser!.uid { return nil }
-                return User(username: username, name: email, profilePic: profileImg, uid: uid)
+                return User(username: username, name: email, profileImgUrl: profileImg, uid: uid)
             }
             didFinishWithSuccess(allUsers)
         }) { (errorCode, error) in

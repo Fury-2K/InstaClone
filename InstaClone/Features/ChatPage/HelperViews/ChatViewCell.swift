@@ -22,10 +22,10 @@ class ChatViewCell: UICollectionViewCell {
     
     
     func setData(_ cellData: UserData) {
-        self.nameLabel.text = cellData.user.name
-        self.chatPreviewLabel.text = cellData.messages.last?.text
-        //self.dp.downloaded(from: cellData.feedPics[2])
-        self.cameraImageView.image = UIImage(named: "camera-7")
+        nameLabel.text = cellData.user.name
+        chatPreviewLabel.text = cellData.messages.last?.text
+        dp.downloaded(from: cellData.user.profileImgUrl)
+        cameraImageView.image = UIImage(named: "camera-7")
     }
     
 }
