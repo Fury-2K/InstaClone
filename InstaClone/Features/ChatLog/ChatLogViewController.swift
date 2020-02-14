@@ -35,15 +35,12 @@ class ChatLogViewController: UIViewController {
     
     private func setData() {
         guard let user = user else { return }
-//        let currentUser: UserData = UserData.getUser(with: uid)[0]
-//                self.setupNavigationBar(user?.username, user?.name)
         setupNavigationBar(user.username, user.username, user.profileImgUrl)
-        
-//        APIClient.fetchMessages(didFinishWithSuccess: { (result) in
-//            if result.toId == user.uid || result.fromId == user.uid { self.messages.append(result) }
-//        }) { (errorCode, error) in
-//            print(errorCode, error)
-//        }
+        viewModel.getMessages(for: user.uid, didFinishWithSuccess: { (result) in
+            self.messages.append((result))
+        }) { (errorCode, errorMsg) in
+            print(errorMsg)
+        }
     }
     
     private func setupView() {
