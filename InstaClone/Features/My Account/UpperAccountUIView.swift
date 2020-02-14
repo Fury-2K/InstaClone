@@ -44,34 +44,44 @@ struct TextStack: View {
 @available(iOS 13.0, *)
 struct HeaderView: View {
     
-    let viewModel: MyAccountViewModel
-    
     let cellData: [TextStackData] = [
         TextStackData(num: "10", value: "Posts"),
         TextStackData(num: "13.3K", value: "Followers"),
         TextStackData(num: "341", value: "Following")
     ]
-//    let profileImgUrl
-//    @Binding var profileImg: UIImage
-//
-//    init() {
-//        //        guard let viewModel = viewModel,
-//        //            let profileImgUrl = profileImgUrl else { return }
-//        viewModel.downloadImage(fromUrl: profileImgUrl, didFinishWithSuccess: { (image) in
-//            self.profileImg = image
-//        }) { (error) in
-//            print(error)
-//        }
-//    }
-//
     
+    let viewModel: MyAccountViewModel = MyAccountViewModel()
+    
+    @State private var profileImg = Image(uiImage: UIImage(named: "circle-user-7")!)
+    
+    var currentUser: User = User()
+    
+    init() {
+        self.currentUser = viewModel.getCurrentUserData()
+    }
+
     var body: some View {
         ZStack {
             HStack {
-                Image("Home")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(50)
+
+                Group {
+                    profileImg
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(50)
+                        .aspectRatio(contentMode: .fill)
+                }.onAppear{
+                    self.viewModel.downloadImage(fromUrl: self.currentUser.profileImgUrl, didFinishWithSuccess: { (image) in
+                        self.profileImg = Image(uiImage: image)
+                    }) { (error) in
+                        print(error)
+                    }
+                }
+//                Image(uiImage: profileImg)
+//                    .resizable()
+//                    .frame(width: 100, height: 100)
+//                    .cornerRadius(50)
+//                    .aspectRatio(contentMode: .fill)
                 Spacer()
                 TextStack(TextStackData: cellData[0])
                 Spacer()
@@ -92,14 +102,17 @@ struct HeaderView: View {
 
 @available(iOS 13.0, *)
 struct BodyView: View {
+    
+    var user: User
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Name")
+            Text(user.username)
                 .font(.system(size: 14))
                 .fontWeight(.bold)
-            Text("Account Type")
+            Text("Account Type \(user.name)")
                 .font(.system(size: 14))
-            Text("Discription")
+            Text("Discription \(user.uid)")
                 .font(.system(size: 13))
         }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
@@ -207,24 +220,30 @@ struct FeedHeader: UIViewRepresentable {
 }
 
 
-
 // MARK: - Main View
 
 @available(iOS 13.0, *)
 struct UpperAccountUIView: View {
     
-//    let viewModel: MyAccountViewModel = MyAccountViewModel()
-//
-//    var user: User
-//
-//    init() {
-//        user = viewModel.getCurrentUserData()
-//    }
-//
+    let viewModel: MyAccountViewModel = MyAccountViewModel()
+    
+    var profileImg: UIImage = UIImage(named: "circle-user-7")!
+    var currentUser: User = User()
+    
+    
+    init() {
+        self.currentUser = viewModel.getCurrentUserData()
+        viewModel.downloadImage(fromUrl: self.currentUser.profileImgUrl, didFinishWithSuccess: { (image) in
+//            self.profileImg = image
+        }, didFinishWithError: { (error) in
+            print(error)
+        })
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-//            HeaderView(viewModel, user.profileImgUrl)
-            BodyView()
+            HeaderView()
+            BodyView(user: currentUser)
             ButtonView()
             StoryScrollView()
         }

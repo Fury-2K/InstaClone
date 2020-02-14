@@ -72,7 +72,6 @@ class UserViewModel {
                 }
                 UserDefaults.standard.set(uid, forKey: "currentUserUid")
                 UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid)
-                
                 didFinishWithSuccess(email, username)
             }
         }
