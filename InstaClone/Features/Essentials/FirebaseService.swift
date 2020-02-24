@@ -16,6 +16,9 @@ class FirebaseService {
     
     public static var shared : FirebaseService = FirebaseService()
     
+    
+    // MARK:- Dummy API calls for the FeedView
+    
     func getUserData(didFinishWithSuccess: @escaping ((FeedData) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         let url = "https://randomuser.me/api/"
         Alamofire.request(url)
@@ -41,6 +44,9 @@ class FirebaseService {
                 didFinishWithSuccess(feedData)
         }
     }
+    
+    
+    // MARK:- Fetch data calls
     
     func fetchUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         loadData(fetch: "users", eventType: .value, didFinishWithSuccess: { (users) in
@@ -92,6 +98,12 @@ class FirebaseService {
         }
     }
     
+    /// Private func to fetch data depending on the type
+    /// - Parameters:
+    ///   - child: Data type to be fetched
+    ///   - eventType: EventType
+    ///   - didFinishWithSuccess: Success callback
+    ///   - didFinishWithError: Failure callback
     private func loadData(fetch child: String, eventType: DataEventType, didFinishWithSuccess: @escaping (([String: Any]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         let ref = Database.database().reference().child(child)
         ref.observe(eventType, with: { (snapshot) in
@@ -103,6 +115,9 @@ class FirebaseService {
             didFinishWithError(error.code, error.description)
         }
     }
+    
+    
+    // MARK:- Post data
     
     func sendMessage(_ message: String, to user: User) {
         let ref = Database.database().reference().child("messages")
@@ -188,7 +203,7 @@ class FirebaseService {
     }
     
     
-    // MARK:- My Account Helper Methods
+    // MARK:- My-Account Helper Methods
     
     func getCurrentUserData() -> User {
         guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return User() }
