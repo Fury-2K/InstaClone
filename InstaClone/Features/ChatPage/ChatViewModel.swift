@@ -13,7 +13,7 @@ class ChatViewModel {
     // MARK: - Method to fetch UserMessageDictionary
     
     private func getUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        APIClient.fetchUsers(didFinishWithSuccess: { (result) in
+        FirebaseService.shared.fetchUsers(didFinishWithSuccess: { (result) in
             didFinishWithSuccess(result)
         }) { (errorCode, error) in
             didFinishWithError(errorCode, error)
@@ -21,7 +21,7 @@ class ChatViewModel {
     }
     
     private func getAllMessages(didFinishWithSuccess: @escaping (([Message]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-        APIClient.fetchAllMessages(didFinishWithSuccess: { (messages) in
+        FirebaseService.shared.fetchAllMessages(didFinishWithSuccess: { (messages) in
             didFinishWithSuccess(messages)
         }) { (errorCode, error) in
             didFinishWithError(errorCode, error)
@@ -66,7 +66,7 @@ class ChatViewModel {
         
         guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return }
         
-        APIClient.fetchMessages(didFinishWithSuccess: { (result) in
+        FirebaseService.shared.fetchMessages(didFinishWithSuccess: { (result) in
             if (result.toId == uid || result.fromId == uid) && (result.toId == currentUserUid || result.fromId == currentUserUid) {
                 didFinishWithSuccess(result)
             }
@@ -78,7 +78,7 @@ class ChatViewModel {
     func sendMessage(_ text: String?, to user: User?) {
         guard let message = text,
             let user = user else { return }
-        APIClient.sendMessage(message, to: user)
+        FirebaseService.shared.sendMessage(message, to: user)
     }
     
 }
