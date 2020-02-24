@@ -8,15 +8,19 @@
 
 import Foundation
 import FirebaseStorage
+//import CoreData
 
 class MyAccountViewModel {
     
-    
-    // FIXME: - Change this to use coreData
     func getCurrentUserData() -> User {
-        guard let user = UserDefaults.standard.value(forKey: "currentUser") as? User
-            else { return User() }
-        return User(username: user.username, name: user.username, profileImgUrl: user.profileImgUrl, uid: user.uid)
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return User() }
+        let user = UserData.getUser(with: currentUserUid)[0]
+        guard let username = user.username,
+            let email = user.email,
+            let profileImgUrl = user.profileImgUrl else {
+                return User()
+        }
+        return User(username: username, name: email, profileImgUrl: profileImgUrl, uid: currentUserUid)
     }
     
     func downloadImage(fromUrl url: String, didFinishWithSuccess: @escaping ((UIImage) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
@@ -29,7 +33,7 @@ class MyAccountViewModel {
             guard let data = data,
                 let image = UIImage(data: data)
             else {
-                didFinishWithSuccess(UIImage())
+                didFinishWithSuccess(UIImage(named: "circle-user-7")!)
                 return
             }
             didFinishWithSuccess(image)

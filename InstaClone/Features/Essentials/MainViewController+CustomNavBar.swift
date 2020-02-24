@@ -56,6 +56,7 @@ extension MainViewController {
     
     @objc func logoutUser() {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.removeObject(forKey: "currentUserUid")
         let userAccountViewController = UserAccountViewController()
         userAccountViewController.modalPresentationStyle = .fullScreen
         present(userAccountViewController, animated: true) {

@@ -50,8 +50,8 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         stackView.alignment = .leading
         stackView.spacing = 1
         
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "circle-user-7")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        imageView.image = UIImage(named: "circle-user-7")
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -59,6 +59,8 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: leftBtn), UIBarButtonItem(customView: imageView), UIBarButtonItem(customView: stackView)]
         leftBtn.addTarget(self, action: #selector(leftBtnTapped), for: .touchUpInside)
+        
+        imageView.downloadImage(fromUrl: imageUrl)
     }
     
     private func setupRightNavBarItems() {
