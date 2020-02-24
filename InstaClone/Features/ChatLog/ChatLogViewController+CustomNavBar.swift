@@ -51,6 +51,7 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         stackView.spacing = 1
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        imageView.clipsToBounds = true
         imageView.image = UIImage(named: "circle-user-7")
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
