@@ -7,7 +7,10 @@
 //
 import SwiftUI
 
+// --------------------------
 // MARK: - Constants
+// --------------------------
+
 @available(iOS 13.0, *)
 struct SegmentedPageData {
     let image: String
@@ -15,7 +18,10 @@ struct SegmentedPageData {
     let view: String
 }
 
+// --------------------------
 // MARK: - Helper Views
+// --------------------------
+
 @available(iOS 13.0, *)
 struct CellView: View {
     var body: some View {
@@ -65,8 +71,10 @@ struct TagFeedGridView: View {
     }
 }
 
-
+// --------------------------
 // MARK: - SegmentedView
+// --------------------------
+
 var selectedPageIndex = 0
 
 @available(iOS 13.0, *)
@@ -85,8 +93,10 @@ struct SegmentedPageView: UIViewRepresentable {
     
 }
 
-
+// --------------------------
 // MARK: - Main UIViews
+// --------------------------
+
 //@available(iOS 13.0, *)
 //struct FeedPreviewUIView: View {
 //    var body: some View {

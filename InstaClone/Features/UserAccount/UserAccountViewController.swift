@@ -62,8 +62,9 @@ class UserAccountViewController: UIViewController {
     }
 }
 
-
+// --------------------------
 // MARK: - UserSigningDelegate
+// --------------------------
 
 extension UserAccountViewController: UserSigningDelegate {
     func loginUser(_ email: String, _ password: String) {
@@ -79,8 +80,9 @@ extension UserAccountViewController: UserSigningDelegate {
     }
 }
 
-
+// --------------------------
 // MARK: - UIImagePickerControllerDelegate and UINavigationControllerDelegate
+// --------------------------
 
 extension UserAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

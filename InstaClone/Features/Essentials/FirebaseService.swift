@@ -16,8 +16,9 @@ class FirebaseService {
     
     public static var shared : FirebaseService = FirebaseService()
     
-    
+    // --------------------------
     // MARK:- Dummy API calls for the FeedView
+    // --------------------------
     
     func getUserData(didFinishWithSuccess: @escaping ((FeedData) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         let url = "https://randomuser.me/api/"
@@ -45,8 +46,9 @@ class FirebaseService {
         }
     }
     
-    
+    // --------------------------
     // MARK:- Fetch data calls
+    // --------------------------
     
     func fetchUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         loadData(fetch: "users", eventType: .value, didFinishWithSuccess: { (users) in
@@ -116,8 +118,9 @@ class FirebaseService {
         }
     }
     
-    
+    // --------------------------
     // MARK:- Post data
+    // --------------------------
     
     func sendMessage(_ message: String, to user: User) {
         let ref = Database.database().reference().child("messages")
@@ -135,8 +138,9 @@ class FirebaseService {
         childRef.updateChildValues(values)
     }
     
-    
+    // --------------------------
     // MARK:- Sign-In/ Sign-Up
+    // --------------------------
     
     func createUser(_ username: String, _ email: String, _ password: String, _ profileImg: UIImage?, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -202,8 +206,9 @@ class FirebaseService {
         }
     }
     
-    
+    // --------------------------
     // MARK:- My-Account Helper Methods
+    // --------------------------
     
     func getCurrentUserData() -> User {
         guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return User() }

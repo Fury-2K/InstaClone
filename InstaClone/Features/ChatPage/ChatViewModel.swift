@@ -10,7 +10,9 @@ import Foundation
 
 class ChatViewModel {
     
+    // --------------------------
     // MARK: - Method to fetch UserMessageDictionary
+    // --------------------------
     
     private func getUsers(didFinishWithSuccess: @escaping (([User]) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         FirebaseService.shared.fetchUsers(didFinishWithSuccess: { (result) in
@@ -59,8 +61,9 @@ class ChatViewModel {
         queue.addOperations([getMessages, getUsers], waitUntilFinished: true)
     }
 
-    
+    // --------------------------
     // MARK: - Other methods
+    // --------------------------
     
     func getMessages(for uid: String, didFinishWithSuccess: @escaping ((Message) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
         
