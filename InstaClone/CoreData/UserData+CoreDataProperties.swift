@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension UserData {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<UserData> {

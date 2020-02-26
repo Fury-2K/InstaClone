@@ -69,7 +69,7 @@ struct HeaderView: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                         .cornerRadius(50)
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                 }.onAppear{
                     self.viewModel.downloadImage(fromUrl: self.currentUser.profileImgUrl, didFinishWithSuccess: { (image) in
                         self.profileImg = Image(uiImage: image)

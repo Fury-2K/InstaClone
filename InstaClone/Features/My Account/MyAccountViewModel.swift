@@ -13,8 +13,9 @@ import FirebaseStorage
 class MyAccountViewModel {
     
     func getCurrentUserData() -> User {
-        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return User() }
-        let user = UserData.getUser(with: currentUserUid)[0]
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String,
+            let user = UserData.getUser(with: currentUserUid) else { return User() }
+        
         guard let username = user.username,
             let email = user.email,
             let profileImgUrl = user.profileImgUrl else {
@@ -32,9 +33,9 @@ class MyAccountViewModel {
             }
             guard let data = data,
                 let image = UIImage(data: data)
-            else {
-                didFinishWithSuccess(UIImage(named: "circle-user-7")!)
-                return
+                else {
+                    didFinishWithSuccess(UIImage(named: "circle-user-7")!)
+                    return
             }
             didFinishWithSuccess(image)
         }
