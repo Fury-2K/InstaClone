@@ -49,7 +49,7 @@ extension FeedVC {
     }
     
     @objc func chatBtnTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(ChatVC(), animated: true)
+        tabBarController?.navigationController?.pushViewController(ChatVC(), animated: true)
     }
     
     @objc func logoutUser() {
