@@ -11,7 +11,7 @@ import Foundation
 class FeedViewModel {
     
     func getData(didFinishWithSuccess: @escaping ((FeedData) -> Void), didFinishWithError: @escaping ((Int, String) -> Void)) {
-            APIClient.getUserData(didFinishWithSuccess: { result in
+        FirebaseService.shared.getUserData(didFinishWithSuccess: { result in
                 didFinishWithSuccess(result)
             }, didFinishWithError: { errorCode,error  in
                 didFinishWithError(errorCode, error)
