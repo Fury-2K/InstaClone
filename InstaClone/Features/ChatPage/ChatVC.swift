@@ -26,13 +26,17 @@ class ChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshControl()
-        setupNavigationBar()
         footerCameraIcon.image = UIImage(named: "camera-7")
         refreshPage()
         collectionView.cellTappedListener = self
         collectionView.toggleSettingsDelegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
     private func setupRefreshControl() {
         self.refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)

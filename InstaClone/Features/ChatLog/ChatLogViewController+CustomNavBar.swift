@@ -1,5 +1,5 @@
 //
-//  ChatLogViewController+NavigationBar.swift
+//  ChatLogViewController+CustomNavBar.swift
 //  InstaClone
 //
 //  Created by Manas Aggarwal on 03/12/19.
@@ -52,13 +52,11 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "circle-user-7")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = imageView.frame.height / 2
-        
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
+
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: leftBtn), UIBarButtonItem(customView: imageView), UIBarButtonItem(customView: stackView)]
         leftBtn.addTarget(self, action: #selector(leftBtnTapped), for: .touchUpInside)
         
@@ -83,6 +81,8 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
     }
     
     private func setupRemainingnavBarItems() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
     }

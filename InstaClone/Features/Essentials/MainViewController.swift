@@ -37,7 +37,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         tabBar.barTintColor = .white
     }
 
-    func setupViewControllers() {
+    private func setupViewControllers() {
         viewControllers = [
             getHomePageController(),
             getSearchPageController(),
@@ -49,7 +49,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         selectedViewController = viewControllers?.first ?? getHomePageController()
     }
 
-    func getHomePageController() -> UINavigationController {
+    private func getHomePageController() -> UINavigationController {
         let navController = UINavigationController(rootViewController: FeedVC())
         navController.tabBarItem = UITabBarItem(title: "Feed",
                                                 image: UIImage(named: "earth-america-7")?.withRenderingMode(.alwaysOriginal),
@@ -57,7 +57,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
     
-    func getSearchPageController() -> UIViewController {
+    private func getSearchPageController() -> UIViewController {
         let navController = UINavigationController(rootViewController: VC1())
         navController.tabBarItem = UITabBarItem(title: "Search",
                                                 image: UIImage(named: "search-7")?.withRenderingMode(.alwaysOriginal),
@@ -65,7 +65,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
     
-    func getGalleryPageController() -> UIViewController {
+    private func getGalleryPageController() -> UIViewController {
         let navController = UINavigationController(rootViewController: VC2())
         navController.tabBarItem = UITabBarItem(title: "Gallery",
                                                 image: UIImage(named: "origami-7")?.withRenderingMode(.alwaysOriginal),
@@ -73,7 +73,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
     
-    func getLikePageController() -> UIViewController {
+    private func getLikePageController() -> UIViewController {
         var navController = UINavigationController()
         if #available(iOS 13.0, *) {
             let contentView = DemoSwiftUIView()
@@ -88,11 +88,10 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
     
-    func getAccountPageController() -> UIViewController {
+    private func getAccountPageController() -> UIViewController {
         var navController = UINavigationController()
         if #available(iOS 13.0, *) {
-            let contentView = AccountUIView()
-            let host = UIHostingController(rootView: contentView)
+            let host = MyAccountHostViewController()
             navController = UINavigationController(rootViewController: host)
             navController.navigationBar.isHidden = true
         } else {

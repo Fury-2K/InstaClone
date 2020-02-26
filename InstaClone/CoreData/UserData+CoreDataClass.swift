@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 public class UserData: NSManagedObject {
 
     static func saveUserData(username: String = "", email: String = "", profileImgUrl: String = "", uid: String = "") {
@@ -22,15 +21,15 @@ public class UserData: NSManagedObject {
         PersistenceService.saveContext()
     }
     
-    static func getUser(with uid: String) -> [UserData] {
+    static func getUser(with uid: String) -> UserData? {
         let fetchRequest: NSFetchRequest<UserData> = UserData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
         fetchRequest.fetchLimit = 1
         
         do {
             let user = try PersistenceService.context.fetch(fetchRequest)
-            return user
-        } catch { return [] }
+            return user[0]
+        } catch { return nil }
     }
     
 }

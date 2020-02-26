@@ -39,6 +39,9 @@
 		1A4560F322E5C48400AB49A0 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4560F222E5C48400AB49A0 /* FirebaseService.swift */; };
 		1A45AB0222E9683B00133D0A /* FeedHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB0122E9683B00133D0A /* FeedHeaderCollectionView.swift */; };
 		1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */; };
+		BB1072D924066DC60039DCBB /* MyAccountHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072D824066DC60039DCBB /* MyAccountHostViewController.swift */; };
+		BB1072DB24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072DA24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift */; };
+		BB1072DD240678A00039DCBB /* FeedVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072DC240678A00039DCBB /* FeedVC+CustomNavBar.swift */; };
 		BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */; };
 		BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */; };
 		BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */; };
@@ -124,6 +127,9 @@
 		1ACDFD9522E5D7700087CDF2 /* ChatCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
 		4E37CDD222B7B319A82FB7C4 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		9BA01523D6C466623CEC7BF2 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1072D824066DC60039DCBB /* MyAccountHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountHostViewController.swift; sourceTree = "<group>"; };
+		BB1072DA24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyAccountHostViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
+		BB1072DC240678A00039DCBB /* FeedVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedVC+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperAccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreviewUIView.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 				1A4560EE22E5C2CB00AB49A0 /* FeedViewModel.swift */,
 				1A4560F022E5C32900AB49A0 /* FeedData.swift */,
 				1A45AB0622E9C10800133D0A /* HelperViews */,
+				BB1072DC240678A00039DCBB /* FeedVC+CustomNavBar.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -326,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */,
+				BB1072DA24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift */,
+				BB1072D824066DC60039DCBB /* MyAccountHostViewController.swift */,
 				BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */,
 				BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */,
 				BB32E3FB23F4006500A926E3 /* MyAccountViewModel.swift */,
@@ -611,6 +620,7 @@
 				BB32E3F123F291BF00A926E3 /* SegmentedPageViewController.swift in Sources */,
 				1A3E425522E85A8A00D9829D /* FeedViewCell.swift in Sources */,
 				BBE0D556238D37330097D947 /* ChatLogViewController.swift in Sources */,
+				BB1072DD240678A00039DCBB /* FeedVC+CustomNavBar.swift in Sources */,
 				BB50E31A237D63AB008843EC /* RegistrationViewController.swift in Sources */,
 				BBCE13E1239A78850096A7B3 /* Message.swift in Sources */,
 				BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */,
@@ -648,6 +658,8 @@
 				BB32E3F823F2AD3500A926E3 /* LoaderView.swift in Sources */,
 				1ACDFD9622E5D7700087CDF2 /* ChatCollectionView.swift in Sources */,
 				1A4560D722E5782700AB49A0 /* FeedCollectionView.swift in Sources */,
+				BB1072DB24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift in Sources */,
+				BB1072D924066DC60039DCBB /* MyAccountHostViewController.swift in Sources */,
 				BB96417A23F54B94003509E7 /* InstaClone.xcdatamodeld in Sources */,
 				BBCE13E8239FBFC50096A7B3 /* ChatLogCollectionViewCell.swift in Sources */,
 				BBCE13DC239916D60096A7B3 /* User.swift in Sources */,

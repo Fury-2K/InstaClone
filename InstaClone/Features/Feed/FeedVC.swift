@@ -29,6 +29,11 @@ class FeedVC: UIViewController {
         getPageData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
     func setupRefreshControl() {
         self.refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)

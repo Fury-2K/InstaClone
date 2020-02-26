@@ -30,8 +30,8 @@ class FirebaseService {
                     let results = result[0] as? [String: Any],
                     let gender = results["gender"] as? String,
                     let name = results["name"] as? [String: Any],
-                        let fName = name["first"] as? String,
-                        let lName = name["last"] as? String,
+                    let fName = name["first"] as? String,
+                    let lName = name["last"] as? String,
                     let email = results["email"] as? String,
                     let pictures = results["picture"] as? [String: Any],
                     let url1 = pictures["large"] as? String,
@@ -110,7 +110,7 @@ class FirebaseService {
         let ref = Database.database().reference().child(child)
         ref.observe(eventType, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: Any] {
-               didFinishWithSuccess(dictionary)
+                didFinishWithSuccess(dictionary)
             } else { didFinishWithError(111,"NetworkCall successful but datafetching failed") }
         }) { (error) in
             let error = error as NSError
@@ -134,7 +134,7 @@ class FirebaseService {
             "fromId": fromId,
             "data": message,
             "timeStamp": timeStamp
-            ]
+        ]
         childRef.updateChildValues(values)
     }
     
@@ -211,8 +211,9 @@ class FirebaseService {
     // --------------------------
     
     func getCurrentUserData() -> User {
-        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String else { return User() }
-        let user = UserData.getUser(with: currentUserUid)[0]
+        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid") as? String,
+            let user = UserData.getUser(with: currentUserUid) else { return User() }
+        
         guard let username = user.username,
             let email = user.email,
             let profileImgUrl = user.profileImgUrl else {
@@ -230,9 +231,9 @@ class FirebaseService {
             }
             guard let data = data,
                 let image = UIImage(data: data)
-            else {
-                didFinishWithSuccess(UIImage(named: "circle-user-7")!)
-                return
+                else {
+                    didFinishWithSuccess(UIImage(named: "circle-user-7")!)
+                    return
             }
             didFinishWithSuccess(image)
         }
