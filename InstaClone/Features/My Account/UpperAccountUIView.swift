@@ -7,7 +7,9 @@
 //
 import SwiftUI
 
+// --------------------------
 // MARK: - Constants
+// --------------------------
 
 struct TextStackData {
     let num: String
@@ -24,8 +26,9 @@ struct StoryData {
     let title: String
 }
 
-
+// --------------------------
 // MARK: - Helper Views
+// --------------------------
 
 @available(iOS 13.0, *)
 struct TextStack: View {
@@ -181,8 +184,9 @@ struct StoryScrollView: View {
     }
 }
 
-
+// --------------------------
 // MARK: - Embedded a collectionView in SwiftUI View
+// --------------------------
 
 @available(iOS 13.0, *)
 struct FeedHeader: UIViewRepresentable {
@@ -219,8 +223,9 @@ struct FeedHeader: UIViewRepresentable {
     
 }
 
-
+// --------------------------
 // MARK: - Main View
+// --------------------------
 
 @available(iOS 13.0, *)
 struct UpperAccountUIView: View {
@@ -230,14 +235,8 @@ struct UpperAccountUIView: View {
     var profileImg: UIImage = UIImage(named: "circle-user-7")!
     var currentUser: User = User()
     
-    
     init() {
         self.currentUser = viewModel.getCurrentUserData()
-        viewModel.downloadImage(fromUrl: self.currentUser.profileImgUrl, didFinishWithSuccess: { (image) in
-//            self.profileImg = image
-        }, didFinishWithError: { (error) in
-            print(error)
-        })
     }
     
     var body: some View {

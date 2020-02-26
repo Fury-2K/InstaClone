@@ -54,6 +54,7 @@ extension ChatLogViewController: UIGestureRecognizerDelegate {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "circle-user-7")
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = imageView.frame.height / 2
 
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: leftBtn), UIBarButtonItem(customView: imageView), UIBarButtonItem(customView: stackView)]

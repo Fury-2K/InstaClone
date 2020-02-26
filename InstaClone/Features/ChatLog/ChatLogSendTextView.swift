@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 protocol AddMessageDelegate {
     func handleSend(_ text: String)
