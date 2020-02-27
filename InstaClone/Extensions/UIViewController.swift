@@ -12,15 +12,22 @@ import  UIKit
 extension UIViewController {
     
     func showLoadingAnimation() {
-        DispatchQueue.main.async {
-            self.view.showLoadingAnimation()
-        }
+        let loader = AlertService.shared.createLoaderAlert()
+        present(loader, animated: true, completion: nil)
+        
+//--------Old implementation---------------------
+//        DispatchQueue.main.async {
+//            self.view.showLoadingAnimation()
+//        }
     }
 
     func hideLoadingAnimation() {
-        DispatchQueue.main.async {
-            self.view.hideLoadingAnimation()
-        }
+        dismiss(animated: true, completion: nil)
+        
+//--------Old implementation---------------------
+//        DispatchQueue.main.async {
+//            self.view.hideLoadingAnimation()
+//        }
     }
     
 }

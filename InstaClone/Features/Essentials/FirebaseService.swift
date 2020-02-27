@@ -169,7 +169,7 @@ class FirebaseService {
                         UserDefaults.standard.set(uid, forKey: "currentUserUid")
                         UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid, name: name)
                         
-                        let values: [String: Any] = ["email": email, "username": username, "profileImage": profileImgUrl]
+                        let values: [String: Any] = ["email": email, "name": name, "username": username, "profileImage": profileImgUrl]
                         Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
                             if let error = error {
                                 didFinishWithError(String("Failed to update database values: " + error.localizedDescription))

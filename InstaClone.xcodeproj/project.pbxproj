@@ -42,6 +42,7 @@
 		BB1072D924066DC60039DCBB /* MyAccountHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072D824066DC60039DCBB /* MyAccountHostViewController.swift */; };
 		BB1072DB24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072DA24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift */; };
 		BB1072DD240678A00039DCBB /* FeedVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072DC240678A00039DCBB /* FeedVC+CustomNavBar.swift */; };
+		BB1072E72407AF8C0039DCBB /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1072E62407AF8C0039DCBB /* AlertService.swift */; };
 		BB1D7A7123E81A0100D73D23 /* AccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */; };
 		BB32E3AC23E9791500A926E3 /* UpperAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */; };
 		BB32E3AE23E9793700A926E3 /* FeedPreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */; };
@@ -130,6 +131,7 @@
 		BB1072D824066DC60039DCBB /* MyAccountHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountHostViewController.swift; sourceTree = "<group>"; };
 		BB1072DA24066F850039DCBB /* MyAccountHostViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyAccountHostViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BB1072DC240678A00039DCBB /* FeedVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedVC+CustomNavBar.swift"; sourceTree = "<group>"; };
+		BB1072E62407AF8C0039DCBB /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		BB1D7A7023E81A0100D73D23 /* AccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AB23E9791500A926E3 /* UpperAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperAccountUIView.swift; sourceTree = "<group>"; };
 		BB32E3AD23E9793700A926E3 /* FeedPreviewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreviewUIView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				1A4560EC22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift */,
 				1A4560F222E5C48400AB49A0 /* FirebaseService.swift */,
 				BB32E3F723F2AD3500A926E3 /* LoaderView.swift */,
+				BB1072E62407AF8C0039DCBB /* AlertService.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				1A3E425922E86F2A00D9829D /* FeedHeaderView.swift in Sources */,
 				1A3E425D22E87FB400D9829D /* HeaderCollectionCell.swift in Sources */,
 				BB9641C723F552F4003509E7 /* UserData+CoreDataClass.swift in Sources */,
+				BB1072E72407AF8C0039DCBB /* AlertService.swift in Sources */,
 				BB50E315237D638E008843EC /* LoginViewController.swift in Sources */,
 				1A4560ED22E5C0BC00AB49A0 /* MainViewController+CustomNavBar.swift in Sources */,
 				BB32E3FC23F4006500A926E3 /* MyAccountViewModel.swift in Sources */,

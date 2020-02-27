@@ -53,12 +53,17 @@ extension FeedVC {
     }
     
     @objc func logoutUser() {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.removeObject(forKey: "currentUserUid")
-        let userAccountViewController = UserAccountViewController()
-        userAccountViewController.modalPresentationStyle = .fullScreen
-        present(userAccountViewController, animated: true) {
-            UIApplication.shared.keyWindow?.rootViewController = UserAccountViewController()
-        }
+        let logoutSheet = AlertService.shared.createLogoutSheet(cancelHandler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }, logoutHandler: { _ in
+            UserDefaults.standard.removeObject(forKey: "currentUserUid")
+            let userAccountViewController = UserAccountViewController()
+            userAccountViewController.modalPresentationStyle = .fullScreen
+            self.present(userAccountViewController, animated: true) {
+                UIApplication.shared.keyWindow?.rootViewController = UserAccountViewController()
+            }
+            return nil
+        })
+        tabBarController?.present(logoutSheet, animated: true, completion: nil)
     }
 }
