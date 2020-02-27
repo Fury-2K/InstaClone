@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
+/// Deprecated and replaced by AlertService
 class LoaderView: UIView {
+    
+    // --------------------------
+    // MARK:- Old implemenation (BlurEffectView)
+    // --------------------------
     
     static let TAG: Int = 989
     
@@ -18,10 +23,6 @@ class LoaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // --------------------------
-    // MARK:- Old implemenation (BlurEffectView)
-    // --------------------------
      
      override init(frame: CGRect) {
      let blurEffect = UIBlurEffect(style: .dark)
@@ -53,21 +54,4 @@ class LoaderView: UIView {
      overlayView.center = blurEffectView.contentView.center
      
      }
-    
-    // --------------------------
-    // MARK: - UIAlertController
-    // --------------------------
-    /*
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-        
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
-    }
-    */
 }
