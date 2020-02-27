@@ -14,6 +14,7 @@ protocol UserSigningDelegate: class {
 
 class RegistrationViewController: UIViewController {
     
+    @IBOutlet var nameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -31,13 +32,15 @@ class RegistrationViewController: UIViewController {
         guard let username = userNameTextField.text,
         let email = emailTextField.text,
         let password = passwordTextField.text,
-        let userImage = userImage else { return }
-        createUser(username, email, password, userImage)
+        let userImage = userImage,
+        let name = nameTextField.text
+        else { return }
+        createUser(username, email, password, userImage, name)
     }
     
-    private func createUser(_ username: String, _ email: String, _ password: String, _ userImage: UIImage?) {
+    private func createUser(_ username: String, _ email: String, _ password: String, _ userImage: UIImage?, _ name: String) {
         showLoadingAnimation()
-        viewModel.createUser(username, email, password, userImage, didFinishWithSuccess: { username, email in
+        viewModel.createUser(username, email, password, userImage, name, didFinishWithSuccess: { username, email in
             self.userSigningDelegate?.loginUser(username, email)
             self.hideLoadingAnimation()
         }, didFinishWithError: { error in

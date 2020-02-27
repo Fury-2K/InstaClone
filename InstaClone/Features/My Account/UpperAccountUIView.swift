@@ -110,10 +110,10 @@ struct BodyView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(user.username)
+            Text(user.name)
                 .font(.system(size: 14))
                 .fontWeight(.bold)
-            Text("Account Type \(user.name)")
+            Text("Account Type \(user.email)")
                 .font(.system(size: 14))
             Text("Discription \(user.uid)")
                 .font(.system(size: 13))

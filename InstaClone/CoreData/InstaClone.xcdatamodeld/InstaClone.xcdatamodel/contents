@@ -2,11 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="UserData" representedClassName=".UserData" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="profileImgUrl" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserData" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="UserData" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

@@ -34,7 +34,7 @@ class ChatLogViewController: UIViewController {
     
     private func setData() {
         guard let user = user else { return }
-        setupNavigationBar(user.username, user.username, user.profileImgUrl)
+        setupNavigationBar(user.username, user.name, user.profileImgUrl)
         viewModel.getMessages(for: user.uid, didFinishWithSuccess: { (result) in
             self.messages.append((result))
         }) { (errorCode, errorMsg) in
