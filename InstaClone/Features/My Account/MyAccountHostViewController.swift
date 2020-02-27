@@ -17,11 +17,6 @@ class MyAccountHostViewController: UIHostingController<AccountUIView> {
     init() {
         let contentView = AccountUIView()
         super.init(rootView: contentView)
-        
-        //        guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String,
-        //            let currentUserData = UserData.getUser(with: currentUserUid) else { return }
-        //
-        //        setupNavigationBar(currentUserData.username)
     }
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="InstaClone" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="zvn-Js-eGH" id="K0Y-y4-Zko"/>
+                <outlet property="nameTextField" destination="2KV-nc-IE9" id="0Io-Sw-ESz"/>
                 <outlet property="passwordTextField" destination="rsf-au-5i7" id="0Pe-oq-Db1"/>
                 <outlet property="registerBtn" destination="6GO-yf-c1T" id="mH6-sV-1SH"/>
                 <outlet property="userNameTextField" destination="E77-Gk-Mnq" id="Rer-qb-YRH"/>
@@ -22,8 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E77-Gk-Mnq">
-                    <rect key="frame" x="16" y="349.5" width="382" height="35"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E77-Gk-Mnq">
+                    <rect key="frame" x="16" y="306.5" width="382" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="n0N-nJ-bDH"/>
                     </constraints>
@@ -66,16 +67,27 @@
                         <action selector="registerBtnTapped:" destination="-1" eventType="touchUpInside" id="We9-Jp-dE4"/>
                     </connections>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KV-nc-IE9">
+                    <rect key="frame" x="16" y="349.5" width="382" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="m48-2D-5H4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="z6K-BD-oGR" firstAttribute="top" secondItem="rsf-au-5i7" secondAttribute="bottom" constant="8" id="2Mc-6K-09n"/>
+                <constraint firstItem="2KV-nc-IE9" firstAttribute="top" secondItem="E77-Gk-Mnq" secondAttribute="bottom" constant="8" id="Eg3-rT-Fe8"/>
                 <constraint firstItem="E77-Gk-Mnq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="FHZ-rJ-XSB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2KV-nc-IE9" secondAttribute="trailing" constant="16" id="FmM-VX-oOe"/>
                 <constraint firstItem="zvn-Js-eGH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LDZ-Ki-JrP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rsf-au-5i7" secondAttribute="trailing" constant="16" id="MHA-Zq-oRT"/>
                 <constraint firstItem="z6K-BD-oGR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="PTK-R1-U7N"/>
+                <constraint firstItem="2KV-nc-IE9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="YO8-oO-5EH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z6K-BD-oGR" secondAttribute="trailing" constant="16" id="ahD-97-1uT"/>
-                <constraint firstItem="zvn-Js-eGH" firstAttribute="top" secondItem="E77-Gk-Mnq" secondAttribute="bottom" constant="8" id="cvs-UU-i92"/>
+                <constraint firstItem="zvn-Js-eGH" firstAttribute="top" secondItem="2KV-nc-IE9" secondAttribute="bottom" constant="8" id="cvs-UU-i92"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6GO-yf-c1T" secondAttribute="trailing" constant="16" id="fJ6-Fn-Awk"/>
                 <constraint firstItem="rsf-au-5i7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="mWk-kD-rnU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E77-Gk-Mnq" secondAttribute="trailing" constant="16" id="p8M-q1-lFe"/>

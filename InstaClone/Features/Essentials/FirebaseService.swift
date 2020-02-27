@@ -56,12 +56,13 @@ class FirebaseService {
                 guard let user = element.value as? [String : Any],
                     let username = user["username"] as? String,
                     let email = user["email"] as? String,
-                    let profileImg = user["profileImage"] as? String
+                    let profileImg = user["profileImage"] as? String,
+                    let name = user["name"] as? String
                     else { return nil }
                 let uid = element.key
                 guard let currentUserUid = UserDefaults.standard.value(forKey: "currentUserUid")as? String else { return nil }
                 if uid == currentUserUid { return nil }
-                return User(username: username, name: email, profileImgUrl: profileImg, uid: uid)
+                return User(username: username, name: name, profileImgUrl: profileImg, uid: uid, email: email)
             }
             didFinishWithSuccess(allUsers)
         }) { (errorCode, error) in
@@ -142,7 +143,7 @@ class FirebaseService {
     // MARK:- Sign-In/ Sign-Up
     // --------------------------
     
-    func createUser(_ username: String, _ email: String, _ password: String, _ profileImg: UIImage?, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
+    func createUser(_ username: String, _ email: String, _ password: String, _ profileImg: UIImage?, _ name: String, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 didFinishWithError(String("Failed to sign User: " + error.localizedDescription))
@@ -166,7 +167,7 @@ class FirebaseService {
                             return
                         }
                         UserDefaults.standard.set(uid, forKey: "currentUserUid")
-                        UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid)
+                        UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid, name: name)
                         
                         let values: [String: Any] = ["email": email, "username": username, "profileImage": profileImgUrl]
                         Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
@@ -195,12 +196,14 @@ class FirebaseService {
                 
                 guard let snapshot = snapshot.value as? [String: Any],
                     let username = snapshot["username"] as? String,
-                    let profileImgUrl = snapshot["profileImage"] as? String else {
+                    let profileImgUrl = snapshot["profileImage"] as? String,
+                    let name = snapshot["name"] as? String
+                    else {
                         didFinishWithError(error ?? "error404")
                         return
                 }
                 UserDefaults.standard.set(uid, forKey: "currentUserUid")
-                UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid)
+                UserData.saveUserData(username: username, email: email, profileImgUrl: profileImgUrl, uid: uid, name: name)
                 didFinishWithSuccess(email, username)
             }
         }
@@ -216,10 +219,12 @@ class FirebaseService {
         
         guard let username = user.username,
             let email = user.email,
-            let profileImgUrl = user.profileImgUrl else {
+            let profileImgUrl = user.profileImgUrl,
+            let name = user.name
+            else {
                 return User()
         }
-        return User(username: username, name: email, profileImgUrl: profileImgUrl, uid: currentUserUid)
+        return User(username: username, name: name, profileImgUrl: profileImgUrl, uid: currentUserUid, email: email)
     }
     
     func downloadImage(fromUrl url: String, didFinishWithSuccess: @escaping ((UIImage) -> Void), didFinishWithError: @escaping ((String) -> Void)) {

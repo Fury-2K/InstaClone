@@ -14,11 +14,13 @@ class User: NSObject {
     var name: String
     var profileImgUrl: String
     var uid: String
+    var email: String
     
-    init(username: String = "", name: String = "", profileImgUrl: String = "", uid: String = "") {
+    init(username: String = "", name: String = "", profileImgUrl: String = "", uid: String = "", email: String = "") {
         self.username = username
         self.name = name
         self.profileImgUrl = profileImgUrl
         self.uid = uid
+        self.email = email
     }
 }
