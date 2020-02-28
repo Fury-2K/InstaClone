@@ -11,19 +11,19 @@ import UIKit
 
 class UserViewModel {
     
-    func createUser(_ username: String, _ email: String, _ password: String, _ profileImg: UIImage?, _ name: String, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
+    func createUser(_ username: String, _ email: String, _ password: String, _ profileImg: UIImage?, _ name: String, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String, String) -> Void)) {
         FirebaseService.shared.createUser(username, email, password, profileImg, name, didFinishWithSuccess: { (username, email) in
             didFinishWithSuccess(username, email)
-        }) { (error) in
-            didFinishWithError(error)
+        }) { (error, discription) in
+            didFinishWithError(error, discription)
         }
     }
     
-    func signInUser(_ email: String, _ password: String, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
+    func signInUser(_ email: String, _ password: String, didFinishWithSuccess: @escaping ((String, String) -> Void), didFinishWithError: @escaping ((String, String) -> Void)) {
         FirebaseService.shared.signInUser(email, password, didFinishWithSuccess: { (username, email) in
             didFinishWithSuccess(username, email)
-        }) { (error) in
-            didFinishWithError(error)
+        }) { (error, discription) in
+            didFinishWithError(error, discription)
         }
     }
 }

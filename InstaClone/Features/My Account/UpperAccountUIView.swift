@@ -76,7 +76,7 @@ struct HeaderView: View {
                 }.onAppear{
                     self.viewModel.downloadImage(fromUrl: self.currentUser.profileImgUrl, didFinishWithSuccess: { (image) in
                         self.profileImg = Image(uiImage: image)
-                    }) { (error) in
+                    }) { (error, discription) in
                         print(error)
                     }
                 }

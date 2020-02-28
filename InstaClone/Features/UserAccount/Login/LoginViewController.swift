@@ -29,9 +29,14 @@ class LoginViewController: UIViewController {
         viewModel.signInUser(email, password, didFinishWithSuccess: { username, email in
             self.hideLoadingAnimation()
             self.userSigningDelegate?.loginUser(email, password)
-        }, didFinishWithError: { error in
+        }, didFinishWithError: { (error, discription) in
             self.hideLoadingAnimation()
-            print(error)
+            let alert = AlertService.shared.createErrorAlert(error, discription, retryHandler: {_ in
+                self.loginTapped(sender)
+            }, cancelHandler: {_ in
+                self.dismiss(animated: true, completion: nil)
+            })
+            self.present(alert, animated: true, completion: nil)
         })
         
     }

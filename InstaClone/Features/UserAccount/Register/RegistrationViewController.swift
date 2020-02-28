@@ -43,7 +43,7 @@ class RegistrationViewController: UIViewController {
         viewModel.createUser(username, email, password, userImage, name, didFinishWithSuccess: { username, email in
             self.userSigningDelegate?.loginUser(username, email)
             self.hideLoadingAnimation()
-        }, didFinishWithError: { error in
+        }, didFinishWithError: { (error, discription) in
             print("error: ", error)
             self.hideLoadingAnimation()
         })

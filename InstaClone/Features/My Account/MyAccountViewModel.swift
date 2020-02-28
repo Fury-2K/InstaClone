@@ -15,11 +15,11 @@ class MyAccountViewModel {
         return FirebaseService.shared.getCurrentUserData()
     }
     
-    func downloadImage(fromUrl url: String, didFinishWithSuccess: @escaping ((UIImage) -> Void), didFinishWithError: @escaping ((String) -> Void)) {
+    func downloadImage(fromUrl url: String, didFinishWithSuccess: @escaping ((UIImage) -> Void), didFinishWithError: @escaping ((String, String) -> Void)) {
         FirebaseService.shared.downloadImage(fromUrl: url, didFinishWithSuccess: { (image) in
             didFinishWithSuccess(image)
-        }) { (error) in
-            didFinishWithError(error)
+        }) { (error, discription) in
+            didFinishWithError(error, discription)
         }
     }
 }
