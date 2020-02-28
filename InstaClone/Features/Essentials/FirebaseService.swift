@@ -147,6 +147,7 @@ class FirebaseService {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 didFinishWithError("Registration Failed", error.localizedDescription)
+                return
             }
             guard let uid = result?.user.uid else { return }
             
@@ -155,11 +156,13 @@ class FirebaseService {
                 storageRef.putData(imageData, metadata: nil) { (metaData, error) in
                     if let error = error {
                         didFinishWithError("Failed to upload imageData", error.localizedDescription)
+                        return
                     }
                     
                     storageRef.downloadURL { (url, error) in
                         if let error = error {
                             didFinishWithError("Download Failed", error.localizedDescription)
+                            return
                         }
                         
                         guard let profileImgUrl = url?.absoluteString else {
@@ -173,6 +176,7 @@ class FirebaseService {
                         Database.database().reference().child("users").child(uid).setValue(values) { (error, ref) in
                             if let error = error {
                                 didFinishWithError("Database updation Failed", error.localizedDescription)
+                                return
                             }
                             didFinishWithSuccess(username, email)
                         }
@@ -186,12 +190,14 @@ class FirebaseService {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 didFinishWithError("Login Failed", error.localizedDescription)
+                return
             }
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
             Database.database().reference().child("users").child(uid).observe(.value) { (snapshot, error) in
                 if error != nil {
                     didFinishWithError("Alert", error ?? "error404")
+                    return
                 }
                 
                 guard let snapshot = snapshot.value as? [String: Any],
@@ -233,6 +239,7 @@ class FirebaseService {
         storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             if let error = error {
                 didFinishWithError("Download Failed", error.localizedDescription)
+                return
             }
             guard let data = data,
                 let image = UIImage(data: data)
