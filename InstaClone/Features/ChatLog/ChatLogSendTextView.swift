@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddMessageDelegate {
+protocol AddMessageDelegate: class {
     func handleSend(_ text: String)
 }
 
@@ -25,7 +25,7 @@ class ChatLogSendTextView: UIView {
     @IBOutlet weak var defaultStackView: UIStackView!
     @IBOutlet weak var sendBtn: UIButton!
     
-    var addMessageDelegate: AddMessageDelegate?
+    weak var addMessageDelegate: AddMessageDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

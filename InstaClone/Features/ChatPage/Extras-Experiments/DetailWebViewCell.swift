@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-protocol ResizeWebCellDelegate {
+protocol ResizeWebCellDelegate: class {
     func expandCell()
     func collapseCell()
 }
@@ -19,7 +19,7 @@ class DetailWebViewCell: UITableViewCell {
 //    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var toggleSwitch: UISwitch!
     
-    var resizeWebCellDelegate: ResizeWebCellDelegate?
+    weak var resizeWebCellDelegate: ResizeWebCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

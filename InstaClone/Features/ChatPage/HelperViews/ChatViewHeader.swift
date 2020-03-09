@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ToggleSettingsDelegate {
+protocol ToggleSettingsDelegate: class {
     func toggleSettings()
 }
 
@@ -17,7 +17,7 @@ class ChatViewHeader: UICollectionReusableView {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var HeaderLabel: UILabel!
     
-    var toggleSettingsDelegate: ToggleSettingsDelegate?
+    weak var toggleSettingsDelegate: ToggleSettingsDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
