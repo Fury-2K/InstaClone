@@ -13,6 +13,7 @@ class ChatLogViewController: UIViewController {
     
     @IBOutlet weak var chatLogSendTextView: ChatLogSendTextView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var chatSendViewBottomConstraint: NSLayoutConstraint!
     
     let viewModel: ChatViewModel = ChatViewModel()
     
@@ -30,6 +31,13 @@ class ChatLogViewController: UIViewController {
         setupView()
         setupCollectionView()
         chatLogSendTextView.addMessageDelegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatLogViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatLogViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setData() {
@@ -49,13 +57,16 @@ class ChatLogViewController: UIViewController {
     }
 }
 
+// --------------------------
+// MARK: - CollectionView
+// --------------------------
+
 extension ChatLogViewController: UICollectionViewDelegate,  UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.isScrollEnabled = true
         collectionView.delegate = self
-        collectionView.setCollectionViewLayout(UICollectionViewFlowLayout(), animated: true)
         collectionView.alwaysBounceVertical = true
         registerClasses()
     }
@@ -86,9 +97,37 @@ extension ChatLogViewController: UICollectionViewDelegate,  UICollectionViewData
     
 }
 
+// --------------------------
+// MARK: - AddMessageDelegate
+// --------------------------
+
 extension ChatLogViewController: AddMessageDelegate {
     func handleSend(_ text: String) {
         viewModel.sendMessage(text, to: user)
         chatLogSendTextView.textField.text = ""
     }
+}
+
+// --------------------------
+// MARK: - Keyboard handler
+// --------------------------
+
+extension ChatLogViewController {
+
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.chatSendViewBottomConstraint.constant = -keyboardSize.height + 8
+            }) { (_) in
+                self.collectionView.scrollToItem(at: IndexPath(item: self.messages.count - 1, section: 0), at: [.centeredVertically, .centeredHorizontally], animated: false)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.chatSendViewBottomConstraint.constant = -8
+        })
+    }
+    
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatLogViewController" customModule="InstaClone" customModuleProvider="target">
             <connections>
                 <outlet property="chatLogSendTextView" destination="eNS-Kz-cWR" id="XIf-fx-s4y"/>
+                <outlet property="chatSendViewBottomConstraint" destination="K9B-6x-ECt" id="4Yf-lQ-3fV"/>
                 <outlet property="collectionView" destination="7Mh-6f-ln7" id="c9X-mY-Jil"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,7 +29,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7Mh-6f-ln7">
-                    <rect key="frame" x="0.0" y="44" width="414" height="757"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="749"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Anb-l0-QkK">
                         <size key="itemSize" width="50" height="50"/>
@@ -46,7 +47,7 @@
                 <constraint firstItem="7Mh-6f-ln7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MBU-IP-vOu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Mh-6f-ln7" secondAttribute="trailing" id="hbB-JB-1z2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eNS-Kz-cWR" secondAttribute="trailing" constant="16" id="nyv-LE-EiM"/>
-                <constraint firstItem="eNS-Kz-cWR" firstAttribute="top" secondItem="7Mh-6f-ln7" secondAttribute="bottom" id="u1c-Mi-8zF"/>
+                <constraint firstItem="eNS-Kz-cWR" firstAttribute="top" secondItem="7Mh-6f-ln7" secondAttribute="bottom" constant="8" id="u1c-Mi-8zF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
