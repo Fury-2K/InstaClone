@@ -12,7 +12,7 @@ import UIKit
 
 class FeedCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var onclickListener: OnClickListener?
+    weak var onclickListener: OnClickListener?
     weak var scrollDelegate: ScrollDelegate?
     
     var data: [FeedData] = [] {

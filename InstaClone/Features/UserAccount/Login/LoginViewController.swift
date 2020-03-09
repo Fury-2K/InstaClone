@@ -26,11 +26,11 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text,
         let password = passwordTextField.text else { return }
         showLoadingAnimation()
-        viewModel.signInUser(email, password, didFinishWithSuccess: { username, email in
-            self.hideLoadingAnimation()
-            self.userSigningDelegate?.loginUser(email, password)
-        }, didFinishWithError: { error in
-            self.hideLoadingAnimation()
+        viewModel.signInUser(email, password, didFinishWithSuccess: { [weak self] username, email in
+            self?.hideLoadingAnimation()
+            self?.userSigningDelegate?.loginUser(email, password)
+        }, didFinishWithError: { [weak self] error in
+            self?.hideLoadingAnimation()
             print(error)
         })
         

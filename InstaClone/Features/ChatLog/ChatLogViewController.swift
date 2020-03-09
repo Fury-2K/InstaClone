@@ -43,8 +43,8 @@ class ChatLogViewController: UIViewController {
     private func setData() {
         guard let user = user else { return }
         setupNavigationBar(user.username, user.name, user.profileImgUrl)
-        viewModel.getMessages(for: user.uid, didFinishWithSuccess: { (result) in
-            self.messages.append((result))
+        viewModel.getMessages(for: user.uid, didFinishWithSuccess: { [weak self] (result) in
+            self?.messages.append((result))
         }) { (errorCode, errorMsg) in
             print(errorMsg)
         }
@@ -116,17 +116,18 @@ extension ChatLogViewController {
 
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.chatSendViewBottomConstraint.constant = -keyboardSize.height + 8
-            }) { (_) in
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.chatSendViewBottomConstraint.constant = -keyboardSize.height + 8
+            }) { [weak self] (_) in
+                guard let self = self else { return }
                 self.collectionView.scrollToItem(at: IndexPath(item: self.messages.count - 1, section: 0), at: [.centeredVertically, .centeredHorizontally], animated: false)
             }
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.chatSendViewBottomConstraint.constant = -8
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.chatSendViewBottomConstraint.constant = -8
         })
     }
     

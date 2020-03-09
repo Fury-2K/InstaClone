@@ -52,8 +52,8 @@ class FeedVC: UIViewController {
         
         for _ in 0..<5 {
             group.enter()
-            self.viewModel.getData(didFinishWithSuccess: { response in
-                self.feedData.append(response)
+            viewModel.getData(didFinishWithSuccess: { [weak self] response in
+                self?.feedData.append(response)
                 group.leave()
             }, didFinishWithError: { errorCode, error in
                 print(error)
@@ -61,7 +61,8 @@ class FeedVC: UIViewController {
             })
         }
         
-        group.notify(queue: .main) {
+        group.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
             self.collectionView.data = self.feedData
             self.refreshControl.endRefreshing()
         }
