@@ -12,6 +12,6 @@ def shared_pods
 end
 
 target 'InstaClone' do
-  use_frameworks!
+  use_modular_headers!
 	shared_pods
 end
