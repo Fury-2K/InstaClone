@@ -67,6 +67,7 @@
 		BB9641BC23F54E29003509E7 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641BB23F54E29003509E7 /* PersistenceService.swift */; };
 		BB9641C723F552F4003509E7 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641C523F552F4003509E7 /* UserData+CoreDataClass.swift */; };
 		BB9641C823F552F4003509E7 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9641C623F552F4003509E7 /* UserData+CoreDataProperties.swift */; };
+		BBCA6728242DE0E60091B86E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBCA6727242DE0E60091B86E /* GoogleService-Info.plist */; };
 		BBCE13C423966B1E0096A7B3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13C323966B1E0096A7B3 /* UIImageView.swift */; };
 		BBCE13CC2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */; };
 		BBCE13CE239687AB0096A7B3 /* ChatVC+CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */; };
@@ -82,7 +83,6 @@
 		BBCE13E9239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */; };
 		BBCE13EB239FC97F0096A7B3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE13EA239FC97F0096A7B3 /* String.swift */; };
 		BBE0D52B238672280097D947 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0D52A238672280097D947 /* UserViewModel.swift */; };
-		BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D52C238678A10097D947 /* GoogleService-Info.plist */; };
 		BBE0D553238816840097D947 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D552238816840097D947 /* Launch Screen.storyboard */; };
 		BBE0D556238D37330097D947 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0D554238D37330097D947 /* ChatLogViewController.swift */; };
 		BBE0D557238D37330097D947 /* ChatLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE0D555238D37330097D947 /* ChatLogViewController.xib */; };
@@ -154,6 +154,7 @@
 		BB9641BB23F54E29003509E7 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		BB9641C523F552F4003509E7 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB9641C623F552F4003509E7 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BBCA6727242DE0E60091B86E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBCE13C323966B1E0096A7B3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		BBCE13CB2396839B0096A7B3 /* ChatLogViewController+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLogViewController+CustomNavBar.swift"; sourceTree = "<group>"; };
 		BBCE13CD239687AB0096A7B3 /* ChatVC+CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+CustomNavBar.swift"; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		BBCE13E7239FBFC50096A7B3 /* ChatLogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBCE13EA239FC97F0096A7B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BBE0D52A238672280097D947 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		BBE0D52C238678A10097D947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "/Users/zop1902/Documents/InstaClone/InstaClone/GoogleService-Info.plist"; sourceTree = "<absolute>"; };
 		BBE0D552238816840097D947 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BBE0D554238D37330097D947 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		BBE0D555238D37330097D947 /* ChatLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogViewController.xib; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 				1A4560BA22E56E8500AB49A0 /* AppDelegate.swift */,
 				BBE0D552238816840097D947 /* Launch Screen.storyboard */,
 				1A4560C122E56EB200AB49A0 /* Assets.xcassets */,
-				BBE0D52C238678A10097D947 /* GoogleService-Info.plist */,
 				1A4560C622E56EB200AB49A0 /* Info.plist */,
+				BBCA6727242DE0E60091B86E /* GoogleService-Info.plist */,
 				1A4560D022E5703800AB49A0 /* Features */,
 				BBCE13C523966B290096A7B3 /* Extensions */,
 				BB96417B23F54B9B003509E7 /* CoreData */,
@@ -530,11 +530,11 @@
 				BB50E316237D638E008843EC /* LoginViewController.xib in Resources */,
 				BBE0D557238D37330097D947 /* ChatLogViewController.xib in Resources */,
 				1A40DAE822F0180D0015D95D /* VC1ScrollCell.xib in Resources */,
-				BBE0D52D238678A10097D947 /* GoogleService-Info.plist in Resources */,
 				1A4560DB22E587AC00AB49A0 /* VC1.xib in Resources */,
 				1A4560EB22E5B04500AB49A0 /* ChatVC.xib in Resources */,
 				BB32E3F223F291BF00A926E3 /* SegmentedPageViewController.xib in Resources */,
 				1A4560C222E56EB200AB49A0 /* Assets.xcassets in Resources */,
+				BBCA6728242DE0E60091B86E /* GoogleService-Info.plist in Resources */,
 				BB6A2E4B2371737300D3F39C /* FillerTableViewCell.xib in Resources */,
 				BB6A2E47237163AB00D3F39C /* DetailWebViewCell.xib in Resources */,
 				BBCE13D62397CE720096A7B3 /* ChatLogSendTextView.xib in Resources */,
