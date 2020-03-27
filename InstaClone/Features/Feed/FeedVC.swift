@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import MaterialComponents
-import MaterialComponents.MaterialBottomSheet_ShapeThemer
 
 class FeedVC: UIViewController {
     
     @IBOutlet weak var collectionView: FeedCollectionView!
     let viewModel: FeedViewModel = FeedViewModel()
     
-    var bottomSheetController: MDCBottomSheetController = MDCBottomSheetController()
     var feedData: [FeedData] = []
     var refreshControl: UIRefreshControl!
     
@@ -55,8 +52,8 @@ class FeedVC: UIViewController {
         
         for _ in 0..<5 {
             group.enter()
-            self.viewModel.getData(didFinishWithSuccess: { response in
-                self.feedData.append(response)
+            viewModel.getData(didFinishWithSuccess: { [weak self] response in
+                self?.feedData.append(response)
                 group.leave()
             }, didFinishWithError: { errorCode, error in
                 print(error)
@@ -64,7 +61,8 @@ class FeedVC: UIViewController {
             })
         }
         
-        group.notify(queue: .main) {
+        group.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
             self.collectionView.data = self.feedData
             self.refreshControl.endRefreshing()
         }
@@ -84,9 +82,7 @@ extension FeedVC: OnClickListener {
     }
 
     func shareBtnTapped(indexPath: IndexPath) {
-        bottomSheetController = MDCBottomSheetController(contentViewController: ChatVC())
-        bottomSheetController.preferredContentSize = CGSize(width: self.preferredContentSize.width, height: 5 * 103 - 20)
-        present(bottomSheetController, animated: true, completion: nil)
+    
     }
 
     func saveBtnTapped(indexPath: IndexPath) {

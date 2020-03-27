@@ -49,12 +49,12 @@ class ChatVC: UIViewController {
     
     @objc private func refreshPage() {
         refreshControl.beginRefreshing()
-        self.viewModel.getUserMessageDictionary(didFinishWithSuccess: { (userDataValues) in
-            self.userData = userDataValues
-            self.refreshControl.endRefreshing()
-        }) { (errorCode, error) in
+        self.viewModel.getUserMessageDictionary(didFinishWithSuccess: { [weak self] (userDataValues) in
+            self?.userData = userDataValues
+            self?.refreshControl.endRefreshing()
+        }) { [weak self] (errorCode, error) in
             print(errorCode, error)
-            self.refreshControl.endRefreshing()
+            self?.refreshControl.endRefreshing()
         }
     }
 }

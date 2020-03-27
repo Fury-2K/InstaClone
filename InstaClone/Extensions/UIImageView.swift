@@ -21,8 +21,8 @@ extension UIImageView {
                 let data = data, error == nil,
                 let image = UIImage(data: data)
                 else { return }
-            DispatchQueue.main.async() {
-                self.image = image
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
             }
             }.resume()
     }
@@ -36,17 +36,17 @@ extension UIImageView {
     func downloadImage(fromUrl url: String) {
         let storageRef = Storage.storage().reference(forURL: url)
         
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] (data, error) -> Void in
             if error != nil {
-                self.image = UIImage(named: "circle-user-7")
+                self?.image = UIImage(named: "circle-user-7")
             }
             guard let data = data,
                 let image = UIImage(data: data)
             else {
-                self.image = UIImage(named: "circle-user-7")
+                self?.image = UIImage(named: "circle-user-7")
                 return
             }
-            self.image = image
+            self?.image = image
         }
     }
     

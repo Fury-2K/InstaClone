@@ -21,8 +21,8 @@ class ChatCollectionView: UICollectionView, UICollectionViewDelegate, UICollecti
         }
     }
     
-    var toggleSettingsDelegate: ToggleSettingsDelegate?
-    var cellTappedListener: CellTappedListener?
+    weak var toggleSettingsDelegate: ToggleSettingsDelegate?
+    weak var cellTappedListener: CellTappedListener?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)

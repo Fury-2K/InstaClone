@@ -17,7 +17,7 @@ protocol OnClickListener: class {
 
 class FeedViewCell: UICollectionViewCell {
     
-    var onClickListener: OnClickListener?
+    weak var onClickListener: OnClickListener?
     var indexPath: IndexPath?
     
     @IBOutlet weak var userProfileImage: UIImageView!

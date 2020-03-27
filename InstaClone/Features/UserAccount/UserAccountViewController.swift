@@ -44,8 +44,8 @@ class UserAccountViewController: UIViewController {
         showLoadingAnimation()
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate = self
-        present(imagePickerViewController, animated: true, completion: {
-            self.hideLoadingAnimation()
+        present(imagePickerViewController, animated: true, completion: { [weak self] in
+            self?.hideLoadingAnimation()
         })
     }
     
