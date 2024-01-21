@@ -27,7 +27,7 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         setupRefreshControl()
         footerCameraIcon.image = UIImage(named: "camera-7")
-        refreshPage()
+//        refreshPage()
         collectionView.cellTappedListener = self
         collectionView.toggleSettingsDelegate = self
     }

@@ -102,5 +102,4 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
                                                 selectedImage: UIImage(named: "circle-user-7")?.withRenderingMode(.alwaysOriginal))
         return navController
     }
-
 }

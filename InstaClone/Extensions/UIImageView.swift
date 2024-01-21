@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import FirebaseStorage
+//import FirebaseStorage
 
 extension UIImageView {
     
@@ -34,20 +34,21 @@ extension UIImageView {
     
     /// Download image from Firebase Storage
     func downloadImage(fromUrl url: String) {
-        let storageRef = Storage.storage().reference(forURL: url)
-        
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] (data, error) ->  Void in
-            if error != nil {
-                self?.image = UIImage(named: "circle-user-7")
-            }
-            guard let data = data,
-                let image = UIImage(data: data)
-            else {
-                self?.image = UIImage(named: "circle-user-7")
-                return
-            }
-            self?.image = image
-        }
+//        let storageRef = Storage.storage().reference(forURL: url)
+//        
+//        storageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] (data, error) ->  Void in
+//            if error != nil {
+//                self?.image = UIImage(named: "circle-user-7")
+//            }
+//            guard let data = data,
+//                let image = UIImage(data: data)
+//            else {
+//                self?.image = UIImage(named: "circle-user-7")
+//                return
+//            }
+//            self?.image = image
+//        }
+        self.image = UIImage(named: "circle-user-7")
     }
     
 }
